@@ -4,27 +4,21 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowRight, FileWarning, ShieldCheck, MessageSquareWarning, Repeat, FileText } from 'lucide-react'
-import { sql } from '@/lib/db'
-
-export const dynamic = 'force-dynamic'
+import { getAllCategories, getTemplatesByCategory } from '@/lib/static-templates'
 
 const categoryIcons = {
   'disputes': FileWarning,
-  'claims': ShieldCheck,
-  'complaints': MessageSquareWarning,
-  'appeals': Repeat,
+  'insurance': ShieldCheck,
+  'complaint': MessageSquareWarning,
+  'appeal': Repeat,
   'official': FileText,
 }
 
 export default async function CategoriesPage() {
-  const categories = await sql`
-    SELECT c.*, COUNT(t.id) as template_count
-    FROM categories c
-    LEFT JOIN templates t ON c.id = t.category_id AND t.is_active = true
-    WHERE c.is_active = true
-    GROUP BY c.id
-    ORDER BY c.display_order
-  `
+  const categories = getAllCategories().map(category => ({
+    ...category,
+    template_count: getTemplatesByCategory(category.slug).length
+  }))
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -44,7 +38,7 @@ export default async function CategoriesPage() {
 
         <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid gap-6 sm:gap-8">
-            {categories.map((category: any) => {
+            {categories.map((category) => {
               const Icon = categoryIcons[category.slug as keyof typeof categoryIcons] || FileText
               
               return (

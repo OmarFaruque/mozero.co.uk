@@ -5,42 +5,19 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowRight, Star, FileText } from 'lucide-react'
-import { sql } from '@/lib/db'
+import { getCategoryBySlug, getTemplatesByCategory } from '@/lib/static-templates'
 import { notFound } from 'next/navigation'
-
-export const dynamic = 'force-dynamic'
 
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const { slug } = params
   
-  let category
-  let templates
+  const category = getCategoryBySlug(slug)
   
-  try {
-    console.log('[v0] Querying category:', slug)
-    category = await sql`
-      SELECT * FROM categories
-      WHERE slug = ${slug} AND is_active = true
-    `
-    console.log('[v0] Category query result:', category)
-
-    if (category.length === 0) {
-      console.log('[v0] No category found for slug:', slug)
-      notFound()
-    }
-
-    console.log('[v0] Querying templates for category:', category[0].id)
-    templates = await sql`
-      SELECT * FROM templates
-      WHERE category_id = ${category[0].id} AND is_active = true
-      ORDER BY is_featured DESC, name ASC
-    `
-    console.log('[v0] Templates query result count:', templates.length)
-  } catch (error) {
-    console.error('[v0] Database error:', error)
-    throw error
+  if (!category) {
+    notFound()
   }
-  // </CHANGE>
+
+  const templates = getTemplatesByCategory(slug)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -48,25 +25,25 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       
       <main className="flex-1">
         <section className="border-b bg-muted/50">
-          <div className="container mx-auto py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
             <div className="max-w-3xl">
               <Link href="/categories" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-block">
                 ← Back to Categories
               </Link>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{category[0].name}</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">{category.name}</h1>
               <p className="text-lg text-muted-foreground text-pretty">
-                {category[0].description}
+                {category.description}
               </p>
             </div>
           </div>
         </section>
 
-        <section className="container mx-auto py-12">
+        <section className="container mx-auto px-4 sm:px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {templates.map((template: any) => (
+            {templates.map((template) => (
               <Card key={template.id} className="flex flex-col hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  {template.is_featured && (
+                  {template.is_popular && (
                     <Badge className="w-fit mb-2" variant="default">
                       <Star className="h-3 w-3 mr-1" />
                       Popular
@@ -83,7 +60,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
                     <div>
                       <p className="text-sm font-medium mb-2">Use Cases:</p>
                       <ul className="space-y-1">
-                        {template.use_cases.slice(0, 3).map((useCase: string, i: number) => (
+                        {template.use_cases.slice(0, 3).map((useCase, i) => (
                           <li key={i} className="text-sm text-muted-foreground flex items-start">
                             <span className="mr-2">•</span>
                             <span>{useCase}</span>
@@ -93,10 +70,10 @@ export default async function CategoryPage({ params }: { params: { slug: string 
                     </div>
                   )}
                   
-                  {template.estimated_length && (
+                  {template.estimated_pages && (
                     <p className="text-sm text-muted-foreground mt-3">
                       <FileText className="inline h-3 w-3 mr-1" />
-                      {template.estimated_length}
+                      {template.estimated_pages}
                     </p>
                   )}
                 </CardContent>

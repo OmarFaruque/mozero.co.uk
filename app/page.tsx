@@ -118,7 +118,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <Button variant="ghost" className="w-full justify-between min-h-[44px]" asChild>
-                  <Link href="/categories/complaints">
+                  <Link href="/categories/complaint">
                     View Templates
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -140,7 +140,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <Button variant="ghost" className="w-full justify-between min-h-[44px]" asChild>
-                  <Link href="/categories/appeals">
+                  <Link href="/categories/appeal">
                     View Templates
                     <ArrowRight className="h-4 w-4" />
                   </Link>
