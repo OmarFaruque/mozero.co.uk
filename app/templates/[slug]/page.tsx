@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Shield, FileText, Clock, CheckCircle } from 'lucide-react'
-import { sql } from '@/lib/db'
+import { TEMPLATES, CATEGORIES } from '@/lib/static-templates'
 import { notFound } from 'next/navigation'
 import { TemplateForm } from '@/components/template-form'
 import { getCurrentUser } from '@/lib/auth'
@@ -20,18 +20,13 @@ export default async function TemplatePage({ params }: { params: { slug: string 
     redirect(`/login?redirect=/templates/${slug}`)
   }
 
-  const template = await sql`
-    SELECT t.*, c.name as category_name, c.slug as category_slug
-    FROM templates t
-    JOIN categories c ON t.category_id = c.id
-    WHERE t.slug = ${slug} AND t.is_active = true
-  `
-
-  if (template.length === 0) {
+  const templateData = TEMPLATES.find(t => t.slug === slug)
+  
+  if (!templateData) {
     notFound()
   }
 
-  const templateData = template[0]
+  const category = CATEGORIES.find(c => c.id === templateData.category_id)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -39,10 +34,10 @@ export default async function TemplatePage({ params }: { params: { slug: string 
       
       <main className="flex-1 bg-muted/30">
         <section className="border-b bg-background">
-          <div className="container py-8">
+          <div className="container mx-auto px-4 sm:px-6 py-8">
             <div className="max-w-4xl">
               <Badge variant="secondary" className="mb-3">
-                {templateData.category_name}
+                {category?.name}
               </Badge>
               <h1 className="text-3xl md:text-4xl font-bold mb-3">{templateData.name}</h1>
               <p className="text-muted-foreground text-pretty">
@@ -52,7 +47,7 @@ export default async function TemplatePage({ params }: { params: { slug: string 
           </div>
         </section>
 
-        <div className="container py-8">
+        <div className="container mx-auto px-4 sm:px-6 py-8">
           <div className="grid lg:grid-cols-[1fr_320px] gap-8 max-w-6xl">
             <div>
               {/* Legal Disclaimer */}
@@ -75,8 +70,7 @@ export default async function TemplatePage({ params }: { params: { slug: string 
                 <CardContent>
                   <TemplateForm 
                     templateId={templateData.id}
-                    questions={templateData.questions}
-                    systemPrompt={templateData.system_prompt}
+                    templateSlug={templateData.slug}
                   />
                 </CardContent>
               </Card>
@@ -93,7 +87,7 @@ export default async function TemplatePage({ params }: { params: { slug: string 
                     <FileText className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div>
                       <p className="text-sm font-medium">Estimated Length</p>
-                      <p className="text-sm text-muted-foreground">{templateData.estimated_length || 'Varies'}</p>
+                      <p className="text-sm text-muted-foreground">{templateData.estimated_pages}</p>
                     </div>
                   </div>
                   
