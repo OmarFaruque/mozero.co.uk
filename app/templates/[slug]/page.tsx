@@ -36,9 +36,11 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
         <section className="border-b bg-background">
           <div className="container mx-auto px-4 sm:px-6 py-8">
             <div className="max-w-4xl">
-              <Badge variant="secondary" className="mb-3">
-                {category?.name}
-              </Badge>
+              {category && (
+                <Badge variant="secondary" className="mb-3">
+                  {category.name}
+                </Badge>
+              )}
               <h1 className="text-3xl md:text-4xl font-bold mb-3">{templateData.name}</h1>
               <p className="text-muted-foreground text-pretty">
                 {templateData.description}
@@ -109,14 +111,14 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 </CardContent>
               </Card>
 
-              {templateData.use_cases && templateData.use_cases.length > 0 && (
+              {Array.isArray(templateData.use_cases) && templateData.use_cases.length > 0 && (
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Common Use Cases</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      {templateData.use_cases.map((useCase: string, i: number) => (
+                      {templateData.use_cases.map((useCase, i) => (
                         <li key={i} className="text-sm text-muted-foreground flex items-start">
                           <span className="mr-2 text-primary">•</span>
                           <span>{useCase}</span>
