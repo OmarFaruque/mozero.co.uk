@@ -5,19 +5,19 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowRight, Star, FileText } from 'lucide-react'
-import { getCategoryBySlug, getTemplatesByCategory } from '@/lib/static-templates'
+import { CATEGORIES, TEMPLATES } from '@/lib/static-templates'
 import { notFound } from 'next/navigation'
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
-  const category = getCategoryBySlug(slug)
+  const category = CATEGORIES.find(cat => cat.slug === slug && cat.is_active)
   
   if (!category) {
     notFound()
   }
 
-  const templates = getTemplatesByCategory(slug)
+  const templates = TEMPLATES.filter(t => t.category_slug === slug)
 
   return (
     <div className="flex min-h-screen flex-col">

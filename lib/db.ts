@@ -1,36 +1,16 @@
 import 'server-only'
 import { neon } from '@neondatabase/serverless'
 
-let _sql: ReturnType<typeof neon> | null = null
+// Database is no longer needed for template pages which now use static data
 
-export const sql = new Proxy(() => {}, {
-  get(target, prop) {
-    if (!_sql) {
-      const databaseUrl = process.env.DATABASE_URL
-      
-      if (!databaseUrl) {
-        throw new Error('DATABASE_URL environment variable is not set. Please add it in the Vars section.')
-      }
-      
-      _sql = neon(databaseUrl)
-    }
-    
-    return (_sql as any)[prop]
-  },
-  apply(target, thisArg, args) {
-    if (!_sql) {
-      const databaseUrl = process.env.DATABASE_URL
-      
-      if (!databaseUrl) {
-        throw new Error('DATABASE_URL environment variable is not set. Please add it in the Vars section.')
-      }
-      
-      _sql = neon(databaseUrl)
-    }
-    
-    return (_sql as any).apply(thisArg, args)
-  }
-}) as unknown as ReturnType<typeof neon>
+const DATABASE_URL = process.env.DATABASE_URL
+
+if (!DATABASE_URL) {
+  throw new Error('DATABASE_URL environment variable is not set')
+}
+
+export const sql = neon(DATABASE_URL)
+
 
 export type User = {
   id: number

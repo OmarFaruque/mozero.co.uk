@@ -20,13 +20,13 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
     redirect(`/login?redirect=/templates/${slug}`)
   }
 
-  const templateData = TEMPLATES.find(t => t.slug === slug)
+  const template = TEMPLATES.find(t => t.slug === slug)
   
-  if (!templateData) {
+  if (!template) {
     notFound()
   }
 
-  const category = CATEGORIES.find(c => c.id === templateData.category_id)
+  const category = CATEGORIES.find(c => c.id === template.category_id)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -41,9 +41,9 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                   {category.name}
                 </Badge>
               )}
-              <h1 className="text-3xl md:text-4xl font-bold mb-3">{templateData.name}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">{template.name}</h1>
               <p className="text-muted-foreground text-pretty">
-                {templateData.description}
+                {template.description}
               </p>
             </div>
           </div>
@@ -52,7 +52,6 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
         <div className="container mx-auto px-4 sm:px-6 py-8">
           <div className="grid lg:grid-cols-[1fr_320px] gap-8 max-w-6xl">
             <div>
-              {/* Legal Disclaimer */}
               <Alert className="mb-6 border-primary/50 bg-primary/5">
                 <Shield className="h-4 w-4 text-primary" />
                 <AlertDescription className="text-sm">
@@ -61,7 +60,6 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 </AlertDescription>
               </Alert>
 
-              {/* Template Form */}
               <Card>
                 <CardHeader>
                   <CardTitle>Complete the Form</CardTitle>
@@ -71,14 +69,13 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 </CardHeader>
                 <CardContent>
                   <TemplateForm 
-                    templateId={templateData.id}
-                    templateSlug={templateData.slug}
+                    templateId={template.id}
+                    templateSlug={template.slug}
                   />
                 </CardContent>
               </Card>
             </div>
 
-            {/* Sidebar */}
             <div className="space-y-6">
               <Card>
                 <CardHeader>
@@ -89,7 +86,7 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                     <FileText className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div>
                       <p className="text-sm font-medium">Estimated Length</p>
-                      <p className="text-sm text-muted-foreground">{templateData.estimated_pages}</p>
+                      <p className="text-sm text-muted-foreground">{template.estimated_pages}</p>
                     </div>
                   </div>
                   
@@ -111,14 +108,14 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 </CardContent>
               </Card>
 
-              {Array.isArray(templateData.use_cases) && templateData.use_cases.length > 0 && (
+              {Array.isArray(template.use_cases) && template.use_cases.length > 0 && (
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Common Use Cases</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      {templateData.use_cases.map((useCase, i) => (
+                      {template.use_cases.map((useCase, i) => (
                         <li key={i} className="text-sm text-muted-foreground flex items-start">
                           <span className="mr-2 text-primary">•</span>
                           <span>{useCase}</span>
