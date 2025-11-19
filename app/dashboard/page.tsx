@@ -52,7 +52,7 @@ export default async function DashboardPage() {
       
       <main className="flex-1 bg-muted/30">
         <section className="border-b bg-background">
-          <div className="container px-4 sm:px-6 py-6 sm:py-8">
+          <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">Dashboard</h1>
@@ -70,7 +70,7 @@ export default async function DashboardPage() {
           </div>
         </section>
 
-        <div className="container px-4 sm:px-6 py-6 sm:py-8">
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

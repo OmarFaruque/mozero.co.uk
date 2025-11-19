@@ -19,19 +19,21 @@ export default function LoginPage() {
       <Header />
       
       <main className="flex-1 flex items-center justify-center py-12 px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle className="text-2xl">Welcome Back</CardTitle>
-            <CardDescription>
-              Log in to your Letterise account to continue
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Suspense fallback={<LoginFormFallback />}>
-              <LoginForm />
-            </Suspense>
-          </CardContent>
-        </Card>
+        <div className="container mx-auto flex justify-center">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle className="text-2xl">Welcome Back</CardTitle>
+              <CardDescription>
+                Log in to your Letterise account to continue
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Suspense fallback={<LoginFormFallback />}>
+                <LoginForm />
+              </Suspense>
+            </CardContent>
+          </Card>
+        </div>
       </main>
 
       <Footer />

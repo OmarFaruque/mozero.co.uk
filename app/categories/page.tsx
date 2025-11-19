@@ -32,7 +32,7 @@ export default async function CategoriesPage() {
       
       <main className="flex-1">
         <section className="border-b bg-muted/50">
-          <div className="container px-4 sm:px-6 py-10 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">Browse Templates</h1>
               <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed">
@@ -42,7 +42,7 @@ export default async function CategoriesPage() {
           </div>
         </section>
 
-        <section className="container px-4 sm:px-6 py-8 sm:py-12">
+        <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid gap-6 sm:gap-8">
             {categories.map((category: any) => {
               const Icon = categoryIcons[category.slug as keyof typeof categoryIcons] || FileText

@@ -9,17 +9,19 @@ export default function SignupPage() {
       <Header />
       
       <main className="flex-1 flex items-center justify-center py-12 px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle className="text-2xl">Create Your Account</CardTitle>
-            <CardDescription>
-              Get started with Letterise and generate professional documents
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <SignupForm />
-          </CardContent>
-        </Card>
+        <div className="container mx-auto flex justify-center">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle className="text-2xl">Create Your Account</CardTitle>
+              <CardDescription>
+                Get started with Letterise and generate professional documents
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <SignupForm />
+            </CardContent>
+          </Card>
+        </div>
       </main>
 
       <Footer />

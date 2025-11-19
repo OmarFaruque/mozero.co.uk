@@ -17,7 +17,7 @@ export default function PricingPage() {
       
       <main className="flex-1">
         <section className="border-b bg-muted/50">
-          <div className="container px-4 sm:px-6 py-10 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">Simple, Transparent Pricing</h1>
               <p className="text-base sm:text-lg text-muted-foreground text-balance px-2">
@@ -28,7 +28,7 @@ export default function PricingPage() {
         </section>
 
         {/* Credit Packages */}
-        <section className="container px-4 sm:px-6 py-12 sm:py-16">
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="text-center mb-8 sm:mb-12">
             <Badge variant="secondary" className="mb-3">
               <Zap className="h-3 w-3 mr-1" />
@@ -65,7 +65,7 @@ export default function PricingPage() {
 
         {/* Subscription Plans */}
         <section className="bg-muted/50 py-12 sm:py-16">
-          <div className="container px-4 sm:px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12">
               <Badge variant="default" className="mb-3">
                 Best Value
@@ -119,7 +119,7 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="container px-4 sm:px-6 py-12 sm:py-16">
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Frequently Asked Questions</h2>
             

@@ -34,7 +34,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       
       <main className="flex-1">
         <section className="border-b bg-muted/50">
-          <div className="container py-12 md:py-16">
+          <div className="container mx-auto py-12 md:py-16">
             <div className="max-w-3xl">
               <Link href="/categories" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-block">
                 ← Back to Categories
@@ -47,7 +47,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
           </div>
         </section>
 
-        <section className="container py-12">
+        <section className="container mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {templates.map((template: any) => (
               <Card key={template.id} className="flex flex-col hover:shadow-lg transition-shadow">
