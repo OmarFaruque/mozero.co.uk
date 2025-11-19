@@ -1,0 +1,181 @@
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Check, Zap } from 'lucide-react'
+import { PRODUCTS } from '@/lib/products'
+import { CheckoutButton } from '@/components/checkout-button'
+
+export default function PricingPage() {
+  const creditPackages = PRODUCTS.filter(p => p.type === 'credits')
+  const subscriptionPlans = PRODUCTS.filter(p => p.type === 'subscription')
+
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      
+      <main className="flex-1">
+        <section className="border-b bg-muted/50">
+          <div className="container px-4 sm:px-6 py-10 sm:py-12 md:py-16">
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">Simple, Transparent Pricing</h1>
+              <p className="text-base sm:text-lg text-muted-foreground text-balance px-2">
+                Choose between pay-per-use credits or monthly subscriptions. No hidden fees.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Credit Packages */}
+        <section className="container px-4 sm:px-6 py-12 sm:py-16">
+          <div className="text-center mb-8 sm:mb-12">
+            <Badge variant="secondary" className="mb-3">
+              <Zap className="h-3 w-3 mr-1" />
+              Pay Per Use
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">Credit Packages</h2>
+            <p className="text-sm sm:text-base text-muted-foreground px-4">
+              Buy credits as needed. Credits never expire.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            {creditPackages.map((product) => (
+              <Card key={product.id} className="flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
+                  <CardDescription className="text-sm">{product.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <div className="text-3xl sm:text-4xl font-bold mb-4">
+                    £{(product.priceInCents / 100).toFixed(2)}
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    £{((product.priceInCents / 100) / (product.credits || 1)).toFixed(2)} per document
+                  </p>
+                </CardContent>
+                <CardFooter>
+                  <CheckoutButton productId={product.id} label="Buy Credits" />
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Subscription Plans */}
+        <section className="bg-muted/50 py-12 sm:py-16">
+          <div className="container px-4 sm:px-6">
+            <div className="text-center mb-8 sm:mb-12">
+              <Badge variant="default" className="mb-3">
+                Best Value
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3">Monthly Subscriptions</h2>
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
+                Save money with monthly plans. Cancel anytime.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+              {subscriptionPlans.map((product) => (
+                <Card key={product.id} className={`flex flex-col relative ${product.id === 'professional-plan' ? 'border-primary shadow-lg md:scale-105' : ''}`}>
+                  {product.id === 'professional-plan' && (
+                    <Badge className="absolute -top-2 right-4">
+                      Popular
+                    </Badge>
+                  )}
+                  <CardHeader>
+                    <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
+                    <CardDescription className="text-sm">{product.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <div className="text-3xl sm:text-4xl font-bold mb-1">
+                      £{(product.priceInCents / 100).toFixed(0)}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-6">per month</p>
+                    
+                    {product.features && (
+                      <ul className="space-y-3">
+                        {product.features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm">
+                            <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </CardContent>
+                  <CardFooter>
+                    <CheckoutButton 
+                      productId={product.id} 
+                      label="Subscribe" 
+                      variant={product.id === 'professional-plan' ? 'default' : 'outline'}
+                    />
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="container px-4 sm:px-6 py-12 sm:py-16">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Frequently Asked Questions</h2>
+            
+            <div className="space-y-4 sm:space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What's the difference between credits and subscriptions?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Credits are pay-per-use and never expire. Subscriptions give you a monthly allocation of credits at a discounted rate. 
+                    Choose credits if you need documents occasionally, or subscribe if you generate documents regularly.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Can I cancel my subscription anytime?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Yes, you can cancel your subscription at any time. You'll retain access until the end of your billing period, 
+                    and any unused credits will remain available.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Do unused credits carry over?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Purchased credits never expire. For subscriptions, unused monthly credits do not roll over to the next month.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Is this legal advice?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    No. Letterise generates template-based documents and does not provide legal advice. 
+                    For legal matters, please consult with a licensed attorney.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

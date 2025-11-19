@@ -1,0 +1,7 @@
+-- Add formatting preferences to documents table
+ALTER TABLE documents 
+ADD COLUMN IF NOT EXISTS font_preference VARCHAR(50) DEFAULT 'times',
+ADD COLUMN IF NOT EXISTS text_color VARCHAR(20) DEFAULT '#000000',
+ADD COLUMN IF NOT EXISTS font_size INTEGER DEFAULT 12,
+ADD COLUMN IF NOT EXISTS text_bold BOOLEAN DEFAULT false,
+ADD COLUMN IF NOT EXISTS text_italic BOOLEAN DEFAULT false;

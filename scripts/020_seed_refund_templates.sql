@@ -1,0 +1,48 @@
+-- Refund Claims Templates
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Item Not Received', 'item-not-received', 'Request a refund for an item that was never delivered', 
+'[{"id":"orderNumber","label":"Order Number","type":"text","required":true},{"id":"orderDate","label":"Order Date","type":"date","required":true},{"id":"itemDescription","label":"Item Description","type":"text","required":true},{"id":"amount","label":"Amount Paid","type":"text","required":true},{"id":"trackingNumber","label":"Tracking Number (if available)","type":"text","required":false},{"id":"expectedDelivery","label":"Expected Delivery Date","type":"date","required":true},{"id":"contactAttempts","label":"Previous Contact Attempts","type":"textarea","required":true}]',
+'You are a professional letter writer helping a customer request a refund for an item not received. Write a formal, polite but firm letter that includes: order details, delivery expectations, evidence of non-delivery, previous contact attempts, and a clear request for a full refund within a specific timeframe. Reference Consumer Rights Act 2015 where appropriate.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Faulty or Damaged Product', 'faulty-damaged-product', 'Request a refund or replacement for defective items', 
+'[{"id":"orderNumber","label":"Order Number","type":"text","required":true},{"id":"orderDate","label":"Order Date","type":"date","required":true},{"id":"productName","label":"Product Name","type":"text","required":true},{"id":"faultDescription","label":"Description of Fault/Damage","type":"textarea","required":true},{"id":"amount","label":"Amount Paid","type":"text","required":true},{"id":"discoveryDate","label":"When Was Fault Discovered","type":"date","required":true},{"id":"photos","label":"Have You Taken Photos?","type":"select","options":["Yes","No"],"required":true},{"id":"remedy","label":"Preferred Remedy","type":"select","options":["Full Refund","Replacement","Repair"],"required":true}]',
+'You are a professional letter writer helping a customer request a remedy for a faulty or damaged product. Write a formal letter citing Consumer Rights Act 2015, explaining the fault clearly, referencing the right to reject within 30 days or repair/replacement/refund thereafter, and requesting the preferred remedy with a deadline.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Service Not As Described', 'service-not-described', 'Challenge services that don''t match what was promised', 
+'[{"id":"serviceProvider","label":"Service Provider Name","type":"text","required":true},{"id":"contractDate","label":"Contract/Booking Date","type":"date","required":true},{"id":"serviceDescription","label":"Service Purchased","type":"text","required":true},{"id":"amount","label":"Amount Paid","type":"text","required":true},{"id":"whatPromised","label":"What Was Promised","type":"textarea","required":true},{"id":"whatReceived","label":"What You Actually Received","type":"textarea","required":true},{"id":"evidence","label":"Evidence Available","type":"textarea","required":false}]',
+'You are a professional letter writer helping a customer request a refund for a service not as described. Write a formal letter referencing Consumer Rights Act 2015 (services to be performed with reasonable care and skill, as described), comparing what was promised vs received, and requesting a full or partial refund based on the discrepancy.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Late Delivery Refund', 'late-delivery-refund', 'Request compensation for delayed deliveries', 
+'[{"id":"orderNumber","label":"Order Number","type":"text","required":true},{"id":"orderDate","label":"Order Date","type":"date","required":true},{"id":"promisedDelivery","label":"Promised Delivery Date","type":"date","required":true},{"id":"actualDelivery","label":"Actual Delivery Date","type":"date","required":true},{"id":"itemDescription","label":"Item Description","type":"text","required":true},{"id":"impact","label":"Impact of Late Delivery","type":"textarea","required":true},{"id":"refundAmount","label":"Refund Amount Requested","type":"text","required":true}]',
+'You are a professional letter writer helping a customer request compensation for late delivery. Write a formal letter citing Consumer Rights Act 2015 and Consumer Contracts Regulations 2013, explaining the promised vs actual delivery date, the impact of the delay, and requesting either a partial refund, full refund, or compensation.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Subscription Cancellation Refund', 'subscription-cancellation', 'Cancel unwanted subscriptions and request refunds', 
+'[{"id":"companyName","label":"Company Name","type":"text","required":true},{"id":"subscriptionType","label":"Subscription Type","type":"text","required":true},{"id":"startDate","label":"Subscription Start Date","type":"date","required":true},{"id":"monthlyAmount","label":"Monthly Amount","type":"text","required":true},{"id":"cancellationDate","label":"When Did You Try to Cancel","type":"date","required":true},{"id":"reason","label":"Reason for Cancellation","type":"textarea","required":true},{"id":"chargesAfter","label":"Charges After Cancellation Request","type":"text","required":false}]',
+'You are a professional letter writer helping a customer cancel a subscription and request a refund. Write a formal letter requesting immediate cancellation, citing Consumer Contracts Regulations 2013 (14-day cooling off if applicable), explaining unauthorized charges if any, and requesting a refund for charges made after cancellation request.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Digital Goods Refund (non-functional)', 'digital-goods-refund', 'Request refund for software or digital products that don''t work', 
+'[{"id":"productName","label":"Product/Software Name","type":"text","required":true},{"id":"purchaseDate","label":"Purchase Date","type":"date","required":true},{"id":"amount","label":"Amount Paid","type":"text","required":true},{"id":"platform","label":"Platform/Store","type":"text","required":true},{"id":"issue","label":"Technical Issue Description","type":"textarea","required":true},{"id":"troubleshooting","label":"Troubleshooting Steps Taken","type":"textarea","required":true},{"id":"systemSpecs","label":"Your System Specifications","type":"textarea","required":false}]',
+'You are a professional letter writer helping a customer request a refund for non-functional digital goods. Write a formal letter citing Consumer Rights Act 2015 (digital content must be of satisfactory quality and fit for purpose), explaining the technical issues, troubleshooting attempts, and requesting a full refund as the product is not fit for purpose.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Pricing Error Refund', 'pricing-error-refund', 'Request refund for items charged at wrong price', 
+'[{"id":"orderNumber","label":"Order Number","type":"text","required":true},{"id":"orderDate","label":"Order Date","type":"date","required":true},{"id":"itemDescription","label":"Item Description","type":"text","required":true},{"id":"displayedPrice","label":"Price Displayed/Advertised","type":"text","required":true},{"id":"chargedPrice","label":"Price Actually Charged","type":"text","required":true},{"id":"evidence","label":"Evidence of Displayed Price","type":"textarea","required":true}]',
+'You are a professional letter writer helping a customer request a refund due to a pricing error. Write a formal letter referencing Pricing Practices Guide and Consumer Protection from Unfair Trading Regulations 2008, explaining the price discrepancy clearly, providing evidence, and requesting either the correct price or a full refund with the difference reimbursed.'
+FROM categories WHERE slug = 'refund-claims';
+
+INSERT INTO templates (category_id, name, slug, description, questions, system_prompt)
+SELECT id, 'Refund After Warranty Claim Refusal', 'warranty-refusal-refund', 'Challenge unfair warranty rejections', 
+'[{"id":"productName","label":"Product Name","type":"text","required":true},{"id":"purchaseDate","label":"Purchase Date","type":"date","required":true},{"id":"warrantyPeriod","label":"Warranty Period","type":"text","required":true},{"id":"faultDescription","label":"Fault Description","type":"textarea","required":true},{"id":"refusalReason","label":"Reason Given for Warranty Refusal","type":"textarea","required":true},{"id":"whyUnfair","label":"Why You Believe the Refusal is Unfair","type":"textarea","required":true},{"id":"amount","label":"Original Purchase Price","type":"text","required":true}]',
+'You are a professional letter writer helping a customer challenge an unfair warranty refusal. Write a formal letter citing Consumer Rights Act 2015 (goods must last a reasonable time - up to 6 years), explaining why the warranty refusal is unfair, arguing that the fault is inherent/manufacturing defect, and requesting a repair, replacement, or refund as the retailer remains liable beyond warranty period for inherent faults.'
+FROM categories WHERE slug = 'refund-claims';
