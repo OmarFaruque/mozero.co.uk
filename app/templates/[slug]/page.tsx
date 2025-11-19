@@ -12,8 +12,8 @@ import { redirect } from 'next/navigation'
 
 export const dynamic = 'force-dynamic'
 
-export default async function TemplatePage({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export default async function TemplatePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   
   const user = await getCurrentUser()
   if (!user) {

@@ -8,8 +8,8 @@ import { ArrowRight, Star, FileText } from 'lucide-react'
 import { getCategoryBySlug, getTemplatesByCategory } from '@/lib/static-templates'
 import { notFound } from 'next/navigation'
 
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   
   const category = getCategoryBySlug(slug)
   
