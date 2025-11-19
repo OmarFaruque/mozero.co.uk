@@ -13,20 +13,34 @@ export const dynamic = 'force-dynamic'
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const { slug } = params
   
-  const category = await sql`
-    SELECT * FROM categories
-    WHERE slug = ${slug} AND is_active = true
-  `
+  let category
+  let templates
+  
+  try {
+    console.log('[v0] Querying category:', slug)
+    category = await sql`
+      SELECT * FROM categories
+      WHERE slug = ${slug} AND is_active = true
+    `
+    console.log('[v0] Category query result:', category)
 
-  if (category.length === 0) {
-    notFound()
+    if (category.length === 0) {
+      console.log('[v0] No category found for slug:', slug)
+      notFound()
+    }
+
+    console.log('[v0] Querying templates for category:', category[0].id)
+    templates = await sql`
+      SELECT * FROM templates
+      WHERE category_id = ${category[0].id} AND is_active = true
+      ORDER BY is_featured DESC, name ASC
+    `
+    console.log('[v0] Templates query result count:', templates.length)
+  } catch (error) {
+    console.error('[v0] Database error:', error)
+    throw error
   }
-
-  const templates = await sql`
-    SELECT * FROM templates
-    WHERE category_id = ${category[0].id} AND is_active = true
-    ORDER BY is_featured DESC, name ASC
-  `
+  // </CHANGE>
 
   return (
     <div className="flex min-h-screen flex-col">
