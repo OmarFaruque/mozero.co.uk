@@ -15,7 +15,8 @@ export async function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-blur-xl">
-      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+      {/* Added mx-auto to center the container */}
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
             <FileText className="h-5 w-5 text-white" />

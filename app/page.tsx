@@ -13,7 +13,7 @@ export default function HomePage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-28">
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-28">
           <div className="mx-auto max-w-3xl text-center space-y-4 sm:space-y-6">
             <Badge variant="secondary" className="mb-2 bg-primary/20 text-primary border-primary/30">
               AI-Powered Document Generation
@@ -42,7 +42,7 @@ export default function HomePage() {
 
         {/* Disclaimer Banner */}
         <section className="bg-primary/5 border-y border-primary/10">
-          <div className="container px-4 sm:px-6 py-3 sm:py-4">
+          <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <p className="text-center text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <Shield className="inline h-3 w-3 sm:h-4 sm:w-4 mr-1" />
               Letterise generates template-based documents and does not provide legal advice. For legal matters, consult a licensed attorney.
@@ -51,7 +51,7 @@ export default function HomePage() {
         </section>
 
         {/* Categories Section */}
-        <section className="container px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Document Categories</h2>
             <p className="text-base sm:text-lg text-foreground/70 text-balance max-w-2xl mx-auto px-4">
@@ -191,7 +191,7 @@ export default function HomePage() {
 
         {/* Features Section */}
         <section className="bg-card/30 py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container px-4 sm:px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose Letterise?</h2>
               <p className="text-base sm:text-lg text-foreground/70 text-balance max-w-2xl mx-auto px-4">
@@ -264,7 +264,7 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="container px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
           <Card className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-600 to-pink-500 text-white border-0 shadow-2xl">
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />

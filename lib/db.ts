@@ -3,7 +3,7 @@ import { neon } from '@neondatabase/serverless'
 
 let _sql: ReturnType<typeof neon> | null = null
 
-export const sql = new Proxy({} as ReturnType<typeof neon>, {
+export const sql = new Proxy(() => {}, {
   get(target, prop) {
     if (!_sql) {
       const databaseUrl = process.env.DATABASE_URL
@@ -28,9 +28,9 @@ export const sql = new Proxy({} as ReturnType<typeof neon>, {
       _sql = neon(databaseUrl)
     }
     
-    return _sql.apply(thisArg, args)
+    return (_sql as any).apply(thisArg, args)
   }
-})
+}) as unknown as ReturnType<typeof neon>
 
 export type User = {
   id: number
