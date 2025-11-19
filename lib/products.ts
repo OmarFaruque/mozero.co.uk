@@ -11,27 +11,27 @@ export type Product = {
 export const PRODUCTS: Product[] = [
   // Credit Packages
   {
+    id: '3-credits',
+    name: '3 Credits',
+    description: 'Try it out',
+    priceInCents: 249, // £2.49
+    credits: 3,
+    type: 'credits'
+  },
+  {
     id: '10-credits',
     name: '10 Credits',
-    description: 'Generate 10 documents',
-    priceInCents: 799, // £7.99
+    description: 'Standard',
+    priceInCents: 699, // £6.99
     credits: 10,
     type: 'credits'
   },
   {
-    id: '25-credits',
-    name: '25 Credits',
-    description: 'Generate 25 documents',
-    priceInCents: 1599, // £15.99
-    credits: 25,
-    type: 'credits'
-  },
-  {
-    id: '50-credits',
-    name: '50 Credits',
-    description: 'Generate 50 documents - Best Value',
-    priceInCents: 2399, // £23.99
-    credits: 50,
+    id: '30-credits',
+    name: '30 Credits',
+    description: 'Most popular',
+    priceInCents: 999, // £9.99
+    credits: 30,
     type: 'credits'
   },
   

@@ -6,10 +6,33 @@ import { Badge } from '@/components/ui/badge'
 import { Check, Zap } from 'lucide-react'
 import { PRODUCTS } from '@/lib/products'
 import { CheckoutButton } from '@/components/checkout-button'
+import { sql } from '@/lib/db'
 
-export default function PricingPage() {
+export const dynamic = 'force-dynamic'
+
+export default async function PricingPage() {
+  const dbPlans = await sql`
+    SELECT id, name, description, price_cents, credits_per_month, is_active
+    FROM subscription_plans
+    WHERE is_active = true AND credits_per_month >= 30
+    ORDER BY price_cents ASC
+  `
+
+  const subscriptionPlans = dbPlans.map((plan: any) => ({
+    id: `plan-${plan.id}`,
+    name: plan.name,
+    description: plan.description,
+    priceInCents: plan.price_cents,
+    type: 'subscription',
+    features: [
+      `${plan.credits_per_month} documents per month`,
+      'Priority support',
+      'All document templates',
+      'Unlimited revisions'
+    ]
+  }))
+
   const creditPackages = PRODUCTS.filter(p => p.type === 'credits')
-  const subscriptionPlans = PRODUCTS.filter(p => p.type === 'subscription')
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -77,43 +100,60 @@ export default function PricingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-              {subscriptionPlans.map((product) => (
-                <Card key={product.id} className={`flex flex-col relative ${product.id === 'professional-plan' ? 'border-primary shadow-lg md:scale-105' : ''}`}>
-                  {product.id === 'professional-plan' && (
-                    <Badge className="absolute -top-2 right-4">
-                      Popular
-                    </Badge>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
-                    <CardDescription className="text-sm">{product.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <div className="text-3xl sm:text-4xl font-bold mb-1">
-                      £{(product.priceInCents / 100).toFixed(0)}
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-6">per month</p>
-                    
-                    {product.features && (
-                      <ul className="space-y-3">
-                        {product.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                            <span className="leading-relaxed">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+              {subscriptionPlans.map((product, index) => {
+                const originalPrices = [1499, 2799, 6999] // £14.99, £27.99, £69.99
+                const originalPrice = originalPrices[index]
+                
+                return (
+                  <Card key={product.id} className={`flex flex-col relative ${index === 1 ? 'border-primary shadow-lg md:scale-105' : ''}`}>
+                    {index === 1 && (
+                      <Badge className="absolute -top-2 right-4">
+                        Popular
+                      </Badge>
                     )}
-                  </CardContent>
-                  <CardFooter>
-                    <CheckoutButton 
-                      productId={product.id} 
-                      label="Subscribe" 
-                      variant={product.id === 'professional-plan' ? 'default' : 'outline'}
-                    />
-                  </CardFooter>
-                </Card>
-              ))}
+                    <CardHeader>
+                      <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
+                      <CardDescription className="text-sm">{product.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      {originalPrice && (
+                        <div className="text-lg text-muted-foreground line-through mb-1">
+                          £{(originalPrice / 100).toFixed(2)}
+                        </div>
+                      )}
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <div className="text-3xl sm:text-4xl font-bold text-primary">
+                          £{(product.priceInCents / 100).toFixed(2)}
+                        </div>
+                        {originalPrice && (
+                          <Badge variant="destructive" className="text-xs">
+                            Save {Math.round(((originalPrice - product.priceInCents) / originalPrice) * 100)}%
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-6">per month</p>
+                    
+                      {product.features && (
+                        <ul className="space-y-3">
+                          {product.features.map((feature, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm">
+                              <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                              <span className="leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </CardContent>
+                    <CardFooter>
+                      <CheckoutButton 
+                        productId={product.id} 
+                        label="Subscribe" 
+                        variant={index === 1 ? 'default' : 'outline'}
+                      />
+                    </CardFooter>
+                  </Card>
+                )
+              })}
             </div>
           </div>
         </section>
