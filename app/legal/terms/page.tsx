@@ -21,7 +21,7 @@ export default function TermsPage() {
               <section>
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                  By accessing and using Letterise ("the Service"), you accept and agree to be bound by these Terms of Service. 
+                  By accessing and using Letterise (Letterise Ltd), you accept and agree to be bound by these Terms of Service. 
                   If you do not agree to these terms, please do not use the Service.
                 </p>
               </section>
