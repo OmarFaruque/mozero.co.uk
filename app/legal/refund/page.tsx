@@ -30,7 +30,7 @@ export default function RefundPage() {
                 <h2>2. Credit Purchases (Pay-Per-Use)</h2>
                 <h3>Refund Eligibility</h3>
                 <p>
-                  Credit purchases may be eligible for refund within 7 days of purchase if:
+                  Credit purchases may be eligible for refund within 14 days of purchase if:
                 </p>
                 <ul>
                   <li>No credits have been used from the purchased package</li>
@@ -41,7 +41,7 @@ export default function RefundPage() {
                 <h3>Non-Refundable Situations</h3>
                 <ul>
                   <li>Credits have already been used to generate documents</li>
-                  <li>More than 7 days have passed since purchase</li>
+                  <li>More than 14 days have passed since purchase</li>
                   <li>Dissatisfaction with generated document content (see Document Quality below)</li>
                 </ul>
               </section>
