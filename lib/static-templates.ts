@@ -17,6 +17,17 @@ export interface Template {
   is_popular: boolean
   category_id: number
   category_slug: string
+  questions?: Question[]
+  system_prompt?: string
+}
+
+export interface Question {
+  id: string
+  label: string
+  type: 'text' | 'textarea' | 'date' | 'select'
+  required: boolean
+  placeholder?: string
+  options?: string[]
 }
 
 export const CATEGORIES: Category[] = [
@@ -141,7 +152,71 @@ export const TEMPLATES: Template[] = [
     estimated_pages: '2-3 pages',
     is_popular: false,
     category_id: 2,
-    category_slug: 'insurance'
+    category_slug: 'insurance',
+    questions: [
+      {
+        id: 'policyholder_name',
+        label: 'Your Full Name',
+        type: 'text',
+        required: true,
+        placeholder: 'John Smith'
+      },
+      {
+        id: 'policy_number',
+        label: 'Insurance Policy Number',
+        type: 'text',
+        required: true,
+        placeholder: 'e.g., ABC123456789'
+      },
+      {
+        id: 'vehicle_info',
+        label: 'Vehicle Information (Year, Make, Model)',
+        type: 'text',
+        required: true,
+        placeholder: '2020 Honda Civic'
+      },
+      {
+        id: 'incident_date',
+        label: 'Date of Incident',
+        type: 'date',
+        required: true
+      },
+      {
+        id: 'incident_type',
+        label: 'Type of Incident',
+        type: 'select',
+        required: true,
+        options: ['Collision Damage', 'Theft', 'Vandalism', 'Weather Damage', 'Other'],
+      },
+      {
+        id: 'incident_description',
+        label: 'Description of Incident',
+        type: 'textarea',
+        required: true,
+        placeholder: 'Please describe what happened...'
+      },
+      {
+        id: 'damage_description',
+        label: 'Damage Details',
+        type: 'textarea',
+        required: true,
+        placeholder: 'Describe the damage to your vehicle...'
+      },
+      {
+        id: 'claim_amount',
+        label: 'Estimated Repair Cost',
+        type: 'text',
+        required: false,
+        placeholder: 'e.g., £5,000'
+      }
+    ],
+    system_prompt: `You are a professional insurance claim letter writer. Create a formal, factual auto insurance claim letter based on the provided information. 
+    - Use professional business letter format
+    - State the claim clearly and concisely
+    - Include all relevant details about the incident
+    - Reference the policy number
+    - Maintain a respectful but firm tone
+    - Request prompt processing of the claim`
   },
   {
     id: 8,

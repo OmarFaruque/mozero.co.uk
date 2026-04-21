@@ -4,13 +4,49 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Shield, FileText, Clock, CheckCircle } from 'lucide-react'
-import { TEMPLATES, CATEGORIES } from '@/lib/static-templates'
 import { notFound } from 'next/navigation'
 import { TemplateForm } from '@/components/template-form'
 import { getCurrentUser } from '@/lib/auth'
 import { redirect } from 'next/navigation'
+import { sql } from '@/lib/db'
 
 export const dynamic = 'force-dynamic'
+
+async function getTemplateBySlug(slug: string) {
+  try {
+    const templates = await sql`
+      SELECT 
+        id, name, slug, description, category_id, system_prompt, questions,
+        COALESCE(estimated_length, '1-2 pages') as estimated_length
+      FROM templates
+      WHERE slug = ${slug} AND is_active = true
+      LIMIT 1
+    `
+    
+    if (templates.length === 0) {
+      return null
+    }
+    
+    const template = templates[0]
+    
+    // Get category info
+    const categories = await sql`
+      SELECT id, name, slug FROM categories WHERE id = ${template.category_id} LIMIT 1
+    `
+    
+    const category = categories.length > 0 ? categories[0] : null
+    
+    return {
+      ...template,
+      category_name: category?.name,
+      questions: template.questions ? (typeof template.questions === 'string' ? JSON.parse(template.questions) : template.questions) : [],
+      system_prompt: template.system_prompt || 'Write a professional, formal letter based on the provided information.'
+    }
+  } catch (error) {
+    console.error('Error fetching template:', error)
+    return null
+  }
+}
 
 export default async function TemplatePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -20,13 +56,11 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
     redirect(`/login?redirect=/templates/${slug}`)
   }
 
-  const template = TEMPLATES.find(t => t.slug === slug)
+  const template = await getTemplateBySlug(slug)
   
   if (!template) {
     notFound()
   }
-
-  const category = CATEGORIES.find(c => c.id === template.category_id)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -36,9 +70,9 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
         <section className="border-b bg-background">
           <div className="container mx-auto px-4 sm:px-6 py-8">
             <div className="max-w-4xl">
-              {category && (
+              {template.category_name && (
                 <Badge variant="secondary" className="mb-3">
-                  {category.name}
+                  {template.category_name}
                 </Badge>
               )}
               <h1 className="text-3xl md:text-4xl font-bold mb-3">{template.name}</h1>
@@ -70,7 +104,8 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 <CardContent>
                   <TemplateForm 
                     templateId={template.id}
-                    templateSlug={template.slug}
+                    questions={template.questions}
+                    systemPrompt={template.system_prompt}
                   />
                 </CardContent>
               </Card>
@@ -86,7 +121,7 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                     <FileText className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div>
                       <p className="text-sm font-medium">Estimated Length</p>
-                      <p className="text-sm text-muted-foreground">{template.estimated_pages}</p>
+                      <p className="text-sm text-muted-foreground">{template.estimated_length || '1-2 pages'}</p>
                     </div>
                   </div>
                   
@@ -108,19 +143,26 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                 </CardContent>
               </Card>
 
-              {Array.isArray(template.use_cases) && template.use_cases.length > 0 && (
+              {template.use_cases && (
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Common Use Cases</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      {template.use_cases.map((useCase, i) => (
-                        <li key={i} className="text-sm text-muted-foreground flex items-start">
-                          <span className="mr-2 text-primary">•</span>
-                          <span>{useCase}</span>
-                        </li>
-                      ))}
+                      {(() => {
+                        // Handle both string (JSON) and array formats
+                        const useCases = typeof template.use_cases === 'string' 
+                          ? JSON.parse(template.use_cases) 
+                          : template.use_cases
+                        
+                        return Array.isArray(useCases) ? useCases.map((useCase, i) => (
+                          <li key={i} className="text-sm text-muted-foreground flex items-start">
+                            <span className="mr-2 text-primary">•</span>
+                            <span>{useCase}</span>
+                          </li>
+                        )) : null
+                      })()}
                     </ul>
                   </CardContent>
                 </Card>
