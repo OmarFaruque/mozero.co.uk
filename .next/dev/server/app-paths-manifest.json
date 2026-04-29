@@ -1,5 +1,6 @@
 {
-  "/categories/[slug]/page": "app/categories/[slug]/page.js",
+  "/admin-login/page": "app/admin-login/page.js",
+  "/administrator/page": "app/administrator/page.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/page": "app/page.js"
 }

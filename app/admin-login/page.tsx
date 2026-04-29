@@ -1,104 +1,83 @@
-"use client"
+'use client'
 
-import type React from "react"
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { AlertCircle, Eye, EyeOff, FileText, Loader2, Lock, Mail, Shield } from 'lucide-react'
 
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, Lock, Mail, Shield, AlertCircle, Loader2 } from "lucide-react"
-import { useAdminAuth } from "@/context/admin-auth"
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-  const { adminLogin, isAdminAuthenticated, loading } = useAdminAuth()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  // Redirect if already authenticated
-  useEffect(() => {
-
-    
-
-    if (!loading && isAdminAuthenticated) {
-      console.log('isAdminAuthenticated:', isAdminAuthenticated, 'loading inside:', loading);
-      router.push("/administrator")
-    }
-  }, [isAdminAuthenticated, loading, router])
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setError('')
     setIsLoading(true)
 
     try {
-      const result = await adminLogin(email, password)
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, rememberMe }),
+      })
+      const data = await response.json()
 
-      if (result.success) {
-        router.push("/administrator")
-      } else {
-        setError(result.error || "Login failed")
+      if (!response.ok) {
+        throw new Error(data.error || 'Unable to sign in')
       }
-    } catch (error) {
-      setError("An unexpected error occurred")
-    } finally {
+
+      router.push('/administrator')
+      router.refresh()
+    } catch (err: any) {
+      setError(err.message || 'Unable to sign in')
       setIsLoading(false)
     }
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
-        <div className="flex items-center space-x-2">
-          <Loader2 className="w-6 h-6 animate-spin text-blue-600" />
-          <span className="text-gray-600">Loading...</span>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-2xl border-0">
-        <CardHeader className="space-y-4 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-lg">
-          <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-            <Shield className="w-8 h-8" />
-          </div>
+    <main className="flex min-h-screen items-center justify-center bg-muted/30 px-4 py-10">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-4">
+          <Link href="/" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground">
+            <FileText className="h-4 w-4" />
+            Letterise
+          </Link>
           <div>
-            <CardTitle className="text-2xl font-bold">Admin Access</CardTitle>
-            <CardDescription className="text-blue-100">
-              Sign in to access the TEMPNOW administrator dashboard
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Shield className="h-6 w-6" />
+            </div>
+            <CardTitle className="text-2xl">Admin Sign In</CardTitle>
+            <CardDescription>
+              Access the Letterise administrator dashboard.
             </CardDescription>
           </div>
         </CardHeader>
 
-        <CardContent className="p-6 space-y-6">
-          {error && (
-            <Alert variant="destructive">
-              <AlertCircle className="w-4 h-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-
+        <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                Email Address
-              </label>
+              <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@tempnow.uk"
-                  className="pl-10 h-11 border-2 focus:border-blue-500"
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="admin@letterise.co.uk"
+                  className="pl-9"
                   required
                   disabled={isLoading}
                 />
@@ -106,58 +85,64 @@ export default function AdminLoginPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium text-gray-700">
-                Password
-              </label>
+              <Label htmlFor="password">Password</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   id="password"
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
-                  className="pl-10 pr-10 h-11 border-2 focus:border-blue-500"
+                  onChange={(event) => setPassword(event.target.value)}
+                  className="pl-9 pr-10"
                   required
                   disabled={isLoading}
                 />
                 <button
                   type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  onClick={() => setShowPassword((value) => !value)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                   disabled={isLoading}
                 >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
             </div>
 
-            <Button
-              type="submit"
-              className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold"
-              disabled={isLoading}
-            >
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id="remember"
+                checked={rememberMe}
+                onCheckedChange={(checked) => setRememberMe(Boolean(checked))}
+              />
+              <Label htmlFor="remember" className="cursor-pointer text-sm font-normal">
+                Keep me signed in
+              </Label>
+            </div>
+
+            {error && (
+              <Alert variant="destructive">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+
+            <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Signing In...
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Signing in
                 </>
               ) : (
                 <>
-                  <Shield className="w-4 h-4 mr-2" />
-                  Sign In to Admin Panel
+                  <Shield className="h-4 w-4" />
+                  Sign in
                 </>
               )}
             </Button>
           </form>
-
-          <div className="text-center">
-            <Button variant="ghost" onClick={() => router.push("/")} className="text-gray-600 hover:text-gray-800">
-              ← Back to Main Site
-            </Button>
-          </div>
         </CardContent>
       </Card>
-    </div>
+    </main>
   )
 }
