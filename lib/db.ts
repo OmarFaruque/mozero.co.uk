@@ -90,3 +90,17 @@ export type UserCredits = {
   credits_used: number
   updated_at: Date
 }
+
+
+export type AdminUser = {
+  id: number
+  first_name: string
+  last_name: string
+  email: string
+  password_hash: string
+  role: 'admin' | 'super_admin' | 'manager'
+  is_active: boolean
+  last_login_at: Date | null
+  created_at: Date
+  updated_at: Date
+}

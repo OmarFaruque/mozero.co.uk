@@ -461,15 +461,11 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Admin Configuration</CardTitle>
+                  <CardDescription>Authentication and environment settings for this dashboard.</CardDescription>
                   <CardDescription>Environment settings required for this dashboard.</CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-3 sm:grid-cols-2">
-                  <ConfigItem label="Admin email" configured={Boolean(process.env.ADMIN_EMAIL)} />
-                  <ConfigItem
-                    label="Admin password"
-                    configured={Boolean(process.env.ADMIN_PASSWORD || process.env.ADMIN_PASSWORD_HASH)}
-                  />
+                  <ConfigItem label="Admin user table" configured={true} />
                   <ConfigItem label="Admin JWT secret" configured={Boolean(process.env.ADMIN_JWT_SECRET)} />
                   <ConfigItem label="Database URL" configured={Boolean(process.env.DATABASE_URL)} />
                   <ConfigItem label="Stripe secret" configured={Boolean(process.env.STRIPE_SECRET_KEY)} />

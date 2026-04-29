@@ -39,7 +39,7 @@ export const CATEGORIES: Category[] = [
     icon: 'FileText',
     is_active: true
   },
-  {
+{
     id: 2,
     slug: 'insurance',
     name: 'Insurance',
