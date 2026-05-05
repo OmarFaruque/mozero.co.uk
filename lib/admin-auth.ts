@@ -3,6 +3,7 @@ import 'server-only'
 import bcrypt from 'bcryptjs'
 import { SignJWT, jwtVerify } from 'jose'
 import { cookies } from 'next/headers'
+import { sql } from '@/lib/db'
 
 const ADMIN_COOKIE_NAME = 'admin_session'
 const DEFAULT_SESSION_SECONDS = 60 * 60 * 8
@@ -23,29 +24,40 @@ type AdminValidationResult =
   | { success: true; user: AdminSession }
   | { success: false; error: string }
 
+type AdminUserRow = {
+  email: string
+  password_hash: string
+}
+
 export async function validateAdminCredentials(
   email: string,
   password: string,
 ): Promise<AdminValidationResult> {
-  const configuredEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase()
-  const configuredPassword = process.env.ADMIN_PASSWORD
-  const configuredPasswordHash = process.env.ADMIN_PASSWORD_HASH
+  const normalizedEmail = email.trim().toLowerCase()
 
-  if (!configuredEmail || (!configuredPassword && !configuredPasswordHash)) {
+  let adminUsers: AdminUserRow[]
+  try {
+   const rows = await sql`
+      SELECT email, password_hash
+      FROM admin_user
+      WHERE email = ${normalizedEmail}
+      LIMIT 1
+    `
+    adminUsers = rows as AdminUserRow[]
+  } catch (error) {
+    console.error('Admin user lookup failed:', error)
     return {
       success: false,
-      error: 'Admin credentials are not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD or ADMIN_PASSWORD_HASH.',
+      error: 'Admin login is not configured. Create the admin_user table and seed an admin account.',
     }
   }
 
-  if (email.trim().toLowerCase() !== configuredEmail) {
+  if (adminUsers.length === 0) {
     return { success: false, error: 'Invalid email or password' }
   }
 
-  const passwordMatches = configuredPasswordHash
-    ? await bcrypt.compare(password, configuredPasswordHash)
-    : password === configuredPassword
-
+  const adminUser = adminUsers[0]
+  const passwordMatches = await bcrypt.compare(password, adminUser.password_hash)
   if (!passwordMatches) {
     return { success: false, error: 'Invalid email or password' }
   }
@@ -53,7 +65,7 @@ export async function validateAdminCredentials(
   return {
     success: true,
     user: {
-      email: configuredEmail,
+      email: adminUser.email,
       role: 'admin',
     },
   }

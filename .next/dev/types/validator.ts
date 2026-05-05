@@ -83,15 +83,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/dashboard/documents/[id]/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/dashboard/documents/[id]">> = Specific
-  const handler = {} as typeof import("../../../app/dashboard/documents/[id]/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../../app/dashboard/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard">> = Specific
@@ -191,20 +182,37 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/api/admin/login/route.ts
+// Validate ../../../app/api/export-pdf/route.ts
 {
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/login">> = Specific
-  const handler = {} as typeof import("../../../app/api/admin/login/route.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/export-pdf">> = Specific
+  const handler = {} as typeof import("../../../app/api/export-pdf/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/api/admin/logout/route.ts
+// Validate ../../../app/api/generate-document/route.ts
 {
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/logout">> = Specific
-  const handler = {} as typeof import("../../../app/api/admin/logout/route.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/generate-document">> = Specific
+  const handler = {} as typeof import("../../../app/api/generate-document/route.js")
   type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+
+
+
+
+// Validate ../../../app/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
+  const handler = {} as typeof import("../../../app/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+f handler>
   // @ts-ignore
   type __Unused = __Check
 }

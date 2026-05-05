@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (!result.success) {
       return NextResponse.json(
         { success: false, error: result.error },
-        { status: result.error.includes('not configured') ? 500 : 401 },
+        { status: result.error.includes('not configured') ? 503 : 401 },
       )
     }
 

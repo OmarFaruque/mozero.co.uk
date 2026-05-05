@@ -3,6 +3,57 @@
   "middleware": {},
   "sortedMiddleware": [],
   "functions": {
+    "/apple-icon/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/server-reference-manifest.js",
+        "server/app/apple-icon/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_apple-icon_route_actions_24ecdbff.js",
+        "server/edge/chunks/80737_next_dist_esm_shared_lib_85286fa5._.js",
+        "server/edge/chunks/80737_next_dist_esm_server_590ad1ca._.js",
+        "server/edge/chunks/80737_next_dist_esm_be0d7103._.js",
+        "server/edge/chunks/80737_next_dist_compiled_react-server-dom-turbopack_f7078a69._.js",
+        "server/edge/chunks/80737_next_dist_compiled_@vercel_og_228641af._.js",
+        "server/edge/chunks/80737_next_dist_compiled_f9d3f758._.js",
+        "server/edge/chunks/80737_next_dist_83707e46._.js",
+        "server/edge/chunks/edge-wrapper_eec8fc1e.js",
+        "server/edge/chunks/4b6e4_@opentelemetry_api_build_esm_df5f8bb8._.js",
+        "server/edge/chunks/[root-of-the-server]__bf9d6c61._.js",
+        "server/edge/chunks/turbopack-edge-wrapper_c8ab2dcf.js"
+      ],
+      "name": "app/apple-icon/route",
+      "page": "/apple-icon/route",
+      "matchers": [
+        {
+          "regexp": "^/apple-icon(?:/)?$",
+          "originalSource": "/apple-icon"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_fdb56e4cc5936d29",
+          "filePath": "server/edge/chunks/80737_next_dist_compiled_@vercel_og_resvg_23ace1ce.wasm"
+        },
+        {
+          "name": "wasm_1ccdc983b1fd9f87",
+          "filePath": "server/edge/chunks/80737_next_dist_compiled_@vercel_og_yoga_23ace1ce.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/noto-sans-v27-latin-regular.bdfa676c.ttf",
+          "filePath": "server/edge/assets/noto-sans-v27-latin-regular.bdfa676c.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "X19AbTz+4pP5+KC0zzW/77Ih3LoTIHAhQ8EjxjCJQhg=",
+        "__NEXT_PREVIEW_MODE_ID": "f8d42bb395baccdbe88322333557e659",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "26eb503c82fb0a9d61172b90e7be29f72f027cce6a21636e61eb361f9703d1da",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "12c0a1e6256689cf4cfa2fd74fd651422cde01b789f442aedafe8f71be4f587f"
+      }
+    },
     "/icon/route": {
       "files": [
         "server/middleware-build-manifest.js",
@@ -49,9 +100,9 @@
       "env": {
         "__NEXT_BUILD_ID": "development",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "X19AbTz+4pP5+KC0zzW/77Ih3LoTIHAhQ8EjxjCJQhg=",
-        "__NEXT_PREVIEW_MODE_ID": "d49a7ec9c3667e3da1ae76302a649977",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "89e216d73c2c53034b1b5b8fa1785c7ff065d4027b38a78a51c8bae210d40ed6",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "bbd5a0c9dcb9afc35a735d63827ec367ce95cffcc5e099256b065ef6c42b2d53"
+        "__NEXT_PREVIEW_MODE_ID": "f8d42bb395baccdbe88322333557e659",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "26eb503c82fb0a9d61172b90e7be29f72f027cce6a21636e61eb361f9703d1da",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "12c0a1e6256689cf4cfa2fd74fd651422cde01b789f442aedafe8f71be4f587f"
       }
     }
   }

@@ -1,9 +1,10 @@
-[00:00:02.462] Server  LOG      ✓ Ready in 1541ms
-[00:00:09.099] Server  LOG      ○ Compiling / ...
-[00:00:15.602] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.067] Server  LOG      ○ Compiling /icon ...
-[03:09:18.137] Server  LOG      ○ Compiling /administrator ...
-[03:09:21.644] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:09:25.839] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:57:46.063] Server  LOG      ✓ Compiled in 605ms
-[03:58:17.950] Server  LOG      ✓ Compiled in 195ms
+[00:00:09.387] Server  LOG      ✓ Ready in 4.6s
+[00:00:17.027] Server  LOG      ○ Compiling / ...
+[00:00:51.046] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:54.724] Server  LOG      ○ Compiling /icon ...
+[00:05:43.826] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:46.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:39.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:11.177] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:16.219] Server  LOG      ○ Compiling /pricing ...
+[00:08:22.350] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'match')
