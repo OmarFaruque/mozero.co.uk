@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Check, Zap } from 'lucide-react'
-import { PRODUCTS } from '@/lib/products'
 import { CheckoutButton } from '@/components/checkout-button'
 import { sql } from '@/lib/db'
 
@@ -12,27 +11,35 @@ export const dynamic = 'force-dynamic'
 
 export default async function PricingPage() {
   const dbPlans = await sql`
-    SELECT id, name, description, price_cents, credits_per_month, is_active
+    SELECT id, name, description, plan_type, price_cents, package_price_cents, price_per_document_cents,
+           credit_amount, monthly_document_limit, discount_percent, features, credits_per_month, is_active
     FROM subscription_plans
-    WHERE is_active = true AND credits_per_month >= 30
+    WHERE is_active = true 
     ORDER BY price_cents ASC
   `
 
-  const subscriptionPlans = dbPlans.map((plan: any) => ({
+  const subscriptionPlans = dbPlans.filter((p: any) => p.plan_type !== 'credits').map((plan: any) => ({
     id: `plan-${plan.id}`,
     name: plan.name,
     description: plan.description,
     priceInCents: plan.price_cents,
     type: 'subscription',
     features: [
-      `${plan.credits_per_month} documents per month`,
+      `${plan.monthly_document_limit ?? plan.credits_per_month ?? 0} documents per month`,
       'Priority support',
       'All document templates',
-      'Unlimited revisions'
+      ...(plan.features || []),
     ]
   }))
 
-  const creditPackages = PRODUCTS.filter(p => p.type === 'credits')
+  const creditPackages = dbPlans.filter((p: any) => p.plan_type === 'credits').map((plan: any) => ({
+    id: `credit-${plan.id}`,
+    name: plan.name,
+    description: plan.description,
+    priceInCents: Number(plan.package_price_cents || plan.price_cents),
+    credits: Number(plan.credit_amount || 0),
+    pricePerDocumentCents: Number(plan.price_per_document_cents || 0),
+  }))
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -75,7 +82,7 @@ export default async function PricingPage() {
                     £{(product.priceInCents / 100).toFixed(2)}
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    £{((product.priceInCents / 100) / (product.credits || 1)).toFixed(2)} per document
+                    £{((product.pricePerDocumentCents || product.priceInCents / Math.max(product.credits || 1, 1)) / 100).toFixed(2)} per document
                   </p>
                 </CardContent>
                 <CardFooter>

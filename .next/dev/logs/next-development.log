@@ -5,3 +5,597 @@
 [00:00:35.844] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:00:39.276] Server  LOG      ○ Compiling /admin-login ...
 [00:00:42.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:32.140] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
+Module not found: Can't resolve '@/components/admin-plans-editor'
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:45:32.169] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
+Module not found: Can't resolve '@/components/admin-plans-editor'
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:45:32.373] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
+Module not found: Can't resolve '@/components/admin-plans-editor'
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:45:32.386] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
+Module not found: Can't resolve '@/components/admin-plans-editor'
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:45:33.271] Browser ERROR   ./app/administrator/page.tsx:25:1
+Module not found: Can't resolve '@/components/admin-plans-editor'
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[01:20:50.623] Browser ERROR   ./app/administrator/page.tsx:25:1
+Export AdminPlansEditor doesn't exist in target module
+  23 | import { Input } from '@/components/ui/input'
+  24 | import { Label } from '@/components/ui/label'
+> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
+  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
+  28 | import { sql } from '@/lib/db'
+
+The export AdminPlansEditor was not found in module [project]/components/admin-plans-editor.tsx [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:21:08.738] Server  LOG      ✓ Compiled in 856ms
+[01:21:12.638] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'join')
+[01:30:51.157] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:30:53.929] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'join')
+[01:30:55.121] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'join')
+[01:37:41.569] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:37:41.575] Server  LOG      ✓ Compiled in 696ms
+[01:37:44.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:38:25.884] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+          <SegmentViewNode type="page" pagePath="administra...">
+            <SegmentTrieNode>
+            <AdministratorPage>
+              <div className="min-h-scre...">
+                <header>
+                <div className="container ...">
+                  <aside>
+                  <main className="space-y-6">
+                    <Card>
+                      <div data-slot="card" className="bg-card te...">
+                        <div>
+                        <CardContent>
+                          <div data-slot="card-content" className="px-6">
+                            <AdminPlansEditor initialPlans={[...]} action={function saveAllPlans}>
+                              <form action={function saveAllPlans} className="space-y-4">
+                                <input>
+                                <div className="space-y-3">
+                                  <div className="rounded-xl...">
+>                                   <button
+>                                     type="button"
+>                                     onClick={function onClick}
+>                                     className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+>                                   >
+                                      <div>
+                                      <div className="flex items...">
+                                        <Button type="button" variant="ghost" size="icon" onClick={function onClick}>
+>                                         <button
+>                                           data-slot="button"
+>                                           className={"inline-flex items-center justify-center gap-2 whitespace-nowr..."}
+>                                           type="button"
+>                                           onClick={function onClick}
+>                                         >
+                                        ...
+                                    ...
+                                  ...
+                                ...
+          ...
+        ...
+
+[01:38:25.884] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[01:38:25.907] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+[01:40:58.340] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:41:02.011] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+          <SegmentViewNode type="page" pagePath="administra...">
+            <SegmentTrieNode>
+            <AdministratorPage>
+              <div className="min-h-scre...">
+                <header>
+                <div className="container ...">
+                  <aside>
+                  <main className="space-y-6">
+                    <Card>
+                      <div data-slot="card" className="bg-card te...">
+                        <div>
+                        <CardContent>
+                          <div data-slot="card-content" className="px-6">
+                            <AdminPlansEditor initialPlans={[...]} action={function saveAllPlans}>
+                              <form action={function saveAllPlans} className="space-y-4">
+                                <input>
+                                <div className="space-y-3">
+                                  <div className="rounded-xl...">
+>                                   <button
+>                                     type="button"
+>                                     onClick={function onClick}
+>                                     className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+>                                   >
+                                      <div>
+                                      <div className="flex items...">
+                                        <Button type="button" variant="ghost" size="icon" onClick={function onClick}>
+>                                         <button
+>                                           data-slot="button"
+>                                           className={"inline-flex items-center justify-center gap-2 whitespace-nowr..."}
+>                                           type="button"
+>                                           onClick={function onClick}
+>                                         >
+                                        ...
+                                    ...
+                                  ...
+                                ...
+          ...
+        ...
+
+[01:41:02.011] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[01:41:02.778] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+[01:53:36.204] Server  LOG      ✓ Compiled in 842ms
+[01:57:07.748] Server  LOG      ✓ Compiled in 294ms
+[01:57:18.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:00:41.195] Server  LOG      ✓ Compiled in 827ms
+[02:01:21.294] Server  ERROR    ⨯ NeonDbError: column "updated_at" of relation "subscription_plans" does not exist
+[02:01:21.564] Browser ERROR   uncaughtError: NeonDbError: column "updated_at" of relation "subscription_plans" does not exist
+[02:06:04.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:06:11.926] Server  LOG      ✓ Compiled in 560ms
+[02:06:13.741] Server  ERROR    ⨯ ReferenceError: saveAllPlans is not defined
+[02:06:14.755] Browser ERROR   uncaughtError: ReferenceError: saveAllPlans is not defined
+[02:06:20.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:13:36.350] Server  LOG      ✓ Compiled in 778ms
+[08:13:45.340] Server  LOG      ✓ Compiled in 737ms
+[08:15:24.710] Server  LOG      ✓ Compiled in 881ms
+[08:15:51.360] Server  LOG      ✓ Compiled in 162ms
+[08:17:55.055] Server  LOG      ✓ Compiled in 575ms
+[08:19:02.116] Server  LOG      ✓ Compiled in 779ms
+[08:19:08.072] Server  LOG      ✓ Compiled in 593ms
+[08:19:13.783] Server  LOG      ✓ Compiled in 359ms
+[08:19:18.428] Server  LOG      ✓ Compiled in 649ms
+[08:19:25.594] Server  LOG      ✓ Compiled in 228ms
+[08:19:42.835] Server  LOG      ✓ Compiled in 237ms
+[08:20:02.286] Server  LOG      ✓ Compiled in 156ms
+[08:20:13.604] Server  LOG      ✓ Compiled in 181ms
+[08:20:23.309] Server  LOG      ✓ Compiled in 141ms
+[08:20:34.225] Server  LOG      ✓ Compiled in 154ms
+[08:20:38.031] Server  LOG      ✓ Compiled in 386ms
+[08:23:30.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:24:18.116] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[08:24:18.270] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[08:24:37.300] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:24:59.748] Server  LOG      ✓ Compiled in 197ms
+[08:25:27.824] Server  LOG      ✓ Compiled in 710ms
+[08:25:44.737] Server  LOG      ✓ Compiled in 183ms
+[08:26:02.084] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[08:26:02.373] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[08:26:52.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:59:33.383] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[08:59:34.341] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
+[09:04:41.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:06:25.896] Server  LOG      ✓ Compiled in 1243ms
+[09:09:28.744] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="administra...">
+              <SegmentTrieNode>
+              <AdministratorPage>
+                <div className="min-h-scre...">
+                  <header>
+                  <div className="container ...">
+                    <aside>
+                    <main className="space-y-6">
+                      <Card>
+                        <div data-slot="card" className="bg-card te...">
+                          <div>
+                          <CardContent>
+                            <div data-slot="card-content" className="px-6">
+                              <AdminPlansEditor initialPlans={[...]} action={function saveAllPlansAction}>
+                                <form action={function saveAllPlansAction} className="space-y-6">
+                                  <input>
+                                  <div className="space-y-4">
+                                    <div
++                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
+-                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
+                                    >
+                                      <div
++                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+-                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+                                      >
+                                        <button type="button" onClick={function onClick} className="flex flex-...">
+                                          <div>
+                                          <div className="text-left">
+                                            <p
++                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
+-                                             className="text-base font-semibold text-slate-900"
+                                            >
++                                             Pay Per Use
+                                            <p
++                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
+-                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
+                                            >
++                                             Monthly subscription
+                                        <div
++                                         className="flex items-center gap-3"
+-                                         className="flex items-center gap-3 coursor-pointer"
+                                        >
+                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
+                                            <button
+                                              data-slot="button"
++                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+-                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+                                              type="button"
+                                              onClick={function onClick}
+                                            >
+                                          <button
+                                            type="button"
+                                            onClick={function onClick}
++                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+-                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+                                          >
+                                            <ChevronDown className={"h-5 w-5 ..."}>
+                                              <svg
+                                                ref={null}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
++                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
+-                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
+                                              >
+                                    <div
++                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
+-                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
+                                    >
+                                      <div
++                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+-                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+                                      >
+                                        <button type="button" onClick={function onClick} className="flex flex-...">
+                                          <div>
+                                          <div className="text-left">
+                                            <p
++                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
+-                                             className="text-base font-semibold text-slate-900"
+                                            >
++                                             Basic Plan
+                                            <p
++                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
+-                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
+                                            >
++                                             Monthly subscription
+                                        <div
++                                         className="flex items-center gap-3"
+-                                         className="flex items-center gap-3 coursor-pointer"
+                                        >
+                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
+                                            <button
+                                              data-slot="button"
++                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+-                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+                                              type="button"
+                                              onClick={function onClick}
+                                            >
+                                          <button
+                                            type="button"
+                                            onClick={function onClick}
++                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+-                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+                                          >
+                                            <ChevronDown className={"h-5 w-5 ..."}>
+                                              <svg
+                                                ref={null}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
++                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
+-                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
+                                              >
+                                    <div
++                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
+-                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
+                                    >
+                                      <div
++                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+-                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+                                      >
+                                        <button type="button" onClick={function onClick} className="flex flex-...">
+                                          <div>
+                                          <div className="text-left">
+                                            <p
++                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
+-                                             className="text-base font-semibold text-slate-900"
+                                            >
++                                             Basic Plan
+                                            <p
++                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
+-                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
+                                            >
++                                             Monthly subscription
+                                        <div
++                                         className="flex items-center gap-3"
+-                                         className="flex items-center gap-3 coursor-pointer"
+                                        >
+                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
+                                            <button
+                                              data-slot="button"
++                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+-                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+                                              type="button"
+                                              onClick={function onClick}
+                                            >
+                                          <button
+                                            type="button"
+                                            onClick={function onClick}
++                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+-                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+                                          >
+                                            <ChevronDown className={"h-5 w-5 ..."}>
+                                              <svg
+                                                ref={null}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
++                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
+-                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
+                                              >
+                                    <div
++                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
+-                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
+                                    >
+                                      <div
++                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+-                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+                                      >
+                                        <button type="button" onClick={function onClick} className="flex flex-...">
+                                          <div>
+                                          <div className="text-left">
+                                            <p
++                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
+-                                             className="text-base font-semibold text-slate-900"
+                                            >
++                                             Professional Plan
+                                            <p
++                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
+-                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
+                                            >
++                                             Monthly subscription
+                                        <div
++                                         className="flex items-center gap-3"
+-                                         className="flex items-center gap-3 coursor-pointer"
+                                        >
+                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
+                                            <button
+                                              data-slot="button"
++                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+-                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+                                              type="button"
+                                              onClick={function onClick}
+                                            >
+                                          <button
+                                            type="button"
+                                            onClick={function onClick}
++                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+-                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+                                          >
+                                            <ChevronDown className={"h-5 w-5 ..."}>
+                                              <svg
+                                                ref={null}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
++                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
+-                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
+                                              >
+                                    <div
++                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
+-                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
+                                    >
+                                      <div
++                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+-                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
+                                      >
+                                        <button type="button" onClick={function onClick} className="flex flex-...">
+                                          <div>
+                                          <div className="text-left">
+                                            <p
++                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
+-                                             className="text-base font-semibold text-slate-900"
+                                            >
++                                             Professional Plan
+                                            <p
++                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
+-                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
+                                            >
++                                             Monthly subscription
+                                        <div
++                                         className="flex items-center gap-3"
+-                                         className="flex items-center gap-3 coursor-pointer"
+                                        >
+                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
+                                            <button
+                                              data-slot="button"
++                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+-                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
+                                              type="button"
+                                              onClick={function onClick}
+                                            >
+                                          <button
+                                            type="button"
+                                            onClick={function onClick}
++                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+-                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
+                                          >
+                                            <ChevronDown className={"h-5 w-5 ..."}>
+                                              <svg
+                                                ref={null}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
++                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
+-                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
+                                              >
+                                  <div
++                                   className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4..."
+-                                   className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4..."
+                                  >
+                                    <Button type="button" variant="outline" onClick={function addPlan} ...>
+                                      <button
+                                        data-slot="button"
++                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+-                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+                                        type="button"
+                                        onClick={function addPlan}
+                                      >
+                                    <Button type="submit" className="h-11 min-w...">
+                                      <button
+                                        data-slot="button"
++                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+-                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+                                        type="submit"
+                                      >
++                                       Save all plans
+            ...
+          ...
+
+[09:09:34.681] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:10:53.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:13:30.162] Server  LOG      ✓ Compiled in 2.5s
+[09:26:12.966] Server  LOG      ✓ Compiled in 1608ms
+[09:26:37.185] Server  LOG      ✓ Compiled in 304ms
+[09:31:06.437] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:32:56.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:33:02.102] Server  LOG      ○ Compiling /pricing ...
+[09:33:13.481] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'match')
