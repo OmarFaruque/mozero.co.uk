@@ -45,6 +45,36 @@
       "filename": "app/administrator/page.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_2"
     },
+    "4027baf68fe24f34ea47aba4bfc8ab8ffb7251b387": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_5",
+          "filename": "app/administrator/page.tsx"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "rsc"
+      },
+      "filename": "app/administrator/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_5"
+    },
+    "4044f6b31ea660adf2898c4bc5913f7ac7a48da130": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_6",
+          "filename": "app/administrator/page.tsx"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "rsc"
+      },
+      "filename": "app/administrator/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_6"
+    },
     "4084a3eaf73f5e9a59d5789ab2642f3f94973a83fe": {
       "workers": {
         "app/administrator/page": {
@@ -74,21 +104,6 @@
       },
       "filename": "app/administrator/page.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_4"
-    },
-    "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
-      "workers": {
-        "app/pricing/page": {
-          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "startCheckoutSession",
-          "filename": "app/actions/stripe.ts"
-        }
-      },
-      "layer": {
-        "app/pricing/page": "action-browser"
-      },
-      "filename": "app/actions/stripe.ts",
-      "exportedName": "startCheckoutSession"
     }
   },
   "edge": {},

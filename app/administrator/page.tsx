@@ -12,6 +12,7 @@ import {
   Settings,
   Users,
   Zap,
+  Trash2,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -22,7 +23,7 @@ import { Label } from '@/components/ui/label'
 import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
 import { getAdminDashboardData } from '@/lib/admin-dashboard'
 import { sql } from '@/lib/db'
-import { PRODUCTS } from '@/lib/products'
+
 
 export const dynamic = 'force-dynamic'
 
@@ -32,6 +33,7 @@ const navItems = [
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
   { id: 'categories', label: 'Categories', icon: FolderOpen },
   { id: 'payments', label: 'Payments', icon: CreditCard },
+  { id: 'plans', label: 'Plans', icon: Settings },
   { id: 'settings', label: 'Settings', icon: Settings },
 ]
 
@@ -81,6 +83,70 @@ async function updateUserCredits(formData: FormData) {
   `
 
   revalidatePath('/administrator')
+}
+
+
+async function upsertPlan(formData: FormData) {
+  'use server'
+  const admin = await getAdminSession()
+  if (!admin) redirect('/admin-login')
+
+  const planId = Number(formData.get('planId') || '0')
+  const rawPlanType = String(formData.get('planType') || 'subscription')
+  const planType = rawPlanType === 'credits' ? 'credits' : 'subscription'
+  const name = String(formData.get('name') || '').trim()
+  const description = String(formData.get('description') || '').trim()
+  const packagePriceCents = Math.round(Number(formData.get('packagePrice') || '0') * 100)
+  const pricePerDocumentCents = Math.round(Number(formData.get('pricePerDocument') || '0') * 100)
+  const creditAmount = Number(formData.get('creditAmount') || '0')
+  const monthlyDocumentLimit = Number(formData.get('monthlyDocumentLimit') || '0')
+  const discountPercent = Number(formData.get('discountPercent') || '0')
+  const featureInput = String(formData.get('features') || '')
+  const features = featureInput.split('\n').map((v) => v.trim()).filter(Boolean)
+
+  if (!name) return
+
+  const priceCents = packagePriceCents
+  const normalizedCreditAmount = planType === 'credits' ? creditAmount : 0
+  const normalizedMonthlyDocumentLimit = planType === 'subscription' ? monthlyDocumentLimit : 0
+  const normalizedPricePerDocumentCents = planType === 'credits' ? pricePerDocumentCents : 0
+  const normalizedDiscountPercent = planType === 'subscription' ? discountPercent : 0
+
+  if (planId > 0) {
+    await sql`
+      UPDATE subscription_plans
+      SET name = ${name}, description = ${description}, plan_type = ${planType},
+          price_cents = ${priceCents}, package_price_cents = ${packagePriceCents},
+          price_per_document_cents = ${normalizedPricePerDocumentCents}, credit_amount = ${normalizedCreditAmount},
+          monthly_document_limit = ${normalizedMonthlyDocumentLimit}, discount_percent = ${normalizedDiscountPercent},
+          features = ${features}, credits_per_month = ${normalizedMonthlyDocumentLimit}, updated_at = CURRENT_TIMESTAMP
+      WHERE id = ${planId}
+    `
+  } else {
+    await sql`
+      INSERT INTO subscription_plans (
+        name, description, plan_type, price_cents, package_price_cents, price_per_document_cents,
+        credit_amount, monthly_document_limit, discount_percent, features, credits_per_month, is_active
+      ) VALUES (
+        ${name}, ${description}, ${planType}, ${priceCents}, ${packagePriceCents}, ${normalizedPricePerDocumentCents},
+        ${normalizedCreditAmount}, ${normalizedMonthlyDocumentLimit}, ${normalizedDiscountPercent}, ${features}, ${normalizedMonthlyDocumentLimit}, true
+      )
+    `
+  }
+
+  revalidatePath('/administrator')
+  revalidatePath('/pricing')
+}
+
+async function deletePlan(formData: FormData) {
+  'use server'
+  const admin = await getAdminSession()
+  if (!admin) redirect('/admin-login')
+  const planId = Number(formData.get('planId'))
+  if (!Number.isInteger(planId)) return
+  await sql`DELETE FROM subscription_plans WHERE id = ${planId}`
+  revalidatePath('/administrator')
+  revalidatePath('/pricing')
 }
 
 async function updateTemplateFlag(formData: FormData) {
@@ -473,29 +539,67 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Checkout Products</CardTitle>
-                  <CardDescription>Products configured in code for credit and subscription checkout.</CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-3 md:grid-cols-2">
-                  {PRODUCTS.map((product) => (
-                    <div key={product.id} className="rounded-lg border p-4">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <h2 className="font-medium">{product.name}</h2>
-                          <p className="text-sm text-muted-foreground">{product.description}</p>
-                        </div>
-                        <Badge variant="secondary">{product.type}</Badge>
-                      </div>
-                      <div className="mt-3 text-sm">
-                        {money(product.priceInCents)} / {product.credits ?? 0} credits
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+              
             </div>
+          )}
+
+           {section === 'plans' && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Plans Management</CardTitle>
+                <CardDescription>Create, edit, activate, and delete credit and monthly plans.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {data.plans.map((plan) => (
+                  <form key={plan.id} action={upsertPlan} className="space-y-3 rounded-lg border p-4">
+                    <input type="hidden" name="planId" value={plan.id} />
+                    <div className="grid gap-3 md:grid-cols-2">
+                      <Input name="name" defaultValue={plan.name} placeholder="Package name" />
+                      <select name="planType" defaultValue={plan.plan_type || 'subscription'} className="h-9 rounded-md border bg-background px-3 text-sm">
+                        <option value="credits">Credits (no time limit)</option>
+                        <option value="subscription">Subscription (monthly)</option>
+                      </select>
+                      <Input name="description" defaultValue={plan.description} placeholder="Description" />
+                      <Input name="packagePrice" type="number" step="0.01" defaultValue={Number(plan.package_price_cents || plan.price_cents) / 100} placeholder="Package/monthly price" />
+                      <Input name="pricePerDocument" type="number" step="0.01" defaultValue={Number(plan.price_per_document_cents || 0) / 100} placeholder="Price per document" />
+                      <Input name="creditAmount" type="number" defaultValue={Number(plan.credit_amount || 0)} placeholder="Credit amount" />
+                      <Input name="monthlyDocumentLimit" type="number" defaultValue={Number(plan.monthly_document_limit || plan.credits_per_month || 0)} placeholder="Documents per month" />
+                      <Input name="discountPercent" type="number" defaultValue={Number(plan.discount_percent || 0)} placeholder="Discount %" />
+                    </div>
+                    <Input name="features" defaultValue={Array.isArray(plan.features) ? plan.features.join('\n') : ''} placeholder="Features (one per line)" />
+                    <div className="flex flex-wrap gap-2">
+                      <Button type="submit" variant="outline">Save</Button>
+                    </div>
+                  </form>
+                ))}
+
+                <form action={upsertPlan} className="space-y-3 rounded-lg border border-dashed p-4">
+                  <h3 className="font-medium">Add New Plan</h3>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <Input name="name" placeholder="Plan name" required />
+                    <select name="planType" required className="h-9 rounded-md border bg-background px-3 text-sm">
+                      <option value="credits">Credits (no time limit)</option>
+                      <option value="subscription">Subscription (monthly)</option>
+                    </select>
+                    <Input name="description" placeholder="Description" />
+                    <Input name="packagePrice" type="number" step="0.01" placeholder="Package/monthly price" required />
+                    <Input name="pricePerDocument" type="number" step="0.01" placeholder="Price per document" />
+                    <Input name="creditAmount" type="number" placeholder="Credit amount" />
+                    <Input name="monthlyDocumentLimit" type="number" placeholder="Documents per month" />
+                    <Input name="discountPercent" type="number" placeholder="Discount %" />
+                  </div>
+                  <Input name="features" placeholder="Features (one per line)" />
+                  <Button type="submit">Add plan</Button>
+                </form>
+
+                {data.plans.map((plan) => (
+                  <form key={`d-${plan.id}`} action={deletePlan}>
+                    <input type="hidden" name="planId" value={plan.id} />
+                    <Button type="submit" variant="destructive" size="sm"><Trash2 className="h-4 w-4" /> Delete {plan.name}</Button>
+                  </form>
+                ))}
+              </CardContent>
+            </Card>
           )}
         </main>
       </div>
