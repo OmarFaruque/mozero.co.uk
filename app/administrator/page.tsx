@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { revalidatePath } from 'next/cache'
 import {
   BarChart3,
   CreditCard,
@@ -15,18 +14,26 @@ import {
   SquareKanban,
 } from 'lucide-react'
 
-
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { AdminPlansEditor } from '@/components/admin-plans-editor'
+import { AdminSettingsEditor } from '@/components/admin-settings-editor'
+import { AdminTemplatesEditor } from '@/components/admin-templates-editor'
+import { AdminCategoriesEditor } from '@/components/admin-categories-editor'
+import { Pagination } from '@/components/ui/pagination'
 import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
 import { getAdminDashboardData } from '@/lib/admin-dashboard'
-import { saveAllPlansAction, updatePlanStatusAction } from '@/lib/plans'
-import { sql } from '@/lib/db'
-
+import { saveAllPlansAction } from '@/lib/plans'
+import { getSettings } from '@/lib/admin-settings'
+import { saveAdminSettingsAction } from '@/app/actions/admin-settings'
+import { 
+  updateTemplateFlag, 
+  updateCategoryStatus, 
+  updateUserCredits 
+} from '@/lib/admin-actions'
 
 export const dynamic = 'force-dynamic'
 
@@ -36,6 +43,7 @@ const navItems = [
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
   { id: 'categories', label: 'Categories', icon: FolderOpen },
   { id: 'payments', label: 'Payments', icon: CreditCard },
+  { id: 'subscriptions', label: 'Subscriptions', icon: Zap },
   { id: 'plans', label: 'Plans', icon: SquareKanban },
   { id: 'settings', label: 'Settings', icon: Settings },
 ]
@@ -58,89 +66,41 @@ function date(value: string | Date | null) {
 
 async function logoutAdmin() {
   'use server'
-
   await deleteAdminSession()
   redirect('/admin-login')
 }
 
-
-
-async function updateTemplateFlag(formData: FormData) {
+// Server actions wrapper for the page
+async function updateTemplateFlagAction(formData: FormData) {
   'use server'
-
-  const admin = await getAdminSession()
-  if (!admin) redirect('/admin-login')
-
   const templateId = Number(formData.get('templateId'))
   const field = String(formData.get('field') || '')
   const nextValue = formData.get('nextValue') === 'true'
-
-  if (!Number.isInteger(templateId)) return
-
-  if (field === 'is_active') {
-    await sql`
-      UPDATE templates
-      SET is_active = ${nextValue}, updated_at = CURRENT_TIMESTAMP
-      WHERE id = ${templateId}
-    `
-  }
-
-  if (field === 'is_featured') {
-    await sql`
-      UPDATE templates
-      SET is_featured = ${nextValue}, updated_at = CURRENT_TIMESTAMP
-      WHERE id = ${templateId}
-    `
-  }
-
-  revalidatePath('/administrator')
+  await updateTemplateFlag(templateId, field, nextValue)
 }
 
-async function updateCategoryStatus(formData: FormData) {
+async function updateCategoryStatusAction(formData: FormData) {
   'use server'
-
-  const admin = await getAdminSession()
-  if (!admin) redirect('/admin-login')
-
   const categoryId = Number(formData.get('categoryId'))
   const nextValue = formData.get('nextValue') === 'true'
-
-  if (!Number.isInteger(categoryId)) return
-
-  await sql`
-    UPDATE categories
-    SET is_active = ${nextValue}
-    WHERE id = ${categoryId}
-  `
-
-  revalidatePath('/administrator')
+  await updateCategoryStatus(categoryId, nextValue)
 }
 
-async function updateUserCredits(formData: FormData) {
+async function updateUserCreditsAction(formData: FormData) {
   'use server'
-
-  const admin = await getAdminSession()
-  if (!admin) redirect('/admin-login')
-
   const userId = Number(formData.get('userId'))
   const creditsAvailable = Number(formData.get('creditsAvailable'))
-
-  if (!Number.isInteger(userId)) return
-
-  await sql`
-    UPDATE user_credits
-    SET credits_available = ${creditsAvailable},
-        updated_at = CURRENT_TIMESTAMP
-    WHERE user_id = ${userId}
-  `
-
-  revalidatePath('/administrator')
+  await updateUserCredits(userId, creditsAvailable)
 }
 
 type PageProps = {
   searchParams?: Promise<{
     section?: string
     q?: string
+    page?: string
+    categoryId?: string
+    status?: string
+    featured?: string
   }>
 }
 
@@ -153,10 +113,28 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
     ? params?.section || 'overview'
     : 'overview'
   const search = params?.q?.trim() || ''
-  const data = await getAdminDashboardData(search)
+  const currentPage = Number(params?.page || '1')
+  
+  const categoryId = params?.categoryId ? Number(params.categoryId) : undefined
+  const statusFilter = params?.status
+  const featuredFilter = params?.featured
+  
+  const data = await getAdminDashboardData(search, section, currentPage, 20, {
+    categoryId: !isNaN(categoryId as number) ? categoryId : undefined,
+    isActive: statusFilter === 'active' ? true : statusFilter === 'hidden' ? false : undefined,
+    isFeatured: featuredFilter === 'featured' ? true : undefined
+  })
+  
+  const stripeSettings = await getSettings('stripe')
+  const webhookUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/webhooks/stripe`
+
+  let paginationBaseUrl = `/administrator?section=${section}${search ? `&q=${encodeURIComponent(search)}` : ''}`
+  if (categoryId) paginationBaseUrl += `&categoryId=${categoryId}`
+  if (statusFilter) paginationBaseUrl += `&status=${statusFilter}`
+  if (featuredFilter) paginationBaseUrl += `&featured=${featuredFilter}`
 
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="admin-dashboard min-h-screen bg-muted/30">
       <header className="border-b bg-background">
         <div className="container mx-auto flex flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
@@ -251,7 +229,7 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                 <CardDescription>Review accounts, documents, credits, and active subscriptions.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <form className="flex max-w-md gap-2">
+                <form className="flex w-full gap-2">
                   <input type="hidden" name="section" value="users" />
                   <div className="relative flex-1">
                     <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -277,7 +255,7 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                         <Badge>{user.active_plan || 'No plan'}</Badge>
                       </div>
 
-                      <form action={updateUserCredits} className="flex items-end gap-2">
+                      <form action={updateUserCreditsAction} className="flex items-end gap-2">
                         <input type="hidden" name="userId" value={user.id} />
                         <div className="flex-1 space-y-1">
                           <Label htmlFor={`credits-${user.id}`}>Credits</Label>
@@ -294,6 +272,13 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                     </div>
                   ))
                 )}
+                {data.pagination && (
+                  <Pagination 
+                    currentPage={data.pagination.page} 
+                    totalPages={data.pagination.totalPages} 
+                    baseUrl={paginationBaseUrl} 
+                  />
+                )}
               </CardContent>
             </Card>
           )}
@@ -301,42 +286,76 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
           {section === 'templates' && (
             <Card>
               <CardHeader>
-                <CardTitle>Templates</CardTitle>
-                <CardDescription>Control which document templates are visible and featured.</CardDescription>
+                <CardTitle>Templates Management</CardTitle>
+                <CardDescription>Add, edit, and organize document templates.</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3">
-                {data.templates.map((template) => (
-                  <div key={template.id} className="grid gap-4 rounded-lg border p-4 lg:grid-cols-[1fr_260px] lg:items-center">
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h2 className="font-medium">{template.name}</h2>
-                        <Badge variant={template.is_active ? 'default' : 'secondary'}>
-                          {template.is_active ? 'Active' : 'Hidden'}
-                        </Badge>
-                        {template.is_featured && <Badge variant="secondary">Featured</Badge>}
-                      </div>
-                      <p className="mt-1 text-sm text-muted-foreground">{template.description}</p>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        {template.category_name || 'Uncategorized'} / {template.slug}
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 lg:justify-end">
-                      <ToggleTemplateButton
-                        templateId={template.id}
-                        field="is_active"
-                        nextValue={!template.is_active}
-                        label={template.is_active ? 'Hide' : 'Show'}
-                      />
-                      <ToggleTemplateButton
-                        templateId={template.id}
-                        field="is_featured"
-                        nextValue={!template.is_featured}
-                        label={template.is_featured ? 'Unfeature' : 'Feature'}
-                      />
+              <CardContent className="space-y-6">
+                <form className="flex flex-wrap gap-4 p-4 border rounded-xl bg-slate-50/50 dark:bg-slate-900/20">
+                  <input type="hidden" name="section" value="templates" />
+                  
+                  <div className="flex-1 min-w-[240px]">
+                    <Label className="text-xs font-bold uppercase mb-1.5 block">Search</Label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                      <Input name="q" defaultValue={search} placeholder="Search by name or slug" className="pl-9 h-10 bg-white dark:bg-slate-950" />
                     </div>
                   </div>
-                ))}
+
+                  <div className="w-[200px]">
+                    <Label className="text-xs font-bold uppercase mb-1.5 block">Category</Label>
+                    <select 
+                      name="categoryId" 
+                      defaultValue={categoryId || ''}
+                      className="flex h-10 w-full rounded-md border border-input bg-white dark:bg-slate-950 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <option value="">All Categories</option>
+                      {data.categories.map(cat => (
+                        <option key={cat.id} value={cat.id}>{cat.name}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="w-[150px]">
+                    <Label className="text-xs font-bold uppercase mb-1.5 block">Status</Label>
+                    <select 
+                      name="status" 
+                      defaultValue={statusFilter || ''}
+                      className="flex h-10 w-full rounded-md border border-input bg-white dark:bg-slate-950 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <option value="">Any Status</option>
+                      <option value="active">Active</option>
+                      <option value="hidden">Hidden</option>
+                    </select>
+                  </div>
+
+                  <div className="w-[150px]">
+                    <Label className="text-xs font-bold uppercase mb-1.5 block">Featured</Label>
+                    <select 
+                      name="featured" 
+                      defaultValue={featuredFilter || ''}
+                      className="flex h-10 w-full rounded-md border border-input bg-white dark:bg-slate-950 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <option value="">All</option>
+                      <option value="featured">Featured Only</option>
+                    </select>
+                  </div>
+
+                  <div className="flex items-end">
+                    <Button type="submit" className="h-10 px-6">Apply</Button>
+                  </div>
+                </form>
+
+                <AdminTemplatesEditor 
+                  initialTemplates={data.templates} 
+                  categories={data.categories} 
+                />
+                {data.pagination && (
+                  <Pagination 
+                    currentPage={data.pagination.page} 
+                    totalPages={data.pagination.totalPages} 
+                    baseUrl={paginationBaseUrl} 
+                  />
+                )}
               </CardContent>
             </Card>
           )}
@@ -344,87 +363,158 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
           {section === 'categories' && (
             <Card>
               <CardHeader>
-                <CardTitle>Categories</CardTitle>
-                <CardDescription>Match the frontend category library and hide categories when needed.</CardDescription>
+                <CardTitle>Categories Management</CardTitle>
+                <CardDescription>Add, edit, and organize document categories.</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3">
-                {data.categories.map((category) => (
-                  <div key={category.id} className="grid gap-4 rounded-lg border p-4 md:grid-cols-[1fr_160px] md:items-center">
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h2 className="font-medium">{category.name}</h2>
-                        <Badge variant={category.is_active ? 'default' : 'secondary'}>
-                          {category.is_active ? 'Active' : 'Hidden'}
-                        </Badge>
-                      </div>
-                      <p className="mt-1 text-sm text-muted-foreground">{category.description}</p>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        {category.slug} / {Number(category.template_count)} templates
-                      </div>
-                    </div>
-
-                    <form action={updateCategoryStatus}>
-                      <input type="hidden" name="categoryId" value={category.id} />
-                      <input type="hidden" name="nextValue" value={String(!category.is_active)} />
-                      <Button type="submit" variant="outline" className="w-full">
-                        {category.is_active ? 'Hide' : 'Show'}
-                      </Button>
-                    </form>
+              <CardContent className="space-y-6">
+                <form className="flex w-full gap-2">
+                  <input type="hidden" name="section" value="categories" />
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <Input name="q" defaultValue={search} placeholder="Search categories" className="pl-9 h-10" />
                   </div>
-                ))}
+                  <Button type="submit" variant="outline">Search</Button>
+                </form>
+
+                <AdminCategoriesEditor 
+                  initialCategories={data.categories} 
+                />
               </CardContent>
             </Card>
           )}
 
           {section === 'payments' && (
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Recent Transactions</CardTitle>
-                  <CardDescription>Latest credit and subscription payments.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {data.transactions.length === 0 ? (
-                    <EmptyState message="No transactions yet." />
-                  ) : (
-                    data.transactions.map((transaction) => (
-                      <div key={transaction.id} className="grid gap-3 rounded-lg border p-4 md:grid-cols-[1fr_120px_120px] md:items-center">
-                        <div>
-                          <div className="font-medium">{transaction.email || 'Unknown user'}</div>
-                          <div className="text-sm text-muted-foreground">
-                            {transaction.transaction_type} / {transaction.credits_purchased || 0} credits
-                          </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent Transactions</CardTitle>
+                <CardDescription>Latest credit and subscription payments.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <form className="flex w-full gap-2">
+                  <input type="hidden" name="section" value="payments" />
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <Input name="q" defaultValue={search} placeholder="Search by email" className="pl-9 h-10" />
+                  </div>
+                  <Button type="submit" variant="outline">Search</Button>
+                </form>
+
+                {data.transactions.length === 0 ? (
+                  <EmptyState message="No transactions yet." />
+                ) : (
+                  data.transactions.map((transaction) => (
+                    <div key={transaction.id} className="grid gap-3 rounded-lg border p-4 md:grid-cols-[1fr_120px_120px_140px] md:items-center">
+                      <div>
+                        <div className="font-medium">{transaction.email || 'Unknown user'}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {transaction.transaction_type} / {transaction.credits_purchased || 0} credits
                         </div>
-                        <Badge variant={transaction.status === 'completed' ? 'default' : 'secondary'}>
-                          {transaction.status}
-                        </Badge>
-                        <div className="text-sm font-medium">{money(Number(transaction.amount_cents))}</div>
+                        {transaction.stripe_payment_id && (
+                          <div className="mt-1">
+                            <div className="text-[10px] font-mono text-muted-foreground truncate max-w-[200px]">
+                              {transaction.stripe_payment_id}
+                            </div>
+                            <a 
+                              href={`https://dashboard.stripe.com/${stripeSettings?.sandbox ? 'test/' : ''}payments/${transaction.stripe_payment_id}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-[10px] text-blue-600 hover:underline inline-block mt-0.5"
+                            >
+                              View on Stripe
+                            </a>
+                          </div>
+                        )}
                       </div>
-                    ))
-                  )}
-                </CardContent>
-              </Card>
-            </div>
+                      <Badge variant={transaction.status === 'completed' ? 'default' : 'secondary'}>
+                        {transaction.status}
+                      </Badge>
+                      <div className="text-sm font-medium">{money(Number(transaction.amount_cents))}</div>
+                      <div className="text-xs text-muted-foreground text-right">{date(transaction.created_at)}</div>
+                    </div>
+                  ))
+                )}
+                {data.pagination && (
+                  <Pagination 
+                    currentPage={data.pagination.page} 
+                    totalPages={data.pagination.totalPages} 
+                    baseUrl={paginationBaseUrl} 
+                  />
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          {section === 'subscriptions' && (
+            <Card>
+              <CardHeader>
+                <CardTitle>User Subscriptions</CardTitle>
+                <CardDescription>Active and historical customer subscriptions.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <form className="flex w-full gap-2">
+                  <input type="hidden" name="section" value="subscriptions" />
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <Input name="q" defaultValue={search} placeholder="Search by email" className="pl-9 h-10" />
+                  </div>
+                  <Button type="submit" variant="outline">Search</Button>
+                </form>
+
+                {data.subscriptions.length === 0 ? (
+                  <EmptyState message="No subscriptions found." />
+                ) : (
+                  data.subscriptions.map((subscription) => (
+                    <div key={subscription.id} className="grid gap-3 rounded-lg border p-4 md:grid-cols-[1fr_120px_140px_140px] md:items-center">
+                      <div>
+                        <div className="font-medium">{subscription.email || 'Unknown user'}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {subscription.plan_name || 'Unknown Plan'}
+                        </div>
+                        {subscription.stripe_subscription_id && (
+                          <div className="mt-1">
+                            <div className="text-[10px] font-mono text-muted-foreground truncate max-w-[200px]">
+                              {subscription.stripe_subscription_id}
+                            </div>
+                            <a 
+                              href={`https://dashboard.stripe.com/${stripeSettings?.sandbox ? 'test/' : ''}subscriptions/${subscription.stripe_subscription_id}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-[10px] text-blue-600 hover:underline inline-block mt-0.5"
+                            >
+                              View on Stripe
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                      <Badge variant={subscription.status === 'active' ? 'default' : 'secondary'}>
+                        {subscription.status}
+                      </Badge>
+                      <div className="text-xs text-muted-foreground">
+                        Period: {date(subscription.current_period_start)} - {date(subscription.current_period_end)}
+                      </div>
+                      <div className="text-xs text-muted-foreground text-right">
+                        Started: {date(subscription.created_at)}
+                      </div>
+                    </div>
+                  ))
+                )}
+                {data.pagination && (
+                  <Pagination 
+                    currentPage={data.pagination.page} 
+                    totalPages={data.pagination.totalPages} 
+                    baseUrl={paginationBaseUrl} 
+                  />
+                )}
+              </CardContent>
+            </Card>
           )}
 
           {section === 'settings' && (
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardDescription>Authentication and environment settings for this dashboard.</CardDescription>
-                  <CardDescription>Environment settings required for this dashboard.</CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-3 sm:grid-cols-2">
-                  <ConfigItem label="Admin user table" configured={true} />
-                  <ConfigItem label="Admin JWT secret" configured={Boolean(process.env.ADMIN_JWT_SECRET)} />
-                  <ConfigItem label="Database URL" configured={Boolean(process.env.DATABASE_URL)} />
-                  <ConfigItem label="Stripe secret" configured={Boolean(process.env.STRIPE_SECRET_KEY)} />
-                  <ConfigItem label="Stripe webhook secret" configured={Boolean(process.env.STRIPE_WEBHOOK_SECRET)} />
-                </CardContent>
-              </Card>
-
-              
-            </div>
+            <AdminSettingsEditor 
+              initialStripeSettings={stripeSettings} 
+              webhookUrl={webhookUrl}
+              onSave={saveAdminSettingsAction}
+            />
           )}
 
            {section === 'plans' && (
@@ -434,7 +524,7 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                 <CardDescription>Create and manage credit and monthly plans from one place.</CardDescription>
               </CardHeader>
               <CardContent>
-                <AdminPlansEditor initialPlans={data.plans as any[]} action={saveAllPlansAction} />
+                <AdminPlansEditor initialPlans={data.plans} action={saveAllPlansAction} />
               </CardContent>
             </Card>
           )}
@@ -451,7 +541,7 @@ function StatCard({
 }: {
   label: string
   value: string | number
-  icon: typeof Users
+  icon: any
 }) {
   return (
     <Card>
@@ -470,38 +560,6 @@ function EmptyState({ message }: { message: string }) {
   return (
     <div className="rounded-lg border border-dashed p-8 text-center text-sm text-muted-foreground">
       {message}
-    </div>
-  )
-}
-
-function ToggleTemplateButton({
-  templateId,
-  field,
-  nextValue,
-  label,
-}: {
-  templateId: number
-  field: 'is_active' | 'is_featured'
-  nextValue: boolean
-  label: string
-}) {
-  return (
-    <form action={updateTemplateFlag}>
-      <input type="hidden" name="templateId" value={templateId} />
-      <input type="hidden" name="field" value={field} />
-      <input type="hidden" name="nextValue" value={String(nextValue)} />
-      <Button type="submit" variant="outline">{label}</Button>
-    </form>
-  )
-}
-
-function ConfigItem({ label, configured }: { label: string; configured: boolean }) {
-  return (
-    <div className="flex items-center justify-between rounded-lg border p-4">
-      <span className="text-sm font-medium">{label}</span>
-      <Badge variant={configured ? 'default' : 'secondary'}>
-        {configured ? 'Configured' : 'Missing'}
-      </Badge>
     </div>
   )
 }

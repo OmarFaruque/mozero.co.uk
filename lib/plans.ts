@@ -94,3 +94,13 @@ export async function updatePlanStatusAction(formData: FormData) {
   revalidatePath('/administrator')
   return { success: true }
 }
+
+export async function getActivePlans() {
+  return await sql`
+    SELECT id, name, description, plan_type, price_cents, package_price_cents, price_per_document_cents,
+           credit_amount, monthly_document_limit, discount_percent, features, credits_per_month, is_active
+    FROM subscription_plans
+    WHERE is_active = true 
+    ORDER BY price_cents ASC
+  `
+}

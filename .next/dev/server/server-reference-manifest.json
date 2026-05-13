@@ -3,7 +3,7 @@
     "004a9874b857afdb2bf0019c288e9b131bd161d510": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "app/administrator/page.tsx"
@@ -18,7 +18,7 @@
     "401c24cd9d6db305485eba3f092fe40e57d6388cda": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_1",
           "filename": "app/administrator/page.tsx"
@@ -33,7 +33,7 @@
     "4023155de109f9432239d9fa0b212dd56628123bfd": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_2",
           "filename": "app/administrator/page.tsx"
@@ -48,7 +48,7 @@
     "4084a3eaf73f5e9a59d5789ab2642f3f94973a83fe": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_3",
           "filename": "app/administrator/page.tsx"
@@ -63,7 +63,7 @@
     "403d5f6a11653d64395fb0b8e28d0563aea520d963": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_1",
           "filename": "lib/plans.ts"
@@ -78,7 +78,7 @@
     "40e2c80c3eaddcd3a74e9a8eadc3893978fbd79575": {
       "workers": {
         "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "lib/plans.ts"
@@ -90,20 +90,80 @@
       "filename": "lib/plans.ts",
       "exportedName": "$$RSC_SERVER_ACTION_0"
     },
-    "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
+    "409cee8ee105cea736c9b802ebdb70dcbff1e5050c": {
       "workers": {
-        "app/pricing/page": {
-          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
-          "exportedName": "startCheckoutSession",
-          "filename": "app/actions/stripe.ts"
+          "exportedName": "saveAdminSettingsAction",
+          "filename": "app/actions/admin-settings.ts"
         }
       },
       "layer": {
-        "app/pricing/page": "action-browser"
+        "app/administrator/page": "rsc"
       },
-      "filename": "app/actions/stripe.ts",
-      "exportedName": "startCheckoutSession"
+      "filename": "app/actions/admin-settings.ts",
+      "exportedName": "saveAdminSettingsAction"
+    },
+    "40c39b6a3128823ac666553ff229592792cd98727d": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "saveTemplateAction",
+          "filename": "app/actions/admin-templates.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "action-browser"
+      },
+      "filename": "app/actions/admin-templates.ts",
+      "exportedName": "saveTemplateAction"
+    },
+    "4005699b10da5186e189527ca878d85a6bfcac9665": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteTemplateAction",
+          "filename": "app/actions/admin-templates.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "action-browser"
+      },
+      "filename": "app/actions/admin-templates.ts",
+      "exportedName": "deleteTemplateAction"
+    },
+    "407ea46d199d9111f90c2c1e316d6a82a0d9e2a6aa": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "saveCategoryAction",
+          "filename": "app/actions/admin-categories.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "action-browser"
+      },
+      "filename": "app/actions/admin-categories.ts",
+      "exportedName": "saveCategoryAction"
+    },
+    "40b976e3f148272b30ef9845f9ce34c48459092f6b": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCategoryAction",
+          "filename": "app/actions/admin-categories.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "action-browser"
+      },
+      "filename": "app/actions/admin-categories.ts",
+      "exportedName": "deleteCategoryAction"
     }
   },
   "edge": {},

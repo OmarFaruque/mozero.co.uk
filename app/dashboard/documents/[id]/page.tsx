@@ -3,7 +3,7 @@ import { Footer } from '@/components/footer'
 import { DocumentEditor } from '@/components/document-editor'
 import { redirect } from 'next/navigation'
 import { requireAuth } from '@/lib/auth'
-import { sql } from '@/lib/db'
+import { getDocumentById } from '@/lib/user-dashboard'
 import { notFound } from 'next/navigation'
 
 export const dynamic = 'force-dynamic'
@@ -21,19 +21,11 @@ export default async function DocumentPage({ params }: { params: { id: string } 
     notFound()
   }
 
-  const documents = await sql`
-    SELECT d.*, t.name as template_name, c.name as category_name
-    FROM documents d
-    LEFT JOIN templates t ON d.template_id = t.id
-    LEFT JOIN categories c ON t.category_id = c.id
-    WHERE d.id = ${documentId} AND d.user_id = ${user.id}
-  `
+  const document = await getDocumentById(user.id, documentId)
 
-  if (documents.length === 0) {
+  if (!document) {
     notFound()
   }
-
-  const document = documents[0]
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -6,8 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { FileText, Plus, CreditCard, Zap } from 'lucide-react'
 import { requireAuth } from '@/lib/auth'
-import { sql } from '@/lib/db'
-import { redirect } from 'next/navigation'
+import { getUserDashboardData } from '@/lib/user-dashboard'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,33 +17,7 @@ export default async function DashboardPage() {
     redirect('/login?redirect=/dashboard')
   }
 
-  const documents = await sql`
-    SELECT d.*, t.name as template_name, c.name as category_name
-    FROM documents d
-    LEFT JOIN templates t ON d.template_id = t.id
-    LEFT JOIN categories c ON t.category_id = c.id
-    WHERE d.user_id = ${user.id}
-    ORDER BY d.created_at DESC
-    LIMIT 10
-  `
-
-  const credits = await sql`
-    SELECT * FROM user_credits
-    WHERE user_id = ${user.id}
-  `
-
-  const userCredits = credits[0] || { credits_available: 0, credits_used: 0 }
-
-  const subscription = await sql`
-    SELECT s.*, p.name as plan_name, p.credits_per_month
-    FROM user_subscriptions s
-    JOIN subscription_plans p ON s.plan_id = p.id
-    WHERE s.user_id = ${user.id} AND s.status = 'active'
-    ORDER BY s.created_at DESC
-    LIMIT 1
-  `
-
-  const activeSubscription = subscription[0] || null
+  const { documents, userCredits, activeSubscription } = await getUserDashboardData(user.id)
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -1,601 +1,2164 @@
-[00:00:03.845] Server  LOG      ✓ Ready in 2.9s
-[00:00:08.452] Server  LOG      ○ Compiling / ...
-[00:00:18.124] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:22.970] Server  LOG      ○ Compiling /icon ...
-[00:00:35.844] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:39.276] Server  LOG      ○ Compiling /admin-login ...
-[00:00:42.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:45:32.140] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
-Module not found: Can't resolve '@/components/admin-plans-editor'
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
+[00:00:44.467] Server  LOG      ✓ Ready in 28.1s
+[00:00:47.855] Server  LOG      ○ Compiling / ...
+[00:01:06.116] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:30.253] Server  LOG      ○ Compiling /administrator ...
+[00:01:34.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:39.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:18.464] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:57.745] Server  LOG      ✓ Compiled in 1854ms
+[00:12:26.109] Server  LOG      ✓ Compiled in 409ms
+[00:12:38.496] Server  LOG      ○ Compiling /_not-found/page ...
+[00:12:42.227] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
 
-Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+Unterminated regexp literal
+[00:12:42.500] Server  ERROR    ⨯ ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
 
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:45:32.169] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
-Module not found: Can't resolve '@/components/admin-plans-editor'
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
-
-Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+Unterminated regexp literal
 
 
-https://nextjs.org/docs/messages/module-not-found
+[00:12:43.169] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:44.734] Server  LOG      ○ Compiling /_error ...
+[00:12:46.266] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:46.724] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:47.207] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:47.207] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:49.001] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:49.001] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:52.822] Browser ERROR   uncaughtError: Error: ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
 
 
-[00:45:32.373] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
-Module not found: Can't resolve '@/components/admin-plans-editor'
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
+[00:12:53.244] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
 
-Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+Unterminated regexp literal
+[00:12:53.348] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:12:58.786] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:04.296] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:16.561] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:42.789] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:13:42.857] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:03.176] Server  ERROR    ⨯ ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
 
 
-https://nextjs.org/docs/messages/module-not-found
+[00:14:03.192] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:04.410] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:04.410] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:05.314] Browser ERROR   uncaughtError: Error: ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
 
 
-[00:45:32.386] Server  ERROR    ⨯ ./app/administrator/page.tsx:25:1
-Module not found: Can't resolve '@/components/admin-plans-editor'
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
+[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
 
-Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+Unterminated regexp literal
+[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:38.829] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:14:38.829] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:16:37.539] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:16:37.858] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:16:50.346] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:16:50.857] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:17:01.587] Server  LOG      ✓ Compiled in 416ms
+[00:17:01.687] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:17:01.824] Browser ERROR   ./app/administrator/page.tsx:543:1
+Parsing ecmascript source code failed
+  541 |   )
+  542 | }
+> 543 | /Card>
+      | ^^^^^^
+  544 |           )}
+  545 |         </main>
+  546 |       </div>
+
+Unterminated regexp literal
+[00:17:35.669] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:35.669] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:36.861] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:36.861] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:56.157] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:56.157] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:56.828] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:17:56.828] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:02.891] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:02.891] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:03.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:03.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:31.482] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:31.482] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:31.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:31.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:44.126] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:44.126] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:44.824] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:18:44.824] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:02.797] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:02.797] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:02.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:02.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:11.404] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
 
 
-https://nextjs.org/docs/messages/module-not-found
+
+./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
 
 
-[00:45:33.271] Browser ERROR   ./app/administrator/page.tsx:25:1
-Module not found: Can't resolve '@/components/admin-plans-editor'
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
+[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-Import map: aliased to relative './components/admin-plans-editor' inside of [project]/
+Expression expected
 
-https://nextjs.org/docs/messages/module-not-found
-[01:20:50.623] Browser ERROR   ./app/administrator/page.tsx:25:1
-Export AdminPlansEditor doesn't exist in target module
-  23 | import { Input } from '@/components/ui/input'
-  24 | import { Label } from '@/components/ui/label'
-> 25 | import { AdminPlansEditor } from '@/components/admin-plans-editor'
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  26 | import { deleteAdminSession, getAdminSession } from '@/lib/admin-auth'
-  27 | import { getAdminDashboardData } from '@/lib/admin-dashboard'
-  28 | import { sql } from '@/lib/db'
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-The export AdminPlansEditor was not found in module [project]/components/admin-plans-editor.tsx [app-rsc] (ecmascript).
-The module has no exports at all.
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-[01:21:08.738] Server  LOG      ✓ Compiled in 856ms
-[01:21:12.638] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'join')
-[01:30:51.157] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:53.929] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'join')
-[01:30:55.121] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'join')
-[01:37:41.569] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:37:41.575] Server  LOG      ✓ Compiled in 696ms
-[01:37:44.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:25.884] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
+Unterminated regexp literal
 
-  ...
-    <RedirectBoundary>
-      <RedirectErrorBoundary router={{...}}>
-        <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-          <SegmentViewNode type="page" pagePath="administra...">
-            <SegmentTrieNode>
-            <AdministratorPage>
-              <div className="min-h-scre...">
-                <header>
-                <div className="container ...">
-                  <aside>
-                  <main className="space-y-6">
-                    <Card>
-                      <div data-slot="card" className="bg-card te...">
-                        <div>
-                        <CardContent>
-                          <div data-slot="card-content" className="px-6">
-                            <AdminPlansEditor initialPlans={[...]} action={function saveAllPlans}>
-                              <form action={function saveAllPlans} className="space-y-4">
-                                <input>
-                                <div className="space-y-3">
-                                  <div className="rounded-xl...">
->                                   <button
->                                     type="button"
->                                     onClick={function onClick}
->                                     className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
->                                   >
-                                      <div>
-                                      <div className="flex items...">
-                                        <Button type="button" variant="ghost" size="icon" onClick={function onClick}>
->                                         <button
->                                           data-slot="button"
->                                           className={"inline-flex items-center justify-center gap-2 whitespace-nowr..."}
->                                           type="button"
->                                           onClick={function onClick}
->                                         >
-                                        ...
-                                    ...
-                                  ...
-                                ...
-          ...
-        ...
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-[01:38:25.884] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[01:38:25.907] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+Expression expected
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Unterminated regexp literal
 
-https://react.dev/link/hydration-mismatch
-[01:40:58.340] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:41:02.011] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.005] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-  ...
-    <RedirectBoundary>
-      <RedirectErrorBoundary router={{...}}>
-        <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-          <SegmentViewNode type="page" pagePath="administra...">
-            <SegmentTrieNode>
-            <AdministratorPage>
-              <div className="min-h-scre...">
-                <header>
-                <div className="container ...">
-                  <aside>
-                  <main className="space-y-6">
-                    <Card>
-                      <div data-slot="card" className="bg-card te...">
-                        <div>
-                        <CardContent>
-                          <div data-slot="card-content" className="px-6">
-                            <AdminPlansEditor initialPlans={[...]} action={function saveAllPlans}>
-                              <form action={function saveAllPlans} className="space-y-4">
-                                <input>
-                                <div className="space-y-3">
-                                  <div className="rounded-xl...">
->                                   <button
->                                     type="button"
->                                     onClick={function onClick}
->                                     className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
->                                   >
-                                      <div>
-                                      <div className="flex items...">
-                                        <Button type="button" variant="ghost" size="icon" onClick={function onClick}>
->                                         <button
->                                           data-slot="button"
->                                           className={"inline-flex items-center justify-center gap-2 whitespace-nowr..."}
->                                           type="button"
->                                           onClick={function onClick}
->                                         >
-                                        ...
-                                    ...
-                                  ...
-                                ...
-          ...
-        ...
+Expression expected
 
-[01:41:02.011] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[01:41:02.778] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-https://react.dev/link/hydration-mismatch
-[01:53:36.204] Server  LOG      ✓ Compiled in 842ms
-[01:57:07.748] Server  LOG      ✓ Compiled in 294ms
-[01:57:18.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:00:41.195] Server  LOG      ✓ Compiled in 827ms
-[02:01:21.294] Server  ERROR    ⨯ NeonDbError: column "updated_at" of relation "subscription_plans" does not exist
-[02:01:21.564] Browser ERROR   uncaughtError: NeonDbError: column "updated_at" of relation "subscription_plans" does not exist
-[02:06:04.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:06:11.926] Server  LOG      ✓ Compiled in 560ms
-[02:06:13.741] Server  ERROR    ⨯ ReferenceError: saveAllPlans is not defined
-[02:06:14.755] Browser ERROR   uncaughtError: ReferenceError: saveAllPlans is not defined
-[02:06:20.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[08:13:36.350] Server  LOG      ✓ Compiled in 778ms
-[08:13:45.340] Server  LOG      ✓ Compiled in 737ms
-[08:15:24.710] Server  LOG      ✓ Compiled in 881ms
-[08:15:51.360] Server  LOG      ✓ Compiled in 162ms
-[08:17:55.055] Server  LOG      ✓ Compiled in 575ms
-[08:19:02.116] Server  LOG      ✓ Compiled in 779ms
-[08:19:08.072] Server  LOG      ✓ Compiled in 593ms
-[08:19:13.783] Server  LOG      ✓ Compiled in 359ms
-[08:19:18.428] Server  LOG      ✓ Compiled in 649ms
-[08:19:25.594] Server  LOG      ✓ Compiled in 228ms
-[08:19:42.835] Server  LOG      ✓ Compiled in 237ms
-[08:20:02.286] Server  LOG      ✓ Compiled in 156ms
-[08:20:13.604] Server  LOG      ✓ Compiled in 181ms
-[08:20:23.309] Server  LOG      ✓ Compiled in 141ms
-[08:20:34.225] Server  LOG      ✓ Compiled in 154ms
-[08:20:38.031] Server  LOG      ✓ Compiled in 386ms
-[08:23:30.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[08:24:18.116] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[08:24:18.270] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[08:24:37.300] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[08:24:59.748] Server  LOG      ✓ Compiled in 197ms
-[08:25:27.824] Server  LOG      ✓ Compiled in 710ms
-[08:25:44.737] Server  LOG      ✓ Compiled in 183ms
-[08:26:02.084] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[08:26:02.373] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[08:26:52.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[08:59:33.383] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[08:59:34.341] Browser ERROR   uncaughtError: NeonDbError: invalid input syntax for type integer: "{"5","2","6","3","7"}"
-[09:04:41.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[09:06:25.896] Server  LOG      ✓ Compiled in 1243ms
-[09:09:28.744] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+Expression expected
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Unterminated regexp literal
 
-%s%s https://react.dev/link/hydration-mismatch 
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
 
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/administr..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="administra...">
-              <SegmentTrieNode>
-              <AdministratorPage>
-                <div className="min-h-scre...">
-                  <header>
-                  <div className="container ...">
-                    <aside>
-                    <main className="space-y-6">
-                      <Card>
-                        <div data-slot="card" className="bg-card te...">
-                          <div>
-                          <CardContent>
-                            <div data-slot="card-content" className="px-6">
-                              <AdminPlansEditor initialPlans={[...]} action={function saveAllPlansAction}>
-                                <form action={function saveAllPlansAction} className="space-y-6">
-                                  <input>
-                                  <div className="space-y-4">
-                                    <div
-+                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
--                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
-                                    >
-                                      <div
-+                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
--                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
-                                      >
-                                        <button type="button" onClick={function onClick} className="flex flex-...">
-                                          <div>
-                                          <div className="text-left">
-                                            <p
-+                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
--                                             className="text-base font-semibold text-slate-900"
-                                            >
-+                                             Pay Per Use
-                                            <p
-+                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
--                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
-                                            >
-+                                             Monthly subscription
-                                        <div
-+                                         className="flex items-center gap-3"
--                                         className="flex items-center gap-3 coursor-pointer"
-                                        >
-                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
-                                            <button
-                                              data-slot="button"
-+                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
--                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
-                                              type="button"
-                                              onClick={function onClick}
-                                            >
-                                          <button
-                                            type="button"
-                                            onClick={function onClick}
-+                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
--                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
-                                          >
-                                            <ChevronDown className={"h-5 w-5 ..."}>
-                                              <svg
-                                                ref={null}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-+                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
--                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
-                                              >
-                                    <div
-+                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
--                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
-                                    >
-                                      <div
-+                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
--                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
-                                      >
-                                        <button type="button" onClick={function onClick} className="flex flex-...">
-                                          <div>
-                                          <div className="text-left">
-                                            <p
-+                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
--                                             className="text-base font-semibold text-slate-900"
-                                            >
-+                                             Basic Plan
-                                            <p
-+                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
--                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
-                                            >
-+                                             Monthly subscription
-                                        <div
-+                                         className="flex items-center gap-3"
--                                         className="flex items-center gap-3 coursor-pointer"
-                                        >
-                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
-                                            <button
-                                              data-slot="button"
-+                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
--                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
-                                              type="button"
-                                              onClick={function onClick}
-                                            >
-                                          <button
-                                            type="button"
-                                            onClick={function onClick}
-+                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
--                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
-                                          >
-                                            <ChevronDown className={"h-5 w-5 ..."}>
-                                              <svg
-                                                ref={null}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-+                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
--                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
-                                              >
-                                    <div
-+                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
--                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
-                                    >
-                                      <div
-+                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
--                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
-                                      >
-                                        <button type="button" onClick={function onClick} className="flex flex-...">
-                                          <div>
-                                          <div className="text-left">
-                                            <p
-+                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
--                                             className="text-base font-semibold text-slate-900"
-                                            >
-+                                             Basic Plan
-                                            <p
-+                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
--                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
-                                            >
-+                                             Monthly subscription
-                                        <div
-+                                         className="flex items-center gap-3"
--                                         className="flex items-center gap-3 coursor-pointer"
-                                        >
-                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
-                                            <button
-                                              data-slot="button"
-+                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
--                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
-                                              type="button"
-                                              onClick={function onClick}
-                                            >
-                                          <button
-                                            type="button"
-                                            onClick={function onClick}
-+                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
--                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
-                                          >
-                                            <ChevronDown className={"h-5 w-5 ..."}>
-                                              <svg
-                                                ref={null}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-+                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
--                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
-                                              >
-                                    <div
-+                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
--                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
-                                    >
-                                      <div
-+                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
--                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
-                                      >
-                                        <button type="button" onClick={function onClick} className="flex flex-...">
-                                          <div>
-                                          <div className="text-left">
-                                            <p
-+                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
--                                             className="text-base font-semibold text-slate-900"
-                                            >
-+                                             Professional Plan
-                                            <p
-+                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
--                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
-                                            >
-+                                             Monthly subscription
-                                        <div
-+                                         className="flex items-center gap-3"
--                                         className="flex items-center gap-3 coursor-pointer"
-                                        >
-                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
-                                            <button
-                                              data-slot="button"
-+                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
--                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
-                                              type="button"
-                                              onClick={function onClick}
-                                            >
-                                          <button
-                                            type="button"
-                                            onClick={function onClick}
-+                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
--                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
-                                          >
-                                            <ChevronDown className={"h-5 w-5 ..."}>
-                                              <svg
-                                                ref={null}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-+                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
--                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
-                                              >
-                                    <div
-+                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-s..."
--                                     className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm..."
-                                    >
-                                      <div
-+                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
--                                       className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left ..."
-                                      >
-                                        <button type="button" onClick={function onClick} className="flex flex-...">
-                                          <div>
-                                          <div className="text-left">
-                                            <p
-+                                             className="text-base font-semibold text-slate-900 dark:text-slate-100"
--                                             className="text-base font-semibold text-slate-900"
-                                            >
-+                                             Professional Plan
-                                            <p
-+                                             className="text-xs font-medium text-slate-500 dark:text-slate-400 upperc..."
--                                             className="text-xs font-medium text-slate-500 uppercase tracking-wider"
-                                            >
-+                                             Monthly subscription
-                                        <div
-+                                         className="flex items-center gap-3"
--                                         className="flex items-center gap-3 coursor-pointer"
-                                        >
-                                          <Button type="button" variant="ghost" size="icon" className="h-9 w-9 te..." ...>
-                                            <button
-                                              data-slot="button"
-+                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
--                                             className={"inline-flex items-center justify-center gap-2 whitespace-no..."}
-                                              type="button"
-                                              onClick={function onClick}
-                                            >
-                                          <button
-                                            type="button"
-                                            onClick={function onClick}
-+                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
--                                           className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-sl..."
-                                          >
-                                            <ChevronDown className={"h-5 w-5 ..."}>
-                                              <svg
-                                                ref={null}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-+                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 dark:text..."
--                                               className="lucide lucide-chevron-down h-5 w-5 text-slate-400 transitio..."
-                                              >
-                                  <div
-+                                   className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4..."
--                                   className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4..."
-                                  >
-                                    <Button type="button" variant="outline" onClick={function addPlan} ...>
-                                      <button
-                                        data-slot="button"
-+                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
--                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
-                                        type="button"
-                                        onClick={function addPlan}
-                                      >
-                                    <Button type="submit" className="h-11 min-w...">
-                                      <button
-                                        data-slot="button"
-+                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
--                                       className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
-                                        type="submit"
-                                      >
-+                                       Save all plans
-            ...
-          ...
+Expression expected
 
-[09:09:34.681] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[09:10:53.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[09:13:30.162] Server  LOG      ✓ Compiled in 2.5s
-[09:26:12.966] Server  LOG      ✓ Compiled in 1608ms
-[09:26:37.185] Server  LOG      ✓ Compiled in 304ms
-[09:31:06.437] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[09:32:56.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[09:33:02.102] Server  LOG      ○ Compiling /pricing ...
-[09:33:13.481] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'match')
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.925] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:14.925] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:16.683] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+
+./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:19:19.742] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.863] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:20.863] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:36.521] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:36.521] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:36.859] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:36.859] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:43.299] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:43.299] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:43.831] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:19:43.831] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:08.850] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+
+./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:12.574] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:31.805] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+
+./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:33.253] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+
+
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:29.521] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:21:29.536] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      | ^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:29.536] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
+Parsing ecmascript source code failed
+  352 |   )
+  353 | }
+> 354 | </div>
+      |  ^^^^^
+  355 |   )
+  356 | }
+  357 |        </div>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/admin-templates-editor.tsx
+    ./app/administrator/page.tsx
+[00:21:29.584] Server  LOG      ✓ Compiled in 0ms
+[00:21:34.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:37.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:42.798] Server  LOG      ○ Compiling /icon ...
+[00:26:09.267] Server  LOG      ✓ Compiled in 1061ms
+[00:26:39.977] Server  LOG      ✓ Compiled in 153ms
+[00:27:01.542] Server  LOG      ✓ Compiled in 161ms
+[00:27:34.596] Server  LOG      ✓ Compiled in 144ms
+[00:28:09.420] Server  LOG      ✓ Compiled in 388ms
+[00:28:28.352] Server  LOG      ✓ Compiled in 1263ms
+[00:28:36.624] Server  LOG      ✓ Compiled in 141ms
+[00:28:52.622] Server  LOG      ✓ Compiled in 128ms
+[00:29:05.906] Server  LOG      ✓ Compiled in 668ms
+[00:29:30.344] Server  LOG      ✓ Compiled in 1697ms
+[00:29:46.116] Server  LOG      ✓ Compiled in 818ms
+[00:32:37.200] Server  LOG      ✓ Compiled in 324ms
+[00:32:47.704] Server  LOG      ✓ Compiled in 305ms
+[00:33:00.607] Server  LOG      ✓ Compiled in 1349ms
+[00:33:12.809] Server  LOG      ✓ Compiled in 172ms
+[00:49:59.337] Server  LOG      ✓ Compiled in 682ms
+[00:51:04.684] Server  LOG      ✓ Compiled in 711ms
+[00:51:14.119] Server  LOG      ✓ Compiled in 623ms
+[00:51:20.372] Server  LOG      ✓ Compiled in 465ms
+[00:51:31.051] Server  LOG      ✓ Compiled in 630ms
+[00:51:35.134] Server  LOG      ✓ Compiled in 227ms
+[00:52:28.258] Server  LOG      ✓ Compiled in 169ms
+[00:54:37.732] Server  LOG      ✓ Compiled in 1772ms
+[00:55:14.533] Server  LOG      ✓ Compiled in 993ms
+[00:56:22.002] Server  LOG      ✓ Compiled in 207ms
+[01:00:55.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:16.408] Browser ERROR   `value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components. input
+[01:06:22.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:47.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:59.158] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:06.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:15.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:30.927] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:41.749] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:55.390] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:10.531] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:21:02.930] Server  LOG      ✓ Compiled in 552ms
+[02:21:40.226] Server  LOG      ✓ Compiled in 290ms
+[02:21:40.848] Browser ERROR   ./lib/admin-dashboard.ts:167:5
+Ecmascript file had an error
+  165 |     totalCount = toNumber(countResult[0].count)
+  166 |
+> 167 |     categories = await sql`
+      |     ^^^^^^^^^^
+  168 |       SELECT
+  169 |         c.id, c.name, c.slug, c.description, c.display_order, c.is_active, c.icon,
+  170 |         COUNT(t.id) AS template_count
+
+cannot reassign to a variable declared with `const`
+
+Import trace:
+  Server Component:
+    ./lib/admin-dashboard.ts
+    ./app/administrator/page.tsx
+[02:22:11.834] Browser ERROR   ./lib/admin-dashboard.ts:167:5
+Ecmascript file had an error
+  165 |     totalCount = toNumber(countResult[0].count)
+  166 |
+> 167 |     categories = await sql`
+      |     ^^^^^^^^^^
+  168 |       SELECT
+  169 |         c.id, c.name, c.slug, c.description, c.display_order, c.is_active, c.icon,
+  170 |         COUNT(t.id) AS template_count
+
+cannot reassign to a variable declared with `const`
+
+Import trace:
+  Server Component:
+    ./lib/admin-dashboard.ts
+    ./app/administrator/page.tsx
+[02:22:17.199] Server  LOG      ✓ Compiled in 385ms
+[02:58:38.627] Server  LOG      ✓ Compiled in 676ms
+[02:58:44.955] Server  LOG      ✓ Compiled in 245ms
+[02:59:52.735] Server  LOG      ○ Compiling /administrator ...
+[03:01:42.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:19.005] Server  LOG      ✓ Compiled in 1298ms
+[03:05:40.054] Server  LOG      ✓ Compiled in 1359ms
+[03:06:25.890] Server  LOG      ✓ Compiled in 1356ms
+[03:09:48.965] Server  LOG      ✓ Compiled in 1704ms
+[03:09:49.772] Browser LOG     allIcon:  []
+[03:09:49.772] Browser LOG     allIcon:  []
+[03:09:51.835] Browser LOG     allIcon:  []
+[03:09:51.835] Browser LOG     allIcon:  []
+[03:10:22.413] Browser LOG     allIcon:  []
+[03:10:22.413] Browser LOG     allIcon:  []
+[03:10:24.042] Browser LOG     allIcon:  []
+[03:10:24.042] Browser LOG     allIcon:  []
+[03:10:24.307] Browser LOG     allIcon:  []
+[03:10:24.307] Browser LOG     allIcon:  []
+[03:10:25.339] Browser LOG     allIcon:  []
+[03:10:25.339] Browser LOG     allIcon:  []
+[03:10:25.499] Browser LOG     allIcon:  []
+[03:10:25.499] Browser LOG     allIcon:  []
+[03:10:25.611] Browser LOG     allIcon:  []
+[03:10:25.611] Browser LOG     allIcon:  []
+[03:10:25.884] Browser LOG     allIcon:  []
+[03:10:25.884] Browser LOG     allIcon:  []
+[03:10:25.884] Browser LOG     allIcon:  []
+[03:10:25.884] Browser LOG     allIcon:  []
+[03:10:26.123] Browser LOG     allIcon:  []
+[03:10:26.123] Browser LOG     allIcon:  []
+[03:10:26.123] Browser LOG     allIcon:  []
+[03:10:26.123] Browser LOG     allIcon:  []
+[03:10:58.621] Server  LOG      ✓ Compiled in 636ms
+[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
+[03:11:03.923] Server  LOG      ✓ Compiled in 344ms
+[03:11:03.999] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
+[03:11:03.999] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
+[03:11:04.836] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
+[03:11:04.836] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
+[03:13:54.261] Server  LOG      ✓ Compiled in 3.8s
+[03:15:24.259] Server  LOG      ✓ Compiled in 2.8s
+[03:15:56.792] Server  LOG      ✓ Compiled in 1752ms
+[03:16:29.716] Server  LOG      ✓ Compiled in 2.2s
+[03:17:17.249] Server  LOG      ✓ Compiled in 2.5s
+[03:17:29.099] Server  LOG      ✓ Compiled in 1645ms
+[03:18:13.688] Server  LOG      ✓ Compiled in 848ms
+[03:18:22.559] Server  LOG      ✓ Compiled in 1035ms

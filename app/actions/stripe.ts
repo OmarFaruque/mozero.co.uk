@@ -1,23 +1,59 @@
 'use server'
 
 import { requireAuth } from '@/lib/auth'
-import { stripe } from '@/lib/stripe'
+import { getStripeInstance } from '@/lib/stripe'
 import { PRODUCTS } from '@/lib/products'
 import { sql } from '@/lib/db'
 
 export async function startCheckoutSession(productId: string) {
   const user = await requireAuth()
-  const product = PRODUCTS.find(p => p.id === productId)
+  const stripe = await getStripeInstance()
+  
+  // Try to find in hardcoded products first
+  let product = PRODUCTS.find(p => p.id === productId)
+  
+  // If not found, try to fetch from database
+  if (!product) {
+    const isCreditsPackage = productId.startsWith('credit-')
+    const dbProductId = productId.replace(/^(credit-|plan-)/, '')
+    
+    const dbProduct = await sql`
+      SELECT id, name, description, plan_type, price_cents, package_price_cents, 
+             price_per_document_cents, credit_amount, monthly_document_limit, 
+             discount_percent, features, credits_per_month
+      FROM subscription_plans
+      WHERE id = ${parseInt(dbProductId)}
+    `
+    
+    if (dbProduct.length === 0) {
+      throw new Error(`Product with id "${productId}" not found`)
+    }
+    
+    const dbPlan = dbProduct[0]
+    product = {
+      id: productId,
+      name: dbPlan.name,
+      description: dbPlan.description,
+      priceInCents: isCreditsPackage ? 
+        Number(dbPlan.package_price_cents) : 
+        Number(dbPlan.price_cents),
+      credits: isCreditsPackage ? 
+        Number(dbPlan.credit_amount) : 
+        Number(dbPlan.monthly_document_limit || dbPlan.credits_per_month || 0),
+      type: dbPlan.plan_type,
+      features: dbPlan.features || []
+    }
+  }
   
   if (!product) {
     throw new Error(`Product with id "${productId}" not found`)
   }
 
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+
   if (product.type === 'credits') {
     // One-time payment for credits
     const session = await stripe.checkout.sessions.create({
-      ui_mode: 'embedded',
-      redirect_on_completion: 'never',
       line_items: [
         {
           price_data: {
@@ -32,6 +68,8 @@ export async function startCheckoutSession(productId: string) {
         },
       ],
       mode: 'payment',
+      success_url: `${appUrl}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${appUrl}/pricing`,
       metadata: {
         userId: user.id.toString(),
         productId: product.id,
@@ -40,12 +78,10 @@ export async function startCheckoutSession(productId: string) {
       }
     })
 
-    return session.client_secret
+    return { url: session.url }
   } else {
     // Subscription
     const session = await stripe.checkout.sessions.create({
-      ui_mode: 'embedded',
-      redirect_on_completion: 'never',
       line_items: [
         {
           price_data: {
@@ -63,6 +99,8 @@ export async function startCheckoutSession(productId: string) {
         },
       ],
       mode: 'subscription',
+      success_url: `${appUrl}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${appUrl}/pricing`,
       metadata: {
         userId: user.id.toString(),
         productId: product.id,
@@ -71,7 +109,7 @@ export async function startCheckoutSession(productId: string) {
       }
     })
 
-    return session.client_secret
+    return { url: session.url }
   }
 }
 
@@ -90,6 +128,7 @@ export async function createPortalSession() {
     throw new Error('No active subscription found')
   }
 
+  const stripe = await getStripeInstance()
   const stripeSubscription = await stripe.subscriptions.retrieve(subscription[0].stripe_subscription_id)
   
   const portalSession = await stripe.billingPortal.sessions.create({

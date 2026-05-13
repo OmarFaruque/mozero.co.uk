@@ -1,22 +1,23 @@
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Check, Zap } from 'lucide-react'
 import { CheckoutButton } from '@/components/checkout-button'
-import { sql } from '@/lib/db'
+import { getActivePlans } from '@/lib/plans'
+import { getSettings } from '@/lib/admin-settings'
+import { getCurrentUser } from '@/lib/auth'
 
 export const dynamic = 'force-dynamic'
 
 export default async function PricingPage() {
-  const dbPlans = await sql`
-    SELECT id, name, description, plan_type, price_cents, package_price_cents, price_per_document_cents,
-           credit_amount, monthly_document_limit, discount_percent, features, credits_per_month, is_active
-    FROM subscription_plans
-    WHERE is_active = true 
-    ORDER BY price_cents ASC
-  `
+  const user = await getCurrentUser()
+  const isLoggedIn = !!user
+  
+  const stripeSettings = await getSettings('stripe')
+  const publishableKey = stripeSettings?.publishable_key || process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+
+  const dbPlans = await getActivePlans()
 
   const subscriptionPlans = dbPlans.filter((p: any) => p.plan_type !== 'credits').map((plan: any) => ({
     id: `plan-${plan.id}`,
@@ -26,8 +27,6 @@ export default async function PricingPage() {
     type: 'subscription',
     features: [
       `${plan.monthly_document_limit ?? plan.credits_per_month ?? 0} documents per month`,
-      'Priority support',
-      'All document templates',
       ...(plan.features || []),
     ]
   }))
@@ -86,7 +85,12 @@ export default async function PricingPage() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <CheckoutButton productId={product.id} label="Buy Credits" />
+                  <CheckoutButton 
+                    productId={product.id} 
+                    label="Buy Credits" 
+                    publishableKey={publishableKey} 
+                    isLoggedIn={isLoggedIn}
+                  />
                 </CardFooter>
               </Card>
             ))}
@@ -156,6 +160,8 @@ export default async function PricingPage() {
                         productId={product.id} 
                         label="Subscribe" 
                         variant={index === 1 ? 'default' : 'outline'}
+                        publishableKey={publishableKey}
+                        isLoggedIn={isLoggedIn}
                       />
                     </CardFooter>
                   </Card>

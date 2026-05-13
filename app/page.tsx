@@ -157,7 +157,7 @@ export default function HomePage() {
                   <CardTitle className="text-lg sm:text-xl">Official Documents</CardTitle>
                 </div>
                 <CardDescription className="text-sm leading-relaxed">
-                  Request records, certifications, and official correspondence
+                  Request records, certifications, and official correspondence f
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">

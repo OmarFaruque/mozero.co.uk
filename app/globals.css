@@ -101,3 +101,31 @@
     }
   }
 }
+
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-primary: #ec4899;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #f472b6;
+  --color-accent-foreground: #ffffff;
+  --color-card: #ffffff;
+  --color-card-foreground: #000000;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #ec4899;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+
+
+  .admin-dashboard input, 
+  .admin-dashboard textarea, 
+  .admin-dashboard select {
+    color: #000000;
+  }
+}
