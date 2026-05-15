@@ -259,9 +259,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$
 // Database is no longer needed for template pages which now use static data
 const DATABASE_URL = process.env.DATABASE_URL;
 if (!DATABASE_URL) {
-    throw new Error('DATABASE_URL environment variable is not set');
+    console.warn('DATABASE_URL environment variable is not set. Database features will fail.');
 }
-const sql = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$neondatabase$2b$serverless$40$1$2e$0$2e$2$2f$node_modules$2f40$neondatabase$2f$serverless$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["neon"])(DATABASE_URL);
+const sql = DATABASE_URL ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$neondatabase$2b$serverless$40$1$2e$0$2e$2$2f$node_modules$2f40$neondatabase$2f$serverless$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["neon"])(DATABASE_URL) : ()=>{
+    throw new Error('DATABASE_URL environment variable is not set');
+};
 }),
 "[project]/lib/auth.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

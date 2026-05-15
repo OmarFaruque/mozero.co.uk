@@ -6,10 +6,12 @@ import { neon } from '@neondatabase/serverless'
 const DATABASE_URL = process.env.DATABASE_URL
 
 if (!DATABASE_URL) {
-  throw new Error('DATABASE_URL environment variable is not set')
+  console.warn('DATABASE_URL environment variable is not set. Database features will fail.')
 }
 
-export const sql = neon(DATABASE_URL)
+export const sql = DATABASE_URL 
+  ? neon(DATABASE_URL) 
+  : (() => { throw new Error('DATABASE_URL environment variable is not set') }) as any
 
 
 export type User = {

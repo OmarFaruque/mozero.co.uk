@@ -32,7 +32,25 @@ export default function AdminLoginPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, rememberMe }),
       })
-      const data = await response.json()
+
+      let data: any = {}
+      const contentType = response.headers.get('content-type')
+      
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json()
+      } else {
+        // If not JSON, get the text to help diagnose the issue
+        const text = await response.text()
+        console.error('Non-JSON response received:', text)
+        
+        if (response.status === 404) {
+          throw new Error('Login API endpoint not found (404). Please check server configuration.')
+        } else if (response.status === 500) {
+          throw new Error('Server error (500). Please check server logs.')
+        } else {
+          throw new Error(`Unexpected response from server (Status: ${response.status})`)
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Unable to sign in')

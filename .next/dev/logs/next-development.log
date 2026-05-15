@@ -1,2164 +1,251 @@
-[00:00:44.467] Server  LOG      ✓ Ready in 28.1s
-[00:00:47.855] Server  LOG      ○ Compiling / ...
-[00:01:06.116] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:30.253] Server  LOG      ○ Compiling /administrator ...
-[00:01:34.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:39.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:18.464] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:57.745] Server  LOG      ✓ Compiled in 1854ms
-[00:12:26.109] Server  LOG      ✓ Compiled in 409ms
-[00:12:38.496] Server  LOG      ○ Compiling /_not-found/page ...
-[00:12:42.227] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
+[00:00:03.650] Server  LOG      ✓ Ready in 2.7s
+[00:00:16.102] Server  LOG      ○ Compiling / ...
+[00:00:39.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.170] Server  LOG      ○ Compiling /icon ...
+[00:02:32.674] Server  LOG      ○ Compiling /administrator ...
+[00:03:20.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:27.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:43.293] Server  LOG      ○ Compiling /api/admin/login ...
+[00:04:14.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:02.348] Server  LOG      ✓ Compiled in 740ms
+[00:17:21.135] Server  LOG      ✓ Compiled in 926ms
+[00:19:10.922] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:23.953] Server  LOG     Admin login attempt received
+[00:19:23.974] Server  LOG     Login request for: "admin@letterise.co.uk"
+[00:19:34.499] Server  LOG     Admin login attempt received
+[00:19:34.501] Server  LOG     Login request for: "admin@letterise.co.uk"
+[00:19:43.357] Server  LOG      ○ Compiling /apple-icon ...
+[00:21:25.756] Server  LOG      ✓ Compiled in 0ms
+[00:21:28.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:16.188] Server  LOG      ✓ Compiled in 4.5s
+[00:31:26.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:33.607] Server  LOG      ○ Compiling /pricing ...
+[00:33:14.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:09.750] Server  LOG      ✓ Compiled in 1197ms
+[00:51:11.289] Server  ERROR    ⨯ ReferenceError: getAllCategories is not defined
+[00:51:12.256] Browser ERROR   uncaughtError: ReferenceError: getAllCategories is not defined
+[00:51:36.460] Server  LOG      ✓ Compiled in 651ms
+[00:51:47.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:14:42.197] Server  LOG      ✓ Compiled in 607ms
+[01:15:26.751] Server  LOG      ✓ Compiled in 374ms
+[01:15:58.248] Server  LOG      ✓ Compiled in 856ms
+[01:16:01.648] Server  ERROR    ⨯ ReferenceError: category is not defined
+[01:16:13.109] Server  LOG      ✓ Compiled in 644ms
+[01:16:30.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:32.474] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[01:16:41.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:27.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:30.111] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[01:17:36.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:38.331] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[01:17:44.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:45.993] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[01:23:08.384] Server  LOG      ✓ Compiled in 911ms
+[01:23:23.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:23:25.971] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[01:24:23.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:24:24.747] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="car-dealer/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
+                        <SegmentViewNode type="page" pagePath="categories...">
+                          <SegmentTrieNode>
+                          <CategoryPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
 
-Unterminated regexp literal
-[00:12:42.500] Server  ERROR    ⨯ ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-
-
-[00:12:43.169] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:44.734] Server  LOG      ○ Compiling /_error ...
-[00:12:46.266] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:46.724] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:47.207] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:47.207] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:49.001] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:49.001] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:52.822] Browser ERROR   uncaughtError: Error: ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-
-
-[00:12:53.244] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:53.348] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:12:58.786] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:04.296] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:16.561] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:23.930] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:42.789] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:13:42.857] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:03.176] Server  ERROR    ⨯ ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-
-
-[00:14:03.192] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:04.410] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:04.410] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:05.314] Browser ERROR   uncaughtError: Error: ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-
-
-[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:05.696] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:38.829] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:14:38.829] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:16:37.539] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:16:37.858] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:16:50.346] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:16:50.857] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:17:01.587] Server  LOG      ✓ Compiled in 416ms
-[00:17:01.687] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:17:01.824] Browser ERROR   ./app/administrator/page.tsx:543:1
-Parsing ecmascript source code failed
-  541 |   )
-  542 | }
-> 543 | /Card>
-      | ^^^^^^
-  544 |           )}
-  545 |         </main>
-  546 |       </div>
-
-Unterminated regexp literal
-[00:17:35.669] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:35.669] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:36.861] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:36.861] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:56.157] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:56.157] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:56.828] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:17:56.828] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:02.891] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:02.891] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:03.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:03.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:31.482] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:31.482] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:31.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:31.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:44.126] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:44.126] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:44.824] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:18:44.824] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:02.797] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:02.797] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:02.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:02.823] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:11.404] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-
-./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:13.257] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.005] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.306] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.925] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:14.925] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:16.683] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-
-./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:19:19.742] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:19.845] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.079] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.863] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:20.863] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:36.521] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:36.521] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:36.859] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:36.859] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:43.299] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:43.299] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:43.831] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:19:43.831] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:08.850] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-
-./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:10.962] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:12.574] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:12.855] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:31.805] Server  ERROR    ⨯ ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-
-./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:32.322] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:33.253] Browser ERROR   uncaughtError: Error: ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-
-
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:20:34.096] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:20.458] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:29.521] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:21:29.536] Browser ERROR   ./components/admin-templates-editor.tsx:354:1
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      | ^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:29.536] Browser ERROR   ./components/admin-templates-editor.tsx:354:2
-Parsing ecmascript source code failed
-  352 |   )
-  353 | }
-> 354 | </div>
-      |  ^^^^^
-  355 |   )
-  356 | }
-  357 |        </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./components/admin-templates-editor.tsx
-    ./app/administrator/page.tsx
-[00:21:29.584] Server  LOG      ✓ Compiled in 0ms
-[00:21:34.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:37.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:42.798] Server  LOG      ○ Compiling /icon ...
-[00:26:09.267] Server  LOG      ✓ Compiled in 1061ms
-[00:26:39.977] Server  LOG      ✓ Compiled in 153ms
-[00:27:01.542] Server  LOG      ✓ Compiled in 161ms
-[00:27:34.596] Server  LOG      ✓ Compiled in 144ms
-[00:28:09.420] Server  LOG      ✓ Compiled in 388ms
-[00:28:28.352] Server  LOG      ✓ Compiled in 1263ms
-[00:28:36.624] Server  LOG      ✓ Compiled in 141ms
-[00:28:52.622] Server  LOG      ✓ Compiled in 128ms
-[00:29:05.906] Server  LOG      ✓ Compiled in 668ms
-[00:29:30.344] Server  LOG      ✓ Compiled in 1697ms
-[00:29:46.116] Server  LOG      ✓ Compiled in 818ms
-[00:32:37.200] Server  LOG      ✓ Compiled in 324ms
-[00:32:47.704] Server  LOG      ✓ Compiled in 305ms
-[00:33:00.607] Server  LOG      ✓ Compiled in 1349ms
-[00:33:12.809] Server  LOG      ✓ Compiled in 172ms
-[00:49:59.337] Server  LOG      ✓ Compiled in 682ms
-[00:51:04.684] Server  LOG      ✓ Compiled in 711ms
-[00:51:14.119] Server  LOG      ✓ Compiled in 623ms
-[00:51:20.372] Server  LOG      ✓ Compiled in 465ms
-[00:51:31.051] Server  LOG      ✓ Compiled in 630ms
-[00:51:35.134] Server  LOG      ✓ Compiled in 227ms
-[00:52:28.258] Server  LOG      ✓ Compiled in 169ms
-[00:54:37.732] Server  LOG      ✓ Compiled in 1772ms
-[00:55:14.533] Server  LOG      ✓ Compiled in 993ms
-[00:56:22.002] Server  LOG      ✓ Compiled in 207ms
-[01:00:55.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:06:16.408] Browser ERROR   `value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components. input
-[01:06:22.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:06:47.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:06:59.158] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:06.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:15.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:30.927] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:41.749] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:55.390] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:10.531] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:21:02.930] Server  LOG      ✓ Compiled in 552ms
-[02:21:40.226] Server  LOG      ✓ Compiled in 290ms
-[02:21:40.848] Browser ERROR   ./lib/admin-dashboard.ts:167:5
-Ecmascript file had an error
-  165 |     totalCount = toNumber(countResult[0].count)
-  166 |
-> 167 |     categories = await sql`
-      |     ^^^^^^^^^^
-  168 |       SELECT
-  169 |         c.id, c.name, c.slug, c.description, c.display_order, c.is_active, c.icon,
-  170 |         COUNT(t.id) AS template_count
-
-cannot reassign to a variable declared with `const`
-
-Import trace:
-  Server Component:
-    ./lib/admin-dashboard.ts
-    ./app/administrator/page.tsx
-[02:22:11.834] Browser ERROR   ./lib/admin-dashboard.ts:167:5
-Ecmascript file had an error
-  165 |     totalCount = toNumber(countResult[0].count)
-  166 |
-> 167 |     categories = await sql`
-      |     ^^^^^^^^^^
-  168 |       SELECT
-  169 |         c.id, c.name, c.slug, c.description, c.display_order, c.is_active, c.icon,
-  170 |         COUNT(t.id) AS template_count
-
-cannot reassign to a variable declared with `const`
-
-Import trace:
-  Server Component:
-    ./lib/admin-dashboard.ts
-    ./app/administrator/page.tsx
-[02:22:17.199] Server  LOG      ✓ Compiled in 385ms
-[02:58:38.627] Server  LOG      ✓ Compiled in 676ms
-[02:58:44.955] Server  LOG      ✓ Compiled in 245ms
-[02:59:52.735] Server  LOG      ○ Compiling /administrator ...
-[03:01:42.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:05:19.005] Server  LOG      ✓ Compiled in 1298ms
-[03:05:40.054] Server  LOG      ✓ Compiled in 1359ms
-[03:06:25.890] Server  LOG      ✓ Compiled in 1356ms
-[03:09:48.965] Server  LOG      ✓ Compiled in 1704ms
-[03:09:49.772] Browser LOG     allIcon:  []
-[03:09:49.772] Browser LOG     allIcon:  []
-[03:09:51.835] Browser LOG     allIcon:  []
-[03:09:51.835] Browser LOG     allIcon:  []
-[03:10:22.413] Browser LOG     allIcon:  []
-[03:10:22.413] Browser LOG     allIcon:  []
-[03:10:24.042] Browser LOG     allIcon:  []
-[03:10:24.042] Browser LOG     allIcon:  []
-[03:10:24.307] Browser LOG     allIcon:  []
-[03:10:24.307] Browser LOG     allIcon:  []
-[03:10:25.339] Browser LOG     allIcon:  []
-[03:10:25.339] Browser LOG     allIcon:  []
-[03:10:25.499] Browser LOG     allIcon:  []
-[03:10:25.499] Browser LOG     allIcon:  []
-[03:10:25.611] Browser LOG     allIcon:  []
-[03:10:25.611] Browser LOG     allIcon:  []
-[03:10:25.884] Browser LOG     allIcon:  []
-[03:10:25.884] Browser LOG     allIcon:  []
-[03:10:25.884] Browser LOG     allIcon:  []
-[03:10:25.884] Browser LOG     allIcon:  []
-[03:10:26.123] Browser LOG     allIcon:  []
-[03:10:26.123] Browser LOG     allIcon:  []
-[03:10:26.123] Browser LOG     allIcon:  []
-[03:10:26.123] Browser LOG     allIcon:  []
-[03:10:58.621] Server  LOG      ✓ Compiled in 636ms
-[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:10:59.612] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:11:00.035] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"}
-[03:11:03.923] Server  LOG      ✓ Compiled in 344ms
-[03:11:03.999] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
-[03:11:03.999] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
-[03:11:04.836] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
-[03:11:04.836] Browser LOG     allIcon:  {"AArrowDown":{},"AArrowDownIcon":{},"AArrowUp":{},"AArrowUpIcon":{},"ALargeSmall":{},"ALargeSmallIcon":{},"Accessibility":{},"AccessibilityIcon":{},"Activity":{},"ActivityIcon":{},"ActivitySquare":{},"ActivitySquareIcon":{},"AirVent":{},"AirVentIcon":{},"Airplay":{},"AirplayIcon":{},"AlarmCheck":{},"AlarmCheckIcon":{},"AlarmClock":{},"AlarmClockCheck":{},"AlarmClockCheckIcon":{},"AlarmClockIcon":{},"AlarmClockMinus":{},"AlarmClockMinusIcon":{},"AlarmClockOff":{},"AlarmClockOffIcon":{},"AlarmClockPlus":{},"AlarmClockPlusIcon":{},"AlarmMinus":{},"AlarmMinusIcon":{},"AlarmPlus":{},"AlarmPlusIcon":{},"AlarmSmoke":{},"AlarmSmokeIcon":{},"Album":{},"AlbumIcon":{},"AlertCircle":{},"AlertCircleIcon":{},"AlertOctagon":{},"AlertOctagonIcon":{},"AlertTriangle":{},"AlertTriangleIcon":{},"AlignCenter":{},"AlignCenterHorizontal":{},"AlignCenterHorizontalIcon":{},"AlignCenterIcon":{},"AlignCenterVertical":{},"AlignCenterVerticalIcon":{},"AlignEndHorizontal":{},"AlignEndHorizontalIcon":{},"AlignEndVertical":{},"AlignEndVerticalIcon":{},"AlignHorizontalDistributeCenter":{},"AlignHorizontalDistributeCenterIcon":{},"AlignHorizontalDistributeEnd":{},"AlignHorizontalDistributeEndIcon":{},"AlignHorizontalDistributeStart":{},"AlignHorizontalDistributeStartIcon":{},"AlignHorizontalJustifyCenter":{},"AlignHorizontalJustifyCenterIcon":{},"AlignHorizontalJustifyEnd":{},"AlignHorizontalJustifyEndIcon":{},"AlignHorizontalJustifyStart":{},"AlignHorizontalJustifyStartIcon":{},"AlignHorizontalSpaceAround":{},"AlignHorizontalSpaceAroundIcon":{},"AlignHorizontalSpaceBetween":{},"AlignHorizontalSpaceBetweenIcon":{},"AlignJustify":{},"AlignJustifyIcon":{},"AlignLeft":{},"AlignLeftIcon":{},"AlignRight":{},"AlignRightIcon":{},"AlignStartHorizontal":{},"AlignStartHorizontalIcon":{},"AlignStartVertical":{},"AlignStartVerticalIcon":{},"AlignVerticalDistributeCenter":{},"AlignVerticalDistributeCenterIcon":{},"AlignVerticalDistributeEnd":{},"AlignVerticalDistributeEndIcon":{},"AlignVerticalDistributeStart":{},"AlignVerticalDistributeStartIcon":{},"AlignVerticalJustifyCenter":{},"AlignVerticalJustifyCenterIcon":{},"AlignVerticalJustifyEnd":{},"AlignVerticalJustifyEndIcon":{},"AlignVerticalJustifyStart":{},"AlignVerticalJustifyStartIcon":{},"AlignVerticalSpaceAround":{},"AlignVerticalSpaceAroundIcon":{},"AlignVerticalSpaceBetween":{},"AlignVerticalSpaceBetweenIcon":{},"Ambulance":{},"AmbulanceIcon":{},"Ampersand":{},"AmpersandIcon":{},"Ampersands":{},"AmpersandsIcon":{},"...":"5096 items not stringified"} []
-[03:13:54.261] Server  LOG      ✓ Compiled in 3.8s
-[03:15:24.259] Server  LOG      ✓ Compiled in 2.8s
-[03:15:56.792] Server  LOG      ✓ Compiled in 1752ms
-[03:16:29.716] Server  LOG      ✓ Compiled in 2.2s
-[03:17:17.249] Server  LOG      ✓ Compiled in 2.5s
-[03:17:29.099] Server  LOG      ✓ Compiled in 1645ms
-[03:18:13.688] Server  LOG      ✓ Compiled in 848ms
-[03:18:22.559] Server  LOG      ✓ Compiled in 1035ms

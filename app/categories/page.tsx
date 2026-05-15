@@ -4,7 +4,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowRight, FileWarning, ShieldCheck, MessageSquareWarning, Repeat, FileText } from 'lucide-react'
-import { getAllCategories, getTemplatesByCategory } from '@/lib/static-templates'
+
+import { categoriesLists } from '@/lib/category-queries'
 
 const categoryIcons = {
   'disputes': FileWarning,
@@ -15,10 +16,7 @@ const categoryIcons = {
 }
 
 export default async function CategoriesPage() {
-  const categories = getAllCategories().map(category => ({
-    ...category,
-    template_count: getTemplatesByCategory(category.slug).length
-  }))
+  const categories = await categoriesLists();
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -1,9 +1,25 @@
 import { NextResponse } from 'next/server'
 import { createAdminSession, validateAdminCredentials } from '@/lib/admin-auth'
 
+export async function GET() {
+  return NextResponse.json({ message: 'Admin login API is working' })
+}
+
 export async function POST(request: Request) {
   try {
-    const { email, password, rememberMe } = await request.json()
+    console.log('Admin login attempt received')
+    
+    if (!process.env.DATABASE_URL) {
+      console.error('DATABASE_URL is not set')
+      return NextResponse.json(
+        { success: false, error: 'Database configuration is missing' },
+        { status: 500 },
+      )
+    }
+
+    const body = await request.json()
+    const { email, password, rememberMe } = body
+    console.log('Login request for:', email)
 
     if (!email || !password) {
       return NextResponse.json(

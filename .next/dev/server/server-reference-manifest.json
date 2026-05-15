@@ -67,10 +67,17 @@
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_1",
           "filename": "lib/plans.ts"
+        },
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_1",
+          "filename": "lib/plans.ts"
         }
       },
       "layer": {
-        "app/administrator/page": "rsc"
+        "app/administrator/page": "rsc",
+        "app/pricing/page": "rsc"
       },
       "filename": "lib/plans.ts",
       "exportedName": "$$RSC_SERVER_ACTION_1"
@@ -82,10 +89,17 @@
           "async": false,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "lib/plans.ts"
+        },
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "lib/plans.ts"
         }
       },
       "layer": {
-        "app/administrator/page": "rsc"
+        "app/administrator/page": "rsc",
+        "app/pricing/page": "rsc"
       },
       "filename": "lib/plans.ts",
       "exportedName": "$$RSC_SERVER_ACTION_0"
@@ -164,6 +178,21 @@
       },
       "filename": "app/actions/admin-categories.ts",
       "exportedName": "deleteCategoryAction"
+    },
+    "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
+      "workers": {
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "startCheckoutSession",
+          "filename": "app/actions/stripe.ts"
+        }
+      },
+      "layer": {
+        "app/pricing/page": "action-browser"
+      },
+      "filename": "app/actions/stripe.ts",
+      "exportedName": "startCheckoutSession"
     }
   },
   "edge": {},
