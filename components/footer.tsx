@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { FileText } from 'lucide-react'
 
 export function Footer() {
@@ -51,7 +50,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Letterise. All rights reserved. This service generates template-based documents and does not provide legal advice.
+            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Letterise. All rights reserved. This service generates template-based documents and does not provide legal advice.
           </p>
         </div>
       </div>

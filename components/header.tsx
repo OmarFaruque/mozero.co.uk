@@ -8,7 +8,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 // Importing Image component for new logo
-import Image from 'next/image'
+
 
 export async function Header() {
   const user = await getCurrentUser()

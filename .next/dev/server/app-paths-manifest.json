@@ -8,5 +8,6 @@
   "/categories/page": "app/categories/page.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/page": "app/page.js",
-  "/pricing/page": "app/pricing/page.js"
+  "/pricing/page": "app/pricing/page.js",
+  "/templates/[slug]/page": "app/templates/[slug]/page.js"
 }

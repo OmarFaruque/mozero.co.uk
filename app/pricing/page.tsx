@@ -37,7 +37,7 @@ export default async function PricingPage() {
     description: plan.description,
     priceInCents: Number(plan.package_price_cents || plan.price_cents),
     credits: Number(plan.credit_amount || 0),
-    pricePerDocumentCents: Number(plan.price_per_document_cents || 0),
+    creditsPerDocument: Number(plan.price_per_document_cents || 0),
   }))
 
   return (
@@ -81,7 +81,7 @@ export default async function PricingPage() {
                     £{(product.priceInCents / 100).toFixed(2)}
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    £{((product.pricePerDocumentCents || product.priceInCents / Math.max(product.credits || 1, 1)) / 100).toFixed(2)} per document
+                    {(product.creditsPerDocument || 1).toFixed(1).replace(/\.0$/, '')} credit{product.creditsPerDocument === 1 ? '' : 's'} per document
                   </p>
                 </CardContent>
                 <CardFooter>

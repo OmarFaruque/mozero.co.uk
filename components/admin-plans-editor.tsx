@@ -193,13 +193,14 @@ export function AdminPlansEditor({ initialPlans, action }: { initialPlans: Plan[
                     {plan.plan_type === 'credits' ? (
                       <>
                         <div className="space-y-2">
-                          <Label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Price Per Document (£)</Label>
+                          <Label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Credits Per Document</Label>
                           <Input
                             type="number"
-                            step="0.01"
+                            step="0.1"
+                            min="0"
                             disabled={isPending}
-                            value={plan.price_per_document_cents / 100}
-                            onChange={(e) => updatePlan(index, { price_per_document_cents: Math.round(Number(e.target.value || 0) * 100) })}
+                           value={plan.price_per_document_cents}
+                            onChange={(e) => updatePlan(index, { price_per_document_cents: Number(e.target.value || 0) })}
                             className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 focus:border-primary focus:ring-primary"
                           />
                         </div>
