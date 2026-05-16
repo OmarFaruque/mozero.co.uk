@@ -2,6 +2,7 @@
   "/admin-login/page": "app/admin-login/page.js",
   "/administrator/page": "app/administrator/page.js",
   "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/generate-document/route": "app/api/generate-document/route.js",
   "/apple-icon/route": "app-edge-has-no-entrypoint",
   "/categories/[slug]/page": "app/categories/[slug]/page.js",
   "/categories/page": "app/categories/page.js",

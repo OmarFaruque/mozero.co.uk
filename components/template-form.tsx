@@ -127,7 +127,7 @@ export function TemplateForm({ templateId, questions, systemPrompt }: TemplateFo
               <SelectTrigger id={question.id} className="min-h-[44px] text-base">
                 <SelectValue placeholder="Select an option" />
               </SelectTrigger>
-              <SelectContent>
+               <SelectContent className="bg-background">
                 {question.options.map((option) => (
                   <SelectItem key={option} value={option} className="text-base">
                     {option}
