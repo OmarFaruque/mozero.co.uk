@@ -270,11 +270,30 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
 
       const selectedPDFFont = selectedFont.pdfFont
       
+      const generatedDate = new Date().toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      })
+
+      doc.setLineHeightFactor(1.5)
+
+      doc.setFont(selectedPDFFont, 'bold')
+      doc.setFontSize(20)
+      doc.setTextColor(0, 0, 0)
+      doc.text('LEGAL DOCUMENT DRAFT', margin, yPosition)
+      yPosition += 10
+
+      doc.setFont(selectedPDFFont, 'normal')
+      doc.setFontSize(11)
+      doc.setTextColor(110, 110, 110)
+      doc.text(`Generated on: ${generatedDate}`, margin, yPosition)
+      yPosition += 12
       
       doc.setFont(selectedPDFFont, 'normal')
       doc.setFontSize(fontSize)
       doc.setTextColor(0, 0, 0)
-      doc.setLineHeightFactor(1.5)
+      
 
       const lineHeight = (fontSize * 0.5) + 2
       const ensureSpace = (neededHeight: number) => {
@@ -351,6 +370,11 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
     fontSize: `${fontSize}px`,
     fontWeight: textBold ? 'bold' : 'normal',
     fontStyle: textItalic ? 'italic' : 'normal',
+  }
+
+  const questionStyle = {
+    ...documentStyle,
+    fontWeight: 'bold' as const,
   }
 
   return (
@@ -651,7 +675,7 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
               <div className="space-y-6">
                 {formattedUserInputEntries.map(({ question, answer }) => (
                   <div key={question} className="space-y-2">
-                    <p className="font-bold" style={documentStyle}>{question}</p>
+                    <p className="font-bold" style={questionStyle}>{question}</p>
                     <p className="whitespace-pre-wrap leading-relaxed" style={documentStyle}>{answer}</p>
                   </div>
                 ))}
