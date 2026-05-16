@@ -41,27 +41,18 @@ function createFallbackDocument(systemPrompt: string, entries: Array<{ label: st
     day: 'numeric',
   })
 
-  const details = entries.map(({ label, value }) => `${label}: ${value}`).join('\n')
+  const structuredAnswers = entries
+    .map(({ label, value }) => `${label}:\n${value}`)
+    .join('\n\n')
 
-  return `LEGAL DOCUMENT DRAFT
-Generated on: ${today}
 
-Document Context:
-${systemPrompt.trim() || '[not provided]'}
+  return `Generated on: ${today}
 
-Provided Information:
-${details}
-
-Statement:
-This document draft was generated from the information supplied by the user. It is intended as a professional template and should be reviewed before submission.
-
-Requested Relief / Outcome:
-[not provided]
-
-Additional Notes:
-- The AI service is currently unavailable, so this draft was created using your submitted answers.
-- Verify names, dates, addresses, and all factual assertions before use.
-- If needed, seek legal advice for jurisdiction-specific requirements.
+  Document Type Context:
+  ${systemPrompt.trim() || '[not provided]'}
+  
+  Submitted Information:
+  ${structuredAnswers}
 `
 }
 

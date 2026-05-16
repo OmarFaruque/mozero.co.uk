@@ -65,3 +65,80 @@ https://react.dev/link/hydration-mismatch
 [05:15:26.334] Server  WARN    Error: Route "/dashboard/documents/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
 [05:21:57.944] Server  LOG      ✓ Compiled in 633ms
 [05:27:56.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:49:20.082] Server  LOG      ✓ Compiled in 387ms
+[06:50:19.640] Server  LOG      ✓ Compiled in 434ms
+[06:51:11.846] Server  LOG      ✓ Compiled in 487ms
+[06:51:34.467] Server  LOG      ✓ Compiled in 302ms
+[06:51:56.430] Server  LOG      ✓ Compiled in 630ms
+[06:52:27.858] Server  LOG      ✓ Compiled in 225ms
+[06:53:31.291] Server  LOG      ✓ Compiled in 571ms
+[06:53:31.982] Browser ERROR   ./components/document-editor.tsx:337:8
+Parsing ecmascript source code failed
+  335 |           yPosition += 5
+  336 |         }
+> 337 |       })
+      |        ^
+  338 |
+  339 |       const filename = `${document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
+  340 |       doc.save(filename)
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/document-editor.tsx
+    ./app/dashboard/documents/[id]/page.tsx
+[06:53:31.992] Browser ERROR   ./components/document-editor.tsx:337:8
+Parsing ecmascript source code failed
+  335 |           yPosition += 5
+  336 |         }
+> 337 |       })
+      |        ^
+  338 |
+  339 |       const filename = `${document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
+  340 |       doc.save(filename)
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/document-editor.tsx
+    ./app/dashboard/documents/[id]/page.tsx
+[06:53:42.988] Browser ERROR   ./components/document-editor.tsx:336:8
+Parsing ecmascript source code failed
+  334 |           yPosition += 5
+  335 |         }
+> 336 |       })
+      |        ^
+  337 |
+  338 |       const filename = `${document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
+  339 |       doc.save(filename)
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/document-editor.tsx
+    ./app/dashboard/documents/[id]/page.tsx
+[06:53:42.990] Browser ERROR   ./components/document-editor.tsx:336:8
+Parsing ecmascript source code failed
+  334 |           yPosition += 5
+  335 |         }
+> 336 |       })
+      |        ^
+  337 |
+  338 |       const filename = `${document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
+  339 |       doc.save(filename)
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/document-editor.tsx
+    ./app/dashboard/documents/[id]/page.tsx
+[06:54:04.096] Server  LOG      ✓ Compiled in 566ms
+[06:54:20.910] Server  LOG      ✓ Compiled in 728ms
+[06:54:39.138] Server  LOG      ✓ Compiled in 523ms
+[06:55:01.503] Server  LOG      ✓ Compiled in 418ms
+[06:55:19.037] Server  LOG      ✓ Compiled in 532ms
+[06:55:36.547] Server  LOG      ✓ Compiled in 224ms

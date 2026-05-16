@@ -22,6 +22,7 @@ type DocumentEditorProps = {
     content: string
     categoryName: string
     createdAt: string
+    userInputs?: Record<string, unknown> | null
     fontPreference?: string
     textColor?: string
     fontSize?: number
@@ -40,6 +41,15 @@ const FONT_OPTIONS = [
   { value: 'garamond', label: 'Garamond', className: 'font-serif', pdfFont: 'times' },
   { value: 'verdana', label: 'Verdana', className: 'font-sans', pdfFont: 'helvetica' },
 ]
+
+function formatFieldLabel(key: string): string {
+  return key
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^./, (s) => s.toUpperCase())
+}
 
 const COLOR_PRESETS = [
   { value: '#000000', label: 'Black' },
@@ -70,6 +80,22 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
   const savedSelectionRef = useRef<{ start: Node; startOffset: number; end: Node; endOffset: number } | null>(null)
 
   const selectedFont = FONT_OPTIONS.find(f => f.value === fontPreference) || FONT_OPTIONS[0]
+
+
+  const isBenefitsDecisionAppeal = document.title === 'Benefits Decision Appeal'
+  const isStructuredLegalTemplate = /appeal|application|claim|complaint|statement|submission|petition/i.test(
+    document.title,
+  )
+
+  const formattedUserInputEntries = Object.entries(document.userInputs || {})
+    .filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== '')
+    .map(([key, value]) => ({
+      question: formatFieldLabel(key),
+      answer: String(value).trim(),
+    }))
+
+  const shouldUseQuestionAnswerLayout =
+    formattedUserInputEntries.length > 0 && (isBenefitsDecisionAppeal || isStructuredLegalTemplate)
 
   useEffect(() => {
     setIsMounted(true)
@@ -244,45 +270,67 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
 
       const selectedPDFFont = selectedFont.pdfFont
       
-      const tempDiv = window.document.createElement('div')
-      tempDiv.innerHTML = editedContent
-      const textContent = tempDiv.textContent || tempDiv.innerText || editedContent
       
       doc.setFont(selectedPDFFont, 'normal')
       doc.setFontSize(fontSize)
       doc.setTextColor(0, 0, 0)
       doc.setLineHeightFactor(1.5)
 
-      const hexToRgb = (hex: string) => {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-        return result ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16)
-        } : { r: 0, g: 0, b: 0 }
+      const lineHeight = (fontSize * 0.5) + 2
+      const ensureSpace = (neededHeight: number) => {
+        if (yPosition + neededHeight > pageHeight - margin) {
+          doc.addPage()
+          yPosition = margin
+        }
       }
 
-      const paragraphs = textContent.split('\n\n')
-      
-      paragraphs.forEach((paragraph, paraIndex) => {
-        if (paragraph.trim() === '') return
-        
-        const lines = doc.splitTextToSize(paragraph.trim(), maxWidth)
-        
-        lines.forEach((line: string) => {
-          if (yPosition > pageHeight - margin - 10) {
-            doc.addPage()
-            yPosition = margin
+      if (shouldUseQuestionAnswerLayout) {
+        formattedUserInputEntries.forEach(({ question, answer }) => {
+          const questionLines = doc.splitTextToSize(question, maxWidth)
+          const answerLines = doc.splitTextToSize(answer, maxWidth)
+          const blockHeight = (questionLines.length + answerLines.length) * lineHeight + 6
+
+          ensureSpace(blockHeight)
+
+          doc.setFont(selectedPDFFont, 'bold')
+          questionLines.forEach((line: string) => {
+            doc.text(line, margin, yPosition)
+            yPosition += lineHeight
+          })
+
+          doc.setFont(selectedPDFFont, 'normal')
+          answerLines.forEach((line: string) => {
+            doc.text(line, margin, yPosition)
+            yPosition += lineHeight
+          })
+
+          yPosition += 6
+        })
+      } else {
+        const tempDiv = window.document.createElement('div')
+        tempDiv.innerHTML = editedContent
+        const textContent = tempDiv.textContent || tempDiv.innerText || editedContent
+        const paragraphs = textContent.split('\n\n')
+
+        paragraphs.forEach((paragraph, paraIndex) => {
+          if (paragraph.trim() === '') return
+
+          const lines = doc.splitTextToSize(paragraph.trim(), maxWidth)
+          ensureSpace(lines.length * lineHeight + 4)
+
+          lines.forEach((line: string) => {
+            doc.text(line, margin, yPosition)
+            yPosition += lineHeight
+          })
+
+          if (paraIndex < paragraphs.length - 1) {
+            yPosition += 5
           }
           
-          doc.text(line, margin, yPosition)
-          yPosition += (fontSize * 0.5) + 2
+         
         })
         
-        if (paraIndex < paragraphs.length - 1) {
-          yPosition += 5
-        }
-      })
+      }
 
       const filename = `${document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
       doc.save(filename)
@@ -308,7 +356,7 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
   return (
     <main className="flex-1 bg-gradient-to-b from-muted/30 to-background">
       <section className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container py-6 md:py-8 max-w-5xl">
+         <div className="container mx-auto py-6 md:py-8 max-w-5xl">
           <Link 
             href="/dashboard" 
             className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-2 transition-colors"
@@ -393,7 +441,7 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
         </div>
       </section>
 
-      <div className="container py-8 md:py-12 max-w-5xl">
+      <div className="container mx-auto py-8 md:py-12 max-w-5xl">
         <Alert className="mb-8 border-primary/50 bg-primary/5">
           <Shield className="h-4 w-4 text-primary" />
           <AlertDescription className="text-sm leading-relaxed">
@@ -596,24 +644,23 @@ export function DocumentEditor({ document }: DocumentEditorProps) {
                   restoreSelection()
                 }}
                 className={`min-h-[600px] outline-none focus:ring-2 focus:ring-primary rounded p-4 whitespace-pre-wrap leading-relaxed ${selectedFont.className}`}
-                style={{
-                  color: textColor,
-                  fontSize: `${fontSize}px`,
-                  fontWeight: textBold ? 'bold' : 'normal',
-                  fontStyle: textItalic ? 'italic' : 'normal',
-                }}
+                style={documentStyle}
                 dangerouslySetInnerHTML={{ __html: editedContent }}
               />
+              ) : shouldUseQuestionAnswerLayout ? (
+              <div className="space-y-6">
+                {formattedUserInputEntries.map(({ question, answer }) => (
+                  <div key={question} className="space-y-2">
+                    <p className="font-bold" style={documentStyle}>{question}</p>
+                    <p className="whitespace-pre-wrap leading-relaxed" style={documentStyle}>{answer}</p>
+                  </div>
+                ))}
+              </div>
             ) : (
               <div className="prose prose-slate max-w-none">
                 <div 
                   className={`whitespace-pre-wrap leading-relaxed ${selectedFont.className}`}
-                  style={{
-                    color: textColor,
-                    fontSize: `${fontSize}px`,
-                    fontWeight: textBold ? 'bold' : 'normal',
-                    fontStyle: textItalic ? 'italic' : 'normal',
-                  }}
+                  style={documentStyle}
                   dangerouslySetInnerHTML={{ __html: editedContent }}
                 />
               </div>

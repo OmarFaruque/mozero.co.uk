@@ -41,6 +41,7 @@ export default async function DocumentPage({ params }: { params: DocumentPagePar
           content: document.content,
           categoryName: document.category_name,
           createdAt: document.created_at,
+          userInputs: document.user_inputs || null,
           fontPreference: document.font_preference || 'times',
           textColor: document.text_color || '#000000',
           fontSize: document.font_size || 12,
