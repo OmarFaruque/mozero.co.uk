@@ -50,6 +50,9 @@ export async function POST(req: Request) {
     )
   }
 
+
+  console.log('event all data', JSON.stringify(event, null, 2))
+
   try {
     switch (event.type) {
       case 'checkout.session.completed': {
@@ -71,7 +74,7 @@ export async function POST(req: Request) {
           if (!Number.isNaN(planId)) {
             await addCreditPlanPurchaseForUser(userId, planId)
           }
-          
+
           // Add credits to user account
           await sql`
             INSERT INTO user_credits (user_id, credits_available, credits_used)
@@ -88,26 +91,46 @@ export async function POST(req: Request) {
             VALUES (${userId}, ${session.payment_intent as string}, ${session.amount_total}, ${credits}, 'credits', 'completed')
           `
         } else if (type === 'subscription' && session.subscription) {
-          // Get subscription plan ID from productId (which is plan-ID)
-          const planId = parseInt(productId.replace('plan-', ''))
+          const planIdFromMetadata = parseInt(metadata.planId || '')
+          const planIdFromProductId = parseInt((productId || '').replace('plan-', ''))
+          const planId = Number.isNaN(planIdFromMetadata) ? planIdFromProductId : planIdFromMetadata
+
+          if (Number.isNaN(planId)) {
+            console.error('Invalid subscription plan ID in checkout metadata', {
+              sessionId: session.id,
+              productId,
+              planIdFromMetadata: metadata.planId
+            })
+            break
+          }
 
           // Create or update subscription record
-          await sql`
-            INSERT INTO user_subscriptions (user_id, plan_id, stripe_subscription_id, status, current_period_start, current_period_end)
-            VALUES (
-              ${userId},
-              ${planId},
-              ${session.subscription as string},
-              'active',
-              to_timestamp(${session.created}),
-              to_timestamp(${session.created}) + INTERVAL '1 month'
-            )
-            ON CONFLICT (stripe_subscription_id) DO UPDATE SET
-              status = 'active',
-              current_period_start = EXCLUDED.current_period_start,
-              current_period_end = EXCLUDED.current_period_end,
-              updated_at = CURRENT_TIMESTAMP
+         const updatedSubscription = await sql`
+            UPDATE user_subscriptions
+            SET plan_id = ${planId},
+                stripe_subscription_id = ${session.subscription as string},
+                status = 'active',
+                current_period_start = to_timestamp(${session.created}),
+                current_period_end = to_timestamp(${session.created}) + INTERVAL '1 month',
+                updated_at = CURRENT_TIMESTAMP
+            WHERE stripe_subscription_id = ${session.subscription as string}
+               OR user_id = ${userId}
+            RETURNING id
           `
+
+          if (updatedSubscription.length === 0) {
+            await sql`
+              INSERT INTO user_subscriptions (user_id, plan_id, stripe_subscription_id, status, current_period_start, current_period_end)
+              VALUES (
+                ${userId},
+                ${planId},
+                ${session.subscription as string},
+                'active',
+                to_timestamp(${session.created}),
+                to_timestamp(${session.created}) + INTERVAL '1 month'
+              )
+            `
+          }
 
           // Add monthly credits
           await sql`

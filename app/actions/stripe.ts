@@ -8,6 +8,7 @@ import { sql } from '@/lib/db'
 export async function startCheckoutSession(productId: string) {
   const user = await requireAuth()
   const stripe = await getStripeInstance()
+  let resolvedPlanId: number | null = null
   
   // Try to find in hardcoded products first
   let product = PRODUCTS.find(p => p.id === productId)
@@ -30,6 +31,7 @@ export async function startCheckoutSession(productId: string) {
     }
     
     const dbPlan = dbProduct[0]
+    resolvedPlanId = Number(dbPlan.id)
     product = {
       id: productId,
       name: dbPlan.name,
@@ -80,6 +82,20 @@ export async function startCheckoutSession(productId: string) {
 
     return { url: session.url }
   } else {
+
+    if (!resolvedPlanId) {
+      const matchedPlan = await sql`
+        SELECT id
+        FROM subscription_plans
+        WHERE plan_type = 'subscription'
+          AND name = ${product.name}
+          AND price_cents = ${product.priceInCents}
+        LIMIT 1
+      `
+      if (matchedPlan.length > 0) {
+        resolvedPlanId = Number(matchedPlan[0].id)
+      }
+    }
     // Subscription
     const session = await stripe.checkout.sessions.create({
       line_items: [
@@ -105,7 +121,8 @@ export async function startCheckoutSession(productId: string) {
         userId: user.id.toString(),
         productId: product.id,
         credits: product.credits?.toString() || '0',
-        type: 'subscription'
+        type: 'subscription',
+        planId: resolvedPlanId?.toString() || ''
       }
     })
 
