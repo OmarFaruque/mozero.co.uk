@@ -1,38 +1,10 @@
-[00:00:03.650] Server  LOG      ✓ Ready in 2.7s
-[00:00:16.102] Server  LOG      ○ Compiling / ...
-[00:00:39.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:43.170] Server  LOG      ○ Compiling /icon ...
-[00:02:32.674] Server  LOG      ○ Compiling /administrator ...
-[00:03:20.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:27.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:43.293] Server  LOG      ○ Compiling /api/admin/login ...
-[00:04:14.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:02.348] Server  LOG      ✓ Compiled in 740ms
-[00:17:21.135] Server  LOG      ✓ Compiled in 926ms
-[00:19:10.922] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:23.953] Server  LOG     Admin login attempt received
-[00:19:23.974] Server  LOG     Login request for: "admin@letterise.co.uk"
-[00:19:34.499] Server  LOG     Admin login attempt received
-[00:19:34.501] Server  LOG     Login request for: "admin@letterise.co.uk"
-[00:19:43.357] Server  LOG      ○ Compiling /apple-icon ...
-[00:21:25.756] Server  LOG      ✓ Compiled in 0ms
-[00:21:28.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:16.188] Server  LOG      ✓ Compiled in 4.5s
-[00:31:26.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:33.607] Server  LOG      ○ Compiling /pricing ...
-[00:33:14.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:09.750] Server  LOG      ✓ Compiled in 1197ms
-[00:51:11.289] Server  ERROR    ⨯ ReferenceError: getAllCategories is not defined
-[00:51:12.256] Browser ERROR   uncaughtError: ReferenceError: getAllCategories is not defined
-[00:51:36.460] Server  LOG      ✓ Compiled in 651ms
-[00:51:47.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:14:42.197] Server  LOG      ✓ Compiled in 607ms
-[01:15:26.751] Server  LOG      ✓ Compiled in 374ms
-[01:15:58.248] Server  LOG      ✓ Compiled in 856ms
-[01:16:01.648] Server  ERROR    ⨯ ReferenceError: category is not defined
-[01:16:13.109] Server  LOG      ✓ Compiled in 644ms
-[01:16:30.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:16:32.474] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+[00:00:06.816] Server  LOG      ✓ Ready in 4.2s
+[00:00:18.026] Server  LOG      ○ Compiling / ...
+[00:00:33.210] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:45.031] Server  LOG      ○ Compiling /administrator ...
+[00:07:35.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:40.373] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:41.199] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -45,216 +17,34 @@ It can also happen if the client has a browser extension installed which messes 
 https://react.dev/link/hydration-mismatch
 
   ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/admin-login" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+          <SegmentViewNode type="page" pagePath="admin-logi...">
+            <SegmentTrieNode>
+            <ClientPageRoot Component={function AdminLoginPage} serverProvidedParams={{...}}>
+              <AdminLoginPage params={Promise} searchParams={Promise}>
+                <main className="flex min-h...">
+                  <Card className="w-full max...">
+                    <div data-slot="card" className="bg-card te...">
+                      <CardHeader>
+                      <CardContent>
+                        <div data-slot="card-content" className="px-6">
+                          <form onSubmit={function handleSubmit} className="space-y-4">
+                            <div className="space-y-2">
+                              <Label>
+                              <div className="relative">
+-                               <div
+-                                 data-lastpass-icon-root=""
+-                                 style={{position:"relative",height:"0px",width:"0px",display:"initial",float:"left"}}
+-                               >
+                            ...
+          ...
+        ...
 
-[01:16:41.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:17:27.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:17:30.111] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
-
-[01:17:36.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:17:38.331] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
-
-[01:17:44.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:17:45.993] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
-
-[01:23:08.384] Server  LOG      ✓ Compiled in 911ms
-[01:23:23.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:23:25.971] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
-
-[01:24:23.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:24:24.747] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <SegmentStateProvider>
-      <RenderFromTemplateContext>
-        <ScrollAndFocusHandler segmentPath={[...]}>
-          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-              <LoadingBoundary name="car-dealer/" loading={null}>
-                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                  <RedirectBoundary>
-                    <RedirectErrorBoundary router={{...}}>
-                      <InnerLayoutRouter url="/categorie..." tree={[...]} params={{slug:"car-..."}} ...>
-                        <SegmentViewNode type="page" pagePath="categories...">
-                          <SegmentTrieNode>
-                          <CategoryPage>
-+                           <div className="flex min-h-screen flex-col">
--                           <header
--                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
--                           >
-                        ...
-                      ...
-            ...
-      ...
-
-[01:30:18.971] Server  LOG      ✓ Compiled in 714ms
-[01:30:44.086] Server  LOG      ✓ Compiled in 801ms
-[01:40:09.581] Server  LOG      ✓ Compiled in 1121ms
-[05:21:53.838] Server  LOG      ✓ Compiled in 3.1s
-[05:22:40.227] Server  LOG      ✓ Compiled in 4.2s
-[05:22:46.742] Server  LOG      ✓ Compiled in 1419ms
-[05:22:57.893] Server  LOG      ✓ Compiled in 1036ms
-[05:23:15.829] Server  LOG      ✓ Compiled in 328ms
-[05:25:12.364] Server  LOG      ○ Compiling /templates/[slug] ...
+[00:07:47.214] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:50.371] Server  LOG      ○ Compiling /icon ...
+[00:08:08.779] Server  LOG     Admin login attempt received
+[00:08:08.782] Server  LOG     Login request for: "admin@letterise.co.uk"
+[00:09:59.546] Browser ERROR   `value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components. input
+[00:19:17.004] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

@@ -1,5 +1,64 @@
 {
   "node": {
+    "403d5f6a11653d64395fb0b8e28d0563aea520d963": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_1",
+          "filename": "lib/plans.ts"
+        },
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_1",
+          "filename": "lib/plans.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "rsc",
+        "app/pricing/page": "rsc"
+      },
+      "filename": "lib/plans.ts",
+      "exportedName": "$$RSC_SERVER_ACTION_1"
+    },
+    "40e2c80c3eaddcd3a74e9a8eadc3893978fbd79575": {
+      "workers": {
+        "app/administrator/page": {
+          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "lib/plans.ts"
+        },
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "lib/plans.ts"
+        }
+      },
+      "layer": {
+        "app/administrator/page": "rsc",
+        "app/pricing/page": "rsc"
+      },
+      "filename": "lib/plans.ts",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
+      "workers": {
+        "app/pricing/page": {
+          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "startCheckoutSession",
+          "filename": "app/actions/stripe.ts"
+        }
+      },
+      "layer": {
+        "app/pricing/page": "action-browser"
+      },
+      "filename": "app/actions/stripe.ts",
+      "exportedName": "startCheckoutSession"
+    },
     "004a9874b857afdb2bf0019c288e9b131bd161d510": {
       "workers": {
         "app/administrator/page": {
@@ -59,50 +118,6 @@
       },
       "filename": "app/administrator/page.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_3"
-    },
-    "403d5f6a11653d64395fb0b8e28d0563aea520d963": {
-      "workers": {
-        "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "$$RSC_SERVER_ACTION_1",
-          "filename": "lib/plans.ts"
-        },
-        "app/pricing/page": {
-          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "$$RSC_SERVER_ACTION_1",
-          "filename": "lib/plans.ts"
-        }
-      },
-      "layer": {
-        "app/administrator/page": "rsc",
-        "app/pricing/page": "rsc"
-      },
-      "filename": "lib/plans.ts",
-      "exportedName": "$$RSC_SERVER_ACTION_1"
-    },
-    "40e2c80c3eaddcd3a74e9a8eadc3893978fbd79575": {
-      "workers": {
-        "app/administrator/page": {
-          "moduleId": "[project]/.next-internal/server/app/administrator/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/administrator/page.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/actions/admin-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/app/actions/admin-templates.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/app/actions/admin-categories.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "$$RSC_SERVER_ACTION_0",
-          "filename": "lib/plans.ts"
-        },
-        "app/pricing/page": {
-          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "$$RSC_SERVER_ACTION_0",
-          "filename": "lib/plans.ts"
-        }
-      },
-      "layer": {
-        "app/administrator/page": "rsc",
-        "app/pricing/page": "rsc"
-      },
-      "filename": "lib/plans.ts",
-      "exportedName": "$$RSC_SERVER_ACTION_0"
     },
     "409cee8ee105cea736c9b802ebdb70dcbff1e5050c": {
       "workers": {
@@ -178,21 +193,6 @@
       },
       "filename": "app/actions/admin-categories.ts",
       "exportedName": "deleteCategoryAction"
-    },
-    "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
-      "workers": {
-        "app/pricing/page": {
-          "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "startCheckoutSession",
-          "filename": "app/actions/stripe.ts"
-        }
-      },
-      "layer": {
-        "app/pricing/page": "action-browser"
-      },
-      "filename": "app/actions/stripe.ts",
-      "exportedName": "startCheckoutSession"
     }
   },
   "edge": {},
