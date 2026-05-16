@@ -33,6 +33,39 @@ function formatDynamicInputs(userInputs: Record<string, unknown>) {
   return { entries, inputBlock, keyBlock }
 }
 
+
+function createFallbackDocument(systemPrompt: string, entries: Array<{ label: string; value: string }>) {
+  const today = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+  const details = entries.map(({ label, value }) => `${label}: ${value}`).join('\n')
+
+  return `LEGAL DOCUMENT DRAFT
+Generated on: ${today}
+
+Document Context:
+${systemPrompt.trim() || '[not provided]'}
+
+Provided Information:
+${details}
+
+Statement:
+This document draft was generated from the information supplied by the user. It is intended as a professional template and should be reviewed before submission.
+
+Requested Relief / Outcome:
+[not provided]
+
+Additional Notes:
+- The AI service is currently unavailable, so this draft was created using your submitted answers.
+- Verify names, dates, addresses, and all factual assertions before use.
+- If needed, seek legal advice for jurisdiction-specific requirements.
+`
+}
+
+
 export async function POST(req: Request) {
   try {
     const user = await requireAuth()
@@ -70,22 +103,11 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate AI provider configuration early for clearer debugging
-    if (!hasOpenAiKeyConfigured()) {
-      console.error('[v0] Missing AI API key. Set OPENAI_API_KEY in environment variables.')
-      return NextResponse.json(
-        {
-          error: 'AI provider is not configured. Set OPENAI_API_KEY in your environment variables.',
-          debugCode: 'AI_KEY_MISSING',
-        },
-        { status: 500 }
-      )
-    }
+    let text = ''
+    let generatedWithFallback = false
 
     // Generate the document using AI
-    const { text } = await generateText({
-      model: 'openai/gpt-4o',
-      prompt: `${systemPrompt}
+    const aiPrompt = `${systemPrompt}
 
       You are generating a document from dynamic backend form fields. Field names are not fixed and may change by template.
 
@@ -104,10 +126,33 @@ export async function POST(req: Request) {
       6) If the requested output is a letter, include sender/recipient/date/subject/salutation/body/closing where available.
       7) Where relevant, include concise legal/procedural framing aligned to the user's system prompt, but do not cite fictional laws or case law.
 
-      Return only the final document content with proper line breaks.`,
-      maxOutputTokens: 2000,
-      temperature: 0.7,
-    })
+      Return only the final document content with proper line breaks.`
+
+    const shouldUseFallback = !hasOpenAiKeyConfigured()
+
+    if (shouldUseFallback) {
+      generatedWithFallback = true
+      text = createFallbackDocument(systemPrompt, entries)
+    } else {
+      try {
+        const aiResult = await generateText({
+          model: 'openai/gpt-4o',
+          prompt: aiPrompt,
+          maxOutputTokens: 2000,
+          temperature: 0.7,
+        })
+        text = aiResult.text
+      } catch (aiError: any) {
+        const message = String(aiError?.message || '').toLowerCase()
+        if (message.includes('api key') || message.includes('authentication') || message.includes('unauthorized')) {
+          console.warn('[v0] Falling back to rule-based document generation due to AI auth/config issue.')
+          generatedWithFallback = true
+          text = createFallbackDocument(systemPrompt, entries)
+        } else {
+          throw aiError
+        }
+      }
+    }      
 
     // Get template name for the document title
     const template = await sql`
@@ -152,6 +197,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       success: true,
       documentId,
+      usedFallback: generatedWithFallback,
     })
   } catch (error: any) {
     console.error('[v0] Document generation error:', error)
