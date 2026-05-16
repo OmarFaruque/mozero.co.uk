@@ -6,6 +6,7 @@
   "/apple-icon/route": "app-edge-has-no-entrypoint",
   "/categories/[slug]/page": "app/categories/[slug]/page.js",
   "/categories/page": "app/categories/page.js",
+  "/dashboard/documents/[id]/page": "app/dashboard/documents/[id]/page.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/page": "app/page.js",
   "/pricing/page": "app/pricing/page.js",

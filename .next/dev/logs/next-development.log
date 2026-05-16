@@ -59,3 +59,9 @@ https://react.dev/link/hydration-mismatch
 [03:06:24.684] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [03:49:34.492] Server  ERROR   [v0] Document generation error: GatewayError: Vercel AI Gateway access failed. If you want to use AI SDK providers directly, use the providers, e.g. @ai-sdk/openai, or register a different global default provider.
 [03:49:54.742] Server  ERROR   [v0] Document generation error: GatewayError: Vercel AI Gateway access failed. If you want to use AI SDK providers directly, use the providers, e.g. @ai-sdk/openai, or register a different global default provider.
+[05:15:11.914] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[05:15:11.916] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[05:15:15.912] Server  LOG      ○ Compiling /dashboard/documents/[id] ...
+[05:15:26.334] Server  WARN    Error: Route "/dashboard/documents/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[05:21:57.944] Server  LOG      ✓ Compiled in 633ms
+[05:27:56.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

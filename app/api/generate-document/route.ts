@@ -143,14 +143,28 @@ export async function POST(req: Request) {
         })
         text = aiResult.text
       } catch (aiError: any) {
-        const message = String(aiError?.message || '').toLowerCase()
-        if (message.includes('api key') || message.includes('authentication') || message.includes('unauthorized')) {
-          console.warn('[v0] Falling back to rule-based document generation due to AI auth/config issue.')
-          generatedWithFallback = true
-          text = createFallbackDocument(systemPrompt, entries)
-        } else {
-          throw aiError
+       const message = String(aiError?.message || '')
+        const normalizedMessage = message.toLowerCase()
+
+        // Per product requirement, any AI provider failure should gracefully fall back
+        // to a deterministic document built from submitted form fields.
+        console.warn('[v0] Falling back to rule-based document generation due to AI provider error.', {
+          reason: message || 'unknown',
+        })
+
+        const isAuthOrConfigIssue =
+          normalizedMessage.includes('api key') ||
+          normalizedMessage.includes('authentication') ||
+          normalizedMessage.includes('unauthorized') ||
+          normalizedMessage.includes('access failed') ||
+          normalizedMessage.includes('gateway') ||
+          normalizedMessage.includes('provider')
+
+        if (isAuthOrConfigIssue) {
+          console.warn('[v0] AI auth/config/provider issue detected; using fallback document generation.')
         }
+        generatedWithFallback = true
+        text = createFallbackDocument(systemPrompt, entries)
       }
     }      
 

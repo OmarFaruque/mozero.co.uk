@@ -8,8 +8,11 @@ import { notFound } from 'next/navigation'
 
 export const dynamic = 'force-dynamic'
 
-export default async function DocumentPage({ params }: { params: { id: string } }) {
-  const { id } = params
+type DocumentPageParams = { id: string } | Promise<{ id: string }>
+
+export default async function DocumentPage({ params }: { params: DocumentPageParams }) {
+  const resolvedParams = await params
+  const { id } = resolvedParams
   const user = await requireAuth().catch(() => null)
   
   if (!user) {
