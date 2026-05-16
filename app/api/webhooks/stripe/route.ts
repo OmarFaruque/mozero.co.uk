@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { getSettings } from '@/lib/admin-settings'
+import { addCreditPlanPurchaseForUser } from '@/lib/stripe-webhook-repo'
 
 export async function POST(req: Request) {
   const stripeSettings = await getSettings('stripe')
@@ -63,6 +64,14 @@ export async function POST(req: Request) {
         const productId = metadata.productId
 
         if (type === 'credits') {
+
+          const planId = parseInt(productId.replace('credit-', ''))
+
+          // Track the purchased credit package so generation can use its per-document credit cost.
+          if (!Number.isNaN(planId)) {
+            await addCreditPlanPurchaseForUser(userId, planId)
+          }
+          
           // Add credits to user account
           await sql`
             INSERT INTO user_credits (user_id, credits_available, credits_used)

@@ -9,6 +9,7 @@ import { TemplateForm } from '@/components/template-form'
 import { getCurrentUser } from '@/lib/auth'
 import { getTemplateBySlug } from '@/lib/template-queries'
 import { redirect } from 'next/navigation'
+import { userHasTemplateAccess } from '@/lib/billing-access'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,6 +19,12 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
   const user = await getCurrentUser()
   if (!user) {
     redirect(`/login?redirect=/templates/${slug}`)
+  }
+
+  const hasTemplateAccess = await userHasTemplateAccess(user.id)
+
+  if (!hasTemplateAccess) {
+    redirect('/pricing')
   }
 
   const template = await getTemplateBySlug(slug)

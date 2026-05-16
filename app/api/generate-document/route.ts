@@ -1,6 +1,12 @@
 import { generateText } from 'ai'
 import { requireAuth } from '@/lib/auth'
-import { sql } from '@/lib/db'
+import {
+  createDocument,
+  deductUserCredits,
+  getCreditsPerDocumentForUser,
+  getTemplateName,
+  getUserCredits,
+} from '@/lib/document-generation-repo'
 import { NextResponse } from 'next/server'
 
 export const maxDuration = 30
@@ -50,7 +56,7 @@ function createFallbackDocument(systemPrompt: string, entries: Array<{ label: st
 
   Document Type Context:
   ${systemPrompt.trim() || '[not provided]'}
-  
+
   Submitted Information:
   ${structuredAnswers}
 `
@@ -69,15 +75,11 @@ export async function POST(req: Request) {
       )
     }
 
-    // Check user credits
-    const userCredits = await sql`
-      SELECT * FROM user_credits
-      WHERE user_id = ${user.id}
-    `
+    const creditsPerDocument = await getCreditsPerDocumentForUser(user.id)
 
-    const credits = userCredits[0] || { credits_available: 0 }
+    const credits = await getUserCredits(user.id)
 
-    if (credits.credits_available < 1) {
+    if (Number(credits.credits_available) < creditsPerDocument) {
       return NextResponse.json(
         { error: 'Insufficient credits. Please purchase credits or subscribe to a plan.' },
         { status: 402 }
@@ -159,45 +161,18 @@ export async function POST(req: Request) {
       }
     }      
 
-    // Get template name for the document title
-    const template = await sql`
-      SELECT name FROM templates WHERE id = ${templateId}
-    `
+    const templateName = await getTemplateName(templateId)
 
-     const templateName = template[0]?.name || `Template ${templateId}`
+    const documentId = await createDocument({
+      userId: user.id,
+      templateId,
+      templateName,
+      content: text,
+      userInputs,
+      creditsPerDocument,
+    })
 
-    // Save the generated document
-    const result = await sql`
-      INSERT INTO documents (user_id, template_id, title, content, user_inputs, status, credits_used)
-      VALUES (
-        ${user.id},
-        ${templateId},
-        ${templateName},
-        ${text},
-        ${JSON.stringify(userInputs)},
-        'draft',
-        1
-      )
-      RETURNING id
-    `
-
-    const documentId = result[0].id
-
-    // Deduct credit
-    if (userCredits.length === 0) {
-      await sql`
-        INSERT INTO user_credits (user_id, credits_available, credits_used)
-        VALUES (${user.id}, -1, 1)
-      `
-    } else {
-      await sql`
-        UPDATE user_credits
-        SET credits_available = credits_available - 1,
-            credits_used = credits_used + 1,
-            updated_at = CURRENT_TIMESTAMP
-        WHERE user_id = ${user.id}
-      `
-    }
+    await deductUserCredits(user.id, creditsPerDocument)
 
     return NextResponse.json({
       success: true,

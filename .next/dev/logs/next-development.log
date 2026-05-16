@@ -146,3 +146,285 @@ Import trace:
 [07:02:44.319] Server  LOG      ✓ Compiled in 380ms
 [07:02:58.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [07:10:00.685] Server  LOG      ✓ Compiled in 945ms
+[07:34:20.645] Server  LOG      ✓ Compiled in 2.7s
+[07:37:10.031] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:25.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:42:49.567] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[07:42:49.568] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[08:11:45.777] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[08:11:45.777] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[08:11:51.079] Server  ERROR   [v0] Document generation error: NeonDbError: operator is not unique: unknown * unknown
+[08:12:09.656] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[08:12:09.657] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[08:12:11.105] Server  ERROR   [v0] Document generation error: NeonDbError: operator is not unique: unknown * unknown
+[08:17:03.580] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[08:17:03.584] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[08:22:00.727] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:22:06.231] Server  LOG      ○ Compiling /dashboard ...
+[08:22:50.100] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:33:28.506] Server  LOG      ○ Compiling /api/webhooks/stripe ...
+[08:33:46.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:36:08.698] Server  WARN    [v0] Falling back to rule-based document generation due to AI provider error. {}
+[08:36:08.699] Server  WARN    [v0] AI auth/config/provider issue detected; using fallback document generation.
+[08:40:14.896] Server  ERROR   Webhook handler error: NeonDbError: there is no unique or exclusion constraint matching the ON CONFLICT specification
+[08:40:27.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:40:30.587] Server  ERROR   Webhook handler error: NeonDbError: there is no unique or exclusion constraint matching the ON CONFLICT specification
+[08:41:26.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:41:42.159] Server  ERROR   Webhook handler error: NeonDbError: there is no unique or exclusion constraint matching the ON CONFLICT specification
+[11:24:26.042] Server  LOG      ✓ Compiled in 3.2s
+[11:24:47.418] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:47.423] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:48.047] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:48.049] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:48.341] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:48.345] Server  ERROR    ⨯ ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[11:24:49.330] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:49.330] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:49.331] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:50.462] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:50.523] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:50.523] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:50.545] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:50.996] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Module not found: Can't resolve '@/lib/billing-access'
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+Import map: aliased to relative './lib/billing-access' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[11:24:57.074] Server  ERROR    ⨯ Failed to generate static paths for /templates/[slug]:
+[11:24:57.126] Server  ERROR   Error: Cannot find module '@/lib/billing-access'
+[11:25:06.996] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Export userHasTemplateAccess doesn't exist in target module
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+The export userHasTemplateAccess was not found in module [project]/lib/billing-access.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[11:25:06.996] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Export userHasTemplateAccess doesn't exist in target module
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+The export userHasTemplateAccess was not found in module [project]/lib/billing-access.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[11:25:06.997] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Export userHasTemplateAccess doesn't exist in target module
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+The export userHasTemplateAccess was not found in module [project]/lib/billing-access.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[11:25:06.997] Browser ERROR   ./app/templates/[slug]/page.tsx:12:1
+Export userHasTemplateAccess doesn't exist in target module
+  10 | import { getTemplateBySlug } from '@/lib/template-queries'
+  11 | import { redirect } from 'next/navigation'
+> 12 | import { userHasTemplateAccess } from '@/lib/billing-access'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | export const dynamic = 'force-dynamic'
+  15 |
+
+The export userHasTemplateAccess was not found in module [project]/lib/billing-access.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[11:25:14.930] Server  LOG      ✓ Compiled in 515ms
+[11:26:19.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
