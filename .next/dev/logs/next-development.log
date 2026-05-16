@@ -52,3 +52,7 @@ https://react.dev/link/hydration-mismatch
 [00:34:18.477] Server  LOG      ○ Compiling /api/generate-document ...
 [00:34:25.383] Server  ERROR   [v0] Document generation error: GatewayError: Vercel AI Gateway access failed. If you want to use AI SDK providers directly, use the providers, e.g. @ai-sdk/openai, or register a different global default provider.
 [01:07:27.099] Server  ERROR   [v0] Document generation error: GatewayError: Vercel AI Gateway access failed. If you want to use AI SDK providers directly, use the providers, e.g. @ai-sdk/openai, or register a different global default provider.
+[01:25:28.279] Server  ERROR   [v0] Missing AI API key. Set OPENAI_API_KEY in environment variables.
+[01:26:40.510] Server  LOG        Reload env: .env
+[01:28:38.672] Server  LOG        Reload env: .env
+[01:28:49.385] Server  ERROR   [v0] Document generation error: GatewayError: Vercel AI Gateway access failed. If you want to use AI SDK providers directly, use the providers, e.g. @ai-sdk/openai, or register a different global default provider.

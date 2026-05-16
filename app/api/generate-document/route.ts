@@ -5,6 +5,10 @@ import { NextResponse } from 'next/server'
 
 export const maxDuration = 30
 
+function hasOpenAiKeyConfigured() {
+  return Boolean(process.env.OPENAI_API_KEY)
+}
+
 function formatFieldLabel(key: string): string {
   return key
     .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
@@ -63,6 +67,18 @@ export async function POST(req: Request) {
       return NextResponse.json(
         { error: 'No usable input fields were provided' },
         { status: 400 }
+      )
+    }
+
+    // Validate AI provider configuration early for clearer debugging
+    if (!hasOpenAiKeyConfigured()) {
+      console.error('[v0] Missing AI API key. Set OPENAI_API_KEY in environment variables.')
+      return NextResponse.json(
+        {
+          error: 'AI provider is not configured. Set OPENAI_API_KEY in your environment variables.',
+          debugCode: 'AI_KEY_MISSING',
+        },
+        { status: 500 }
       )
     }
 
@@ -147,8 +163,21 @@ export async function POST(req: Request) {
       )
     }
 
+    const message = error?.message || 'Unknown error'
+
+    if (message.toLowerCase().includes('api key')) {
+      return NextResponse.json(
+        {
+          error: 'AI API key is missing or invalid. Set OPENAI_API_KEY in environment variables.',
+          debugCode: 'AI_KEY_INVALID_OR_MISSING',
+          details: message,
+        },
+        { status: 500 }
+      )
+    }
+
     return NextResponse.json(
-      { error: 'Failed to generate document. Please try again.' },
+      { error: 'Failed to generate document. Please try again.', debugCode: 'DOCUMENT_GENERATION_FAILED', details: message },
       { status: 500 }
     )
   }
