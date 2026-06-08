@@ -15,10 +15,10 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-28">
           <div className="mx-auto max-w-3xl text-center space-y-4 sm:space-y-6">
-            <Badge variant="secondary" className="mb-2 bg-primary/20 text-primary border-primary/30">
+            <Badge variant="secondary" className="mb-2 bg-primary/20 text-cyan-300 border-primary/30">
               AI-Powered Document Generation
             </Badge>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-tight bg-gradient-to-r from-pink-400 via-pink-500 to-pink-400 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Generate Professional Documents in Minutes
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-foreground/70 text-balance px-2">
@@ -63,7 +63,7 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow border-border/40 bg-card/50 backdrop-blur">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <FileWarning className="h-5 w-5 text-white" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl">Dispute Letters</CardTitle>
@@ -85,7 +85,7 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow border-border/40 bg-card/50 backdrop-blur">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <ShieldCheck className="h-5 w-5 text-white" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl">Insurance</CardTitle>
@@ -107,7 +107,7 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow border-border/40 bg-card/50 backdrop-blur">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <MessageSquareWarning className="h-5 w-5 text-white" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl">Complaint Letters</CardTitle>
@@ -129,7 +129,7 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow border-border/40 bg-card/50 backdrop-blur">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <Repeat className="h-5 w-5 text-white" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl">Appeals</CardTitle>
@@ -151,7 +151,7 @@ export default function HomePage() {
             <Card className="hover:shadow-lg transition-shadow border-border/40 bg-card/50 backdrop-blur">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <FileText className="h-5 w-5 text-white" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl">Official Documents</CardTitle>
@@ -170,7 +170,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-pink-600 to-pink-500 text-white hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1 border-0">
+            <Card className="bg-gradient-to-br from-blue-600 to-cyan-500 text-white hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1 border-0">
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg sm:text-xl">70+ Templates</CardTitle>
                 <CardDescription className="text-white/80 text-sm leading-relaxed">
@@ -201,7 +201,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">AI-Powered</h3>
@@ -211,7 +211,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">Save Time</h3>
@@ -221,7 +221,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">Legally Sound</h3>
@@ -231,7 +231,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <CheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">Easy to Use</h3>
@@ -241,7 +241,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <FileText className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">Export Options</h3>
@@ -251,7 +251,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">Flexible Pricing</h3>
@@ -265,13 +265,13 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
-          <Card className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-600 to-pink-500 text-white border-0 shadow-2xl">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-500 to-cyan-400 text-white border-0 shadow-2xl">
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             
             {/* Animated glow effect */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-pink-400/30 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-400/30 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl pointer-events-none" />
             
             {/* Decorative dots pattern */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
@@ -293,12 +293,12 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-2 sm:px-0 pt-2">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto min-h-[48px] bg-white text-pink-600 hover:bg-white/90 font-semibold shadow-lg" asChild>
-                  <Link href="/signup">
-                    Get Started Free
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto min-h-[48px] bg-white text-blue-600 hover:bg-white/90 font-semibold shadow-lg" asChild>
+                <Link href="/signup">
+                  Get Started Free
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm font-semibold" asChild>
                   <Link href="/categories">
                     Browse Templates

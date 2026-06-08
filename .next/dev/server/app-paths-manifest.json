@@ -1,6 +1,4 @@
 {
-  "/dashboard/documents/[id]/page": "app/dashboard/documents/[id]/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/page": "app/page.js"
 }
