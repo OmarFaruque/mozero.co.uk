@@ -7,7 +7,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    console.log('Admin login attempt received')
+    
     
     if (!process.env.DATABASE_URL) {
       console.error('DATABASE_URL is not set')
