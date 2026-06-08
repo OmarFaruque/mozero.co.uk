@@ -8,10 +8,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
                 <FileText className="h-4 w-4 text-white" />
               </div>
-              <span className="text-lg font-bold bg-gradient-to-r from-white to-pink-400 bg-clip-text text-transparent">
+              <span className="text-lg font-bold bg-gradient-to-r from-white to-[#51a2ff] bg-clip-text text-transparent">
                 Mozero
               </span>
             </Link>
