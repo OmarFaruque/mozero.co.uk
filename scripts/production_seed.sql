@@ -1,4 +1,4 @@
--- Quick production seed script for Letterise
+-- Quick production seed script for Mozero
 -- Run this in your Neon SQL Editor to populate the database
 
 -- Insert categories

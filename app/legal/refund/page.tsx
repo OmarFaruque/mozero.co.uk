@@ -21,7 +21,7 @@ export default function RefundPage() {
               <section>
                 <h2>1. Overview</h2>
                 <p>
-                  At Letterise, we strive to provide high-quality AI-generated documents. This Refund Policy outlines
+                  At Mozero, we strive to provide high-quality AI-generated documents. This Refund Policy outlines
                   the circumstances under which refunds are issued for credit purchases and subscriptions.
                 </p>
               </section>
@@ -73,7 +73,7 @@ export default function RefundPage() {
                   </li>
                 </ul>
                 <p className="font-semibold">
-                  Important: Letterise does not provide legal advice. Please consult an attorney for legal matters.
+                  Important: Mozero does not provide legal advice. Please consult an attorney for legal matters.
                 </p>
               </section>
 
@@ -81,7 +81,7 @@ export default function RefundPage() {
                 <h2>5. Technical Issues</h2>
                 <p>If technical problems prevent you from using the Service:</p>
                 <ul>
-                  <li>Contact us immediately at support@letterise.com</li>
+                  <li>Contact us immediately at support@mozero.com</li>
                   <li>We will work to resolve the issue promptly</li>
                   <li>If unresolved, we will issue credit refunds or account credits</li>
                   <li>Extended service outages qualify for pro-rated refunds</li>
@@ -92,7 +92,7 @@ export default function RefundPage() {
                 <h2>6. How to Request a Refund</h2>
                 <p>To request a refund:</p>
                 <ol>
-                  <li>Email support@letterise.com with your request</li>
+                  <li>Email support@mozero.com with your request</li>
                   <li>Include your account email and transaction details</li>
                   <li>Explain the reason for your refund request</li>
                   <li>Provide any relevant documentation or screenshots</li>
@@ -146,7 +146,7 @@ export default function RefundPage() {
                 <h2>11. Contact Information</h2>
                 <p>For refund requests or questions about this policy:</p>
                 <p>
-                  Email: support@letterise.com
+                  Email: support@mozero.com
                   <br />
                   Response time: 3-5 business days
                 </p>

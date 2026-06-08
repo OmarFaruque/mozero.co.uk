@@ -45,7 +45,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <p className="text-center text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <Shield className="inline h-3 w-3 sm:h-4 sm:w-4 mr-1" />
-              Letterise generates template-based documents and does not provide legal advice. For legal matters, consult a licensed attorney.
+              Mozero generates template-based documents and does not provide legal advice. For legal matters, consult a licensed attorney.
             </p>
           </div>
         </section>
@@ -193,7 +193,7 @@ export default function HomePage() {
         <section className="bg-card/30 py-12 sm:py-16 md:py-20 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose Letterise?</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose Mozero?</h2>
               <p className="text-base sm:text-lg text-foreground/70 text-balance max-w-2xl mx-auto px-4">
                 Professional document generation powered by advanced AI
               </p>
@@ -289,7 +289,7 @@ export default function HomePage() {
                 Ready to Create Your Document?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-white/90 text-balance max-w-2xl mx-auto leading-relaxed px-2">
-                Get started with Letterise today. Generate professional documents in minutes with our AI-powered platform.
+                Get started with Mozero today. Generate professional documents in minutes with our AI-powered platform.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-2 sm:px-0 pt-2">

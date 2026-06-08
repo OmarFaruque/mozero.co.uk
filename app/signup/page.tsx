@@ -14,7 +14,7 @@ export default function SignupPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Create Your Account</CardTitle>
               <CardDescription>
-                Get started with Letterise and generate professional documents
+                Get started with Mozero and generate professional documents
               </CardDescription>
             </CardHeader>
             <CardContent>

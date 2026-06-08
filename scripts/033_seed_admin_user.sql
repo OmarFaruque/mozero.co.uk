@@ -3,7 +3,7 @@ INSERT INTO admin_user (first_name, last_name, email, password_hash, role, is_ac
 VALUES (
   'System',
   'Administrator',
-  'admin@letterise.co.uk',
+  'admin@mozero.co.uk',
   '$2b$10$XKnRJd2yCS7H0SMsrqBZUua9pnoiGmdWgOY7veMALRd7VxgwlS9KC',
   'super_admin',
   TRUE

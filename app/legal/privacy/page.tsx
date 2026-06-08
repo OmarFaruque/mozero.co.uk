@@ -21,7 +21,7 @@ export default function PrivacyPage() {
               <section>
                 <h2>1. Introduction</h2>
                 <p>
-                  Letterise ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we 
+                  Mozero ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we 
                   collect, use, disclose, and safeguard your information when you use our Service.
                 </p>
                 <p>
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
                   <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
                 </ul>
                 <p>
-                  To exercise these rights, contact us at privacy@letterise.com.
+                  To exercise these rights, contact us at privacy@mozero.com.
                 </p>
               </section>
 
@@ -190,8 +190,8 @@ export default function PrivacyPage() {
                   For privacy-related questions or to exercise your rights, contact:
                 </p>
                 <p>
-                  Email: privacy@letterise.com<br />
-                  Data Protection Officer: dpo@letterise.com
+                  Email: privacy@mozero.com<br />
+                  Data Protection Officer: dpo@mozero.com
                 </p>
                 <p>
                   You also have the right to lodge a complaint with your local data protection authority.

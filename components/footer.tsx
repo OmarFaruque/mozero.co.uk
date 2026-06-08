@@ -50,7 +50,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t">
           <p className="text-sm text-muted-foreground text-center">
-            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Letterise. All rights reserved. This service generates template-based documents and does not provide legal advice.
+            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Mozero. All rights reserved. This service generates template-based documents and does not provide legal advice.
           </p>
         </div>
       </div>

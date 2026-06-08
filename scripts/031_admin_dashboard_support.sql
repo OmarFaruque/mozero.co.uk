@@ -1,4 +1,4 @@
--- Admin dashboard support indexes for the Letterise database.
+-- Admin dashboard support indexes for the Mozero database.
 -- Authentication uses ADMIN_EMAIL and ADMIN_PASSWORD or ADMIN_PASSWORD_HASH environment variables.
 
 CREATE INDEX IF NOT EXISTS idx_users_created_at ON users(created_at DESC);

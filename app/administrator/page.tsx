@@ -139,7 +139,7 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
         <div className="container mx-auto flex flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-              Letterise
+              Mozero
             </Link>
             <h1 className="mt-1 text-2xl font-bold tracking-tight">Administrator</h1>
             <p className="text-sm text-muted-foreground">

@@ -24,7 +24,7 @@ export default function LoginPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Welcome Back</CardTitle>
               <CardDescription>
-                Log in to your Letterise account to continue
+                Log in to your Mozero account to continue
               </CardDescription>
             </CardHeader>
             <CardContent>

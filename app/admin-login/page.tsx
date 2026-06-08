@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
         <CardHeader className="space-y-4">
           <Link href="/" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground">
             <FileText className="h-4 w-4" />
-            Letterise
+            Mozero
           </Link>
           <div>
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -78,7 +78,7 @@ export default function AdminLoginPage() {
             </div>
             <CardTitle className="text-2xl">Admin Sign In</CardTitle>
             <CardDescription>
-              Access the Letterise administrator dashboard.
+              Access the Mozero administrator dashboard.
             </CardDescription>
           </div>
         </CardHeader>
@@ -94,7 +94,7 @@ export default function AdminLoginPage() {
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  placeholder="admin@letterise.co.uk"
+                  placeholder="admin@mozero.co.uk"
                   className="pl-9"
                   required
                   disabled={isLoading}

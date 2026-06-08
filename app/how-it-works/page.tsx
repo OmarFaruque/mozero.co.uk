@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
         <section className="border-b bg-muted/50">
           <div className="container mx-auto py-12 md:py-16">
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">How Letterise Works</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">How Mozero Works</h1>
               <p className="text-lg text-muted-foreground text-balance">
                 Generate professional documents in four simple steps using AI technology
               </p>

@@ -218,7 +218,7 @@ export default async function PricingPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    No. Letterise generates template-based documents and does not provide legal advice. 
+                    No. Mozero generates template-based documents and does not provide legal advice. 
                     For legal matters, please consult with a licensed attorney.
                   </p>
                 </CardContent>

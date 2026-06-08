@@ -21,7 +21,7 @@ export default function TermsPage() {
               <section>
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                  By accessing and using Letterise (Letterise Ltd), you accept and agree to be bound by these Terms of Service. 
+                  By accessing and using Mozero (Mozero Ltd), you accept and agree to be bound by these Terms of Service. 
                   If you do not agree to these terms, please do not use the Service.
                 </p>
               </section>
@@ -29,11 +29,11 @@ export default function TermsPage() {
               <section>
                 <h2>2. Description of Service</h2>
                 <p>
-                  Letterise is an AI-powered document generation platform that creates template-based letters and documents. 
+                  Mozero is an AI-powered document generation platform that creates template-based letters and documents. 
                   The Service uses artificial intelligence to generate customized documents based on user-provided information.
                 </p>
                 <p className="font-semibold">
-                  IMPORTANT: Letterise does NOT provide legal advice. The documents generated are for informational purposes only 
+                  IMPORTANT: Mozero does NOT provide legal advice. The documents generated are for informational purposes only 
                   and do not constitute legal counsel. For legal matters, consult a licensed attorney.
                 </p>
               </section>
@@ -91,7 +91,7 @@ export default function TermsPage() {
               <section>
                 <h2>6. Intellectual Property</h2>
                 <p>
-                  The Service, including all content, features, and functionality, is owned by Letterise and protected by 
+                  The Service, including all content, features, and functionality, is owned by Mozero and protected by 
                   copyright, trademark, and other intellectual property laws.
                 </p>
                 <p>
@@ -123,7 +123,7 @@ export default function TermsPage() {
               <section>
                 <h2>8. Indemnification</h2>
                 <p>
-                  You agree to indemnify and hold harmless Letterise and its affiliates from any claims, damages, or expenses 
+                  You agree to indemnify and hold harmless Mozero and its affiliates from any claims, damages, or expenses 
                   arising from your use of the Service or violation of these Terms.
                 </p>
               </section>
@@ -163,7 +163,7 @@ export default function TermsPage() {
               <section>
                 <h2>13. Contact Information</h2>
                 <p>
-                  For questions about these Terms, please contact us at legal@letterise.com.
+                  For questions about these Terms, please contact us at legal@mozero.com.
                 </p>
               </section>
             </CardContent>
