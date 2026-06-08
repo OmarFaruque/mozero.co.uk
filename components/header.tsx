@@ -18,11 +18,11 @@ export async function Header() {
       {/* Added mx-auto to center the container */}
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
             <FileText className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-white to-pink-400 bg-clip-text text-transparent">
-            Letterise
+          <span className="text-xl font-bold bg-gradient-to-r from-white to-[#51a2ff] bg-clip-text text-transparent">
+            Mozero
           </span>
         </Link>
 

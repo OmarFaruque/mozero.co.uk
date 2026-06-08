@@ -12,7 +12,7 @@ export function Footer() {
                 <FileText className="h-4 w-4 text-white" />
               </div>
               <span className="text-lg font-bold bg-gradient-to-r from-white to-pink-400 bg-clip-text text-transparent">
-                Letterise
+                Mozero
               </span>
             </Link>
             <p className="text-sm text-muted-foreground text-pretty">
