@@ -1,34 +1,34 @@
 @import 'tailwindcss';
 
 @theme inline {
-  /* Modern premium sans-serif font stack */
+  /* Updated to premium sans-serif font stack */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
-  /* Modern dark theme with cyan/blue accents - AI-focused aesthetic */
-  --color-background: #0a0e27;
-  --color-foreground: #e4e7eb;
+  /* Dark theme inspired by Draftly - nearly black background with pink accents */
+  --color-background: #0f0d15;
+  --color-foreground: #e8e7ea;
   
-  /* Bright cyan/blue accent palette for modern AI aesthetic */
-  --color-primary: #00d9ff;
-  --color-primary-foreground: #0a0e27;
+  /* Pink/Magenta palette matching Draftly */
+  --color-primary: #ec4899;
+  --color-primary-foreground: #ffffff;
   
-  --color-secondary: #1a1f3a;
-  --color-secondary-foreground: #e4e7eb;
+  --color-secondary: #1a1820;
+  --color-secondary-foreground: #e8e7ea;
   
-  --color-muted: #1a1f3a;
-  --color-muted-foreground: #8b92a9;
+  --color-muted: #1a1820;
+  --color-muted-foreground: #a1a1aa;
   
-  --color-accent: #0099ff;
+  --color-accent: #f472b6;
   --color-accent-foreground: #ffffff;
   
-  --color-card: #151a33;
-  --color-card-foreground: #e4e7eb;
+  --color-card: #18161d;
+  --color-card-foreground: #e8e7ea;
   
-  --color-border: #26304d;
-  --color-input: #26304d;
-  --color-ring: #00d9ff;
+  --color-border: #27242e;
+  --color-input: #27242e;
+  --color-ring: #ec4899;
   
-  --color-destructive: #ff3b3b;
+  --color-destructive: #ef4444;
   --color-destructive-foreground: #ffffff;
   
   --radius: 0.5rem;
@@ -55,7 +55,7 @@
     color: theme('colors.foreground');
     font-feature-settings: "rlig" 1, "calt" 1;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #0a0e27 0%, #15192e 50%, #0a0e27 100%);
+    background: linear-gradient(to bottom, #0f0d15 0%, #1a1820 50%, #0f0d15 100%);
     background-attachment: fixed;
   }
   
@@ -104,26 +104,28 @@
 
 [data-theme="light"] {
   --color-background: #ffffff;
-  --color-foreground: #0a0e27;
-  --color-primary: #00d9ff;
-  --color-primary-foreground: #0a0e27;
-  --color-secondary: #f0f4f9;
-  --color-secondary-foreground: #0a0e27;
-  --color-muted: #f0f4f9;
-  --color-muted-foreground: #5a6478;
-  --color-accent: #0099ff;
+  --color-foreground: #000000;
+  --color-primary: #ec4899;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #f472b6;
   --color-accent-foreground: #ffffff;
   --color-card: #ffffff;
-  --color-card-foreground: #0a0e27;
-  --color-border: #d4dae6;
-  --color-input: #d4dae6;
-  --color-ring: #00d9ff;
-  --color-destructive: #ff3b3b;
+  --color-card-foreground: #000000;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #ec4899;
+  --color-destructive: #ef4444;
   --color-destructive-foreground: #ffffff;
+
+
 
   .admin-dashboard input, 
   .admin-dashboard textarea, 
   .admin-dashboard select {
-    color: #0a0e27;
+    color: #000000;
   }
 }

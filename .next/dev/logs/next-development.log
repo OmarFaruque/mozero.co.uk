@@ -1,38 +1,17 @@
-[00:00:00.766] Server  LOG      ✓ Ready in 479ms
-[00:00:05.624] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:01:39.273] Server  LOG      ✓ Compiled in 133ms
-[00:01:44.257] Server  LOG      ✓ Compiled in 141ms
-[00:01:50.689] Server  LOG      ✓ Compiled in 99ms
-[00:01:55.610] Server  LOG      ✓ Compiled in 69ms
-[00:01:56.470] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:01:59.977] Server  LOG      ✓ Compiled in 58ms
-[00:02:01.054] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:10.044] Server  LOG      ✓ Compiled in 68ms
-[00:02:10.853] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:14.286] Server  LOG      ✓ Compiled in 32ms
-[00:02:15.256] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:19.110] Server  LOG      ✓ Compiled in 57ms
-[00:02:19.880] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:23.679] Server  LOG      ✓ Compiled in 25ms
-[00:02:24.713] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:27.994] Server  LOG      ✓ Compiled in 25ms
-[00:02:28.989] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:34.279] Server  LOG      ✓ Compiled in 51ms
-[00:02:34.991] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:39.661] Server  LOG      ✓ Compiled in 53ms
-[00:02:40.464] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:45.074] Server  LOG      ✓ Compiled in 25ms
-[00:02:45.786] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:50.223] Server  LOG      ✓ Compiled in 25ms
-[00:02:51.152] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:55.134] Server  LOG      ✓ Compiled in 26ms
-[00:02:56.703] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:01.073] Server  LOG      ✓ Compiled in 24ms
-[00:03:01.803] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:06.173] Server  LOG      ✓ Compiled in 23ms
-[00:03:06.946] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:12.136] Server  LOG      ✓ Compiled in 51ms
-[00:03:13.041] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:17.273] Server  LOG      ✓ Compiled in 39ms
-[00:03:17.959] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:28.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.669] Server  LOG      ✓ Ready in 7s
+[00:09:30.529] Server  LOG      ○ Compiling / ...
+[00:09:43.843] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:49.202] Server  LOG      ○ Compiling /icon ...
+[00:09:57.044] Server  LOG      ○ Compiling /dashboard ...
+[00:11:12.546] Server  LOG      ○ Compiling /dashboard/documents/[id] ...
+[00:16:56.795] Server  LOG        Reload env: .env
+[00:16:58.982] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:00.312] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:03.338] Server  LOG      ○ Compiling /_error ...
+[00:17:05.664] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:06.311] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:07.425] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:07.946] Server  ERROR    ⨯ Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:10.018] Browser ERROR   uncaughtError: Error: Database connection string provided to `neon()` is not a valid URL. Connection string: 'postgresql://neondb_owner:npg_sN7JSueD4xXc@ep-withered-mode-ahc2z3xx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require'.
+[00:17:17.028] Server  LOG        Reload env: .env
+[00:00:05.002] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
