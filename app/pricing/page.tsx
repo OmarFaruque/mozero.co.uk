@@ -97,79 +97,81 @@ export default async function PricingPage() {
           </div>
         </section>
 
-        {/* Subscription Plans */}
-        <section className="bg-muted/50 py-12 sm:py-16">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-8 sm:mb-12">
-              <Badge variant="default" className="mb-3">
-                Best Value
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-3">Monthly Subscriptions</h2>
-              <p className="text-sm sm:text-base text-muted-foreground px-4">
-                Save money with monthly plans. Cancel anytime.
-              </p>
-            </div>
+        {/* Subscription Plans - Hidden per client request */}
+        {false && (
+          <section className="bg-muted/50 py-12 sm:py-16">
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="text-center mb-8 sm:mb-12">
+                <Badge variant="default" className="mb-3">
+                  Best Value
+                </Badge>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-3">Monthly Subscriptions</h2>
+                <p className="text-sm sm:text-base text-muted-foreground px-4">
+                  Save money with monthly plans. Cancel anytime.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-              {subscriptionPlans.map((product, index) => {
-                const originalPrices = [1499, 2799, 6999] // £14.99, £27.99, £69.99
-                const originalPrice = originalPrices[index]
-                
-                return (
-                  <Card key={product.id} className={`flex flex-col relative ${index === 1 ? 'border-primary shadow-lg md:scale-105' : ''}`}>
-                    {index === 1 && (
-                      <Badge className="absolute -top-2 right-4">
-                        Popular
-                      </Badge>
-                    )}
-                    <CardHeader>
-                      <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
-                      <CardDescription className="text-sm">{product.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                      {originalPrice && (
-                        <div className="text-lg text-muted-foreground line-through mb-1">
-                          £{(originalPrice / 100).toFixed(2)}
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+                {subscriptionPlans.map((product, index) => {
+                  const originalPrices = [1499, 2799, 6999] // £14.99, £27.99, £69.99
+                  const originalPrice = originalPrices[index]
+                  
+                  return (
+                    <Card key={product.id} className={`flex flex-col relative ${index === 1 ? 'border-primary shadow-lg md:scale-105' : ''}`}>
+                      {index === 1 && (
+                        <Badge className="absolute -top-2 right-4">
+                          Popular
+                        </Badge>
                       )}
-                      <div className="flex items-baseline gap-2 mb-1">
-                        <div className="text-3xl sm:text-4xl font-bold text-primary">
-                          £{(product.priceInCents / 100).toFixed(2)}
-                        </div>
+                      <CardHeader>
+                        <CardTitle className="text-xl sm:text-2xl">{product.name}</CardTitle>
+                        <CardDescription className="text-sm">{product.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex-1">
                         {originalPrice && (
-                          <Badge variant="destructive" className="text-xs">
-                            Save {Math.round(((originalPrice - product.priceInCents) / originalPrice) * 100)}%
-                          </Badge>
+                          <div className="text-lg text-muted-foreground line-through mb-1">
+                            £{(originalPrice / 100).toFixed(2)}
+                          </div>
                         )}
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-6">per month</p>
-                    
-                      {product.features && (
-                        <ul className="space-y-3">
-                          {product.features.map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm">
-                              <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="leading-relaxed">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </CardContent>
-                    <CardFooter>
-                      <CheckoutButton 
-                        productId={product.id} 
-                        label="Subscribe" 
-                        variant={index === 1 ? 'default' : 'outline'}
-                        publishableKey={publishableKey}
-                        isLoggedIn={isLoggedIn}
-                      />
-                    </CardFooter>
-                  </Card>
-                )
-              })}
+                        <div className="flex items-baseline gap-2 mb-1">
+                          <div className="text-3xl sm:text-4xl font-bold text-primary">
+                            £{(product.priceInCents / 100).toFixed(2)}
+                          </div>
+                          {originalPrice && (
+                            <Badge variant="destructive" className="text-xs">
+                              Save {Math.round(((originalPrice - product.priceInCents) / originalPrice) * 100)}%
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-6">per month</p>
+                      
+                        {product.features && (
+                          <ul className="space-y-3">
+                            {product.features.map((feature, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm">
+                                <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                <span className="leading-relaxed">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </CardContent>
+                      <CardFooter>
+                        <CheckoutButton 
+                          productId={product.id} 
+                          label="Subscribe" 
+                          variant={index === 1 ? 'default' : 'outline'}
+                          publishableKey={publishableKey}
+                          isLoggedIn={isLoggedIn}
+                        />
+                      </CardFooter>
+                    </Card>
+                  )
+                })}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* FAQ Section */}
         <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">

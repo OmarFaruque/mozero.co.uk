@@ -1,38 +1,60 @@
-[00:00:00.766] Server  LOG      ✓ Ready in 479ms
-[00:00:05.624] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:01:39.273] Server  LOG      ✓ Compiled in 133ms
-[00:01:44.257] Server  LOG      ✓ Compiled in 141ms
-[00:01:50.689] Server  LOG      ✓ Compiled in 99ms
-[00:01:55.610] Server  LOG      ✓ Compiled in 69ms
-[00:01:56.470] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:01:59.977] Server  LOG      ✓ Compiled in 58ms
-[00:02:01.054] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:10.044] Server  LOG      ✓ Compiled in 68ms
-[00:02:10.853] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:14.286] Server  LOG      ✓ Compiled in 32ms
-[00:02:15.256] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:19.110] Server  LOG      ✓ Compiled in 57ms
-[00:02:19.880] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:23.679] Server  LOG      ✓ Compiled in 25ms
-[00:02:24.713] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:27.994] Server  LOG      ✓ Compiled in 25ms
-[00:02:28.989] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:34.279] Server  LOG      ✓ Compiled in 51ms
-[00:02:34.991] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:39.661] Server  LOG      ✓ Compiled in 53ms
-[00:02:40.464] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:45.074] Server  LOG      ✓ Compiled in 25ms
-[00:02:45.786] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:50.223] Server  LOG      ✓ Compiled in 25ms
-[00:02:51.152] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:02:55.134] Server  LOG      ✓ Compiled in 26ms
-[00:02:56.703] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:01.073] Server  LOG      ✓ Compiled in 24ms
-[00:03:01.803] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:06.173] Server  LOG      ✓ Compiled in 23ms
-[00:03:06.946] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:12.136] Server  LOG      ✓ Compiled in 51ms
-[00:03:13.041] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:17.273] Server  LOG      ✓ Compiled in 39ms
-[00:03:17.959] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:03:28.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.825] Server  LOG      ✓ Ready in 8.4s
+[00:00:13.474] Server  LOG      ○ Compiling / ...
+[00:00:23.305] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.046] Server  LOG      ○ Compiling /icon ...
+[00:00:39.903] Server  LOG      ○ Compiling /administrator ...
+[00:01:33.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:36.961] Server  LOG      ○ Compiling /admin-login ...
+[00:01:52.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:55.343] Server  LOG      ○ Compiling /api/admin/login ...
+[00:02:57.018] Server  LOG     Login request for: "admin@mozero.co.uk"
+[00:03:02.749] Server  LOG     Login request for: "admin@mozero.co.uk"
+[00:24:37.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:43.346] Server  LOG      ○ Compiling /pricing ...
+[00:26:39.726] Server  LOG      ○ Compiling /dashboard ...
+[00:26:46.070] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:48.704] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:50.900] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentStateProvider>
+      <RenderFromTemplateContext>
+        <ScrollAndFocusHandler segmentPath={[...]}>
+          <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+            <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+              <LoadingBoundary name="pricing/" loading={null}>
+                <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/pricing" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                        <SegmentViewNode type="page" pagePath="pricing/pa...">
+                          <SegmentTrieNode>
+                          <PricingPage>
++                           <div className="flex min-h-screen flex-col">
+-                           <header
+-                             className="sticky top-0 z-50 w-full border-b border-border/40 bg-[#0f0d15]/80 backdrop-b..."
+-                           >
+                        ...
+                      ...
+            ...
+      ...
+
+[00:27:00.932] Server  ERROR    ⨯ Error: Stripe secret key not found in database or environment.
+[00:27:10.254] Browser ERROR   Checkout error: {"digest":"2051056911","environmentName":"Server","name":"Error"}
+[00:30:59.899] Server  LOG        Reload env: .env
+[00:31:13.042] Server  LOG      ✓ Compiled in 8.6s
+[00:31:19.729] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:04.364] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:34.644] Server  LOG      ✓ Compiled in 827ms
+[03:46:45.881] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:47.261] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

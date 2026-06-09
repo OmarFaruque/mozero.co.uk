@@ -43,7 +43,7 @@ function Icon() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
+            background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
             borderRadius: '6px'
         },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_$40$babel$2b$core$40$7$2e$29$2e$0_$40$opentelemetry$2b$api$40$1$2e$9$2e$0_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$react$2d$server$2e$js__$5b$app$2d$edge$2d$route$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -67,7 +67,7 @@ function Icon() {
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_$40$babel$2b$core$40$7$2e$29$2e$0_$40$opentelemetry$2b$api$40$1$2e$9$2e$0_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$react$2d$server$2e$js__$5b$app$2d$edge$2d$route$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                     d: "M14 2v6h6M16 13H8M16 17H8M10 9H8",
-                    stroke: "#ec4899",
+                    stroke: "white",
                     strokeWidth: "2",
                     strokeLinecap: "round",
                     strokeLinejoin: "round"

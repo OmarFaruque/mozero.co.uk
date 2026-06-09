@@ -43,7 +43,7 @@ const navItems = [
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
   { id: 'categories', label: 'Categories', icon: FolderOpen },
   { id: 'payments', label: 'Payments', icon: CreditCard },
-  { id: 'subscriptions', label: 'Subscriptions', icon: Zap },
+  // { id: 'subscriptions', label: 'Subscriptions', icon: Zap },
   { id: 'plans', label: 'Plans', icon: SquareKanban },
   { id: 'settings', label: 'Settings', icon: Settings },
 ]
