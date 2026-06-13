@@ -168,11 +168,11 @@ function generateContentStream(title: string, userInputs: any, content: string, 
         xPos = 310
       }
       
-      // Label (bold) on first line
+      // Label (bold) on first line - with top margin
       stream.push('BT')
       stream.push('/F2 11 Tf')
       stream.push('0.13 0.25 0.64 rg')
-      stream.push(`${xPos} ${currentY} Td`)
+      stream.push(`${xPos} ${currentY - 10} Td`)
       stream.push(`(${escapeText(label)}) Tj`)
       stream.push('ET')
       
@@ -180,7 +180,7 @@ function generateContentStream(title: string, userInputs: any, content: string, 
       stream.push('BT')
       stream.push('/F1 10 Tf')
       stream.push('0 0 0 rg')
-      stream.push(`${xPos} ${currentY - 14} Td`)
+      stream.push(`${xPos} ${currentY - 24} Td`)
       stream.push(`(${escapeText(val)}) Tj`)
       stream.push('ET')
       
@@ -193,10 +193,10 @@ function generateContentStream(title: string, userInputs: any, content: string, 
       }
     })
     
-    yPos = boxBottom - 15
+    yPos = boxBottom - 25
   }
   
-  // DOCUMENT CONTENT SECTION
+  // DOCUMENT CONTENT SECTION - with more top margin
   stream.push('BT')
   stream.push('/F2 13 Tf')
   stream.push('0.13 0.25 0.64 rg')

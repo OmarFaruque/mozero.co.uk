@@ -2,3 +2,5 @@
 [00:00:04.896] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
 [00:22:03.612] Server  LOG        Reload env: .env.development.local
 [00:22:04.812] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
+[00:24:34.516] Server  LOG        Reload env: .env.development.local
+[00:24:35.645] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
