@@ -2,57 +2,5 @@
   "version": 3,
   "middleware": {},
   "sortedMiddleware": [],
-  "functions": {
-    "/icon/route": {
-      "files": [
-        "server/middleware-build-manifest.js",
-        "server/interception-route-rewrite-manifest.js",
-        "server/server-reference-manifest.js",
-        "server/app/icon/route_client-reference-manifest.js",
-        "server/edge/chunks/_next-internal_server_app_icon_route_actions_6c46f2f4.js",
-        "server/edge/chunks/80737_next_dist_esm_shared_lib_85286fa5._.js",
-        "server/edge/chunks/80737_next_dist_esm_server_590ad1ca._.js",
-        "server/edge/chunks/80737_next_dist_esm_08d3876b._.js",
-        "server/edge/chunks/80737_next_dist_compiled_react-server-dom-turbopack_f7078a69._.js",
-        "server/edge/chunks/80737_next_dist_compiled_@vercel_og_228641af._.js",
-        "server/edge/chunks/80737_next_dist_compiled_f9d3f758._.js",
-        "server/edge/chunks/80737_next_dist_83707e46._.js",
-        "server/edge/chunks/edge-wrapper_5ff6d521.js",
-        "server/edge/chunks/4b6e4_@opentelemetry_api_build_esm_df5f8bb8._.js",
-        "server/edge/chunks/[root-of-the-server]__64f2736d._.js",
-        "server/edge/chunks/turbopack-edge-wrapper_515b40e7.js"
-      ],
-      "name": "app/icon/route",
-      "page": "/icon/route",
-      "matchers": [
-        {
-          "regexp": "^/icon(?:/)?$",
-          "originalSource": "/icon"
-        }
-      ],
-      "wasm": [
-        {
-          "name": "wasm_fdb56e4cc5936d29",
-          "filePath": "server/edge/chunks/80737_next_dist_compiled_@vercel_og_resvg_23ace1ce.wasm"
-        },
-        {
-          "name": "wasm_1ccdc983b1fd9f87",
-          "filePath": "server/edge/chunks/80737_next_dist_compiled_@vercel_og_yoga_23ace1ce.wasm"
-        }
-      ],
-      "assets": [
-        {
-          "name": "server/edge/assets/noto-sans-v27-latin-regular.bdfa676c.ttf",
-          "filePath": "server/edge/assets/noto-sans-v27-latin-regular.bdfa676c.ttf"
-        }
-      ],
-      "env": {
-        "__NEXT_BUILD_ID": "development",
-        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "NtQq9Rk+mdaYIgegTyWyclc3vct8Vvyz09P6bReiXeY=",
-        "__NEXT_PREVIEW_MODE_ID": "06873ce9d96dd34d9bae4c3969703dd6",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "3d819269a93f482a7828c925a6d5de2cff83a57e1c50f052bfa4d2c06d17692d",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1e9fbf619d18d819b5e22fe26afea2076b7f544232cc42756a3e7546e738ca36"
-      }
-    }
-  }
+  "functions": {}
 }
