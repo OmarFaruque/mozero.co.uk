@@ -267,6 +267,7 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                             type="number"
                             min="0"
                             defaultValue={Number(user.credits_available)}
+                            className="text-white"
                           />
                         </div>
                         <Button type="submit" variant="outline">Save</Button>
