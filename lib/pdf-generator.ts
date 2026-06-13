@@ -113,7 +113,7 @@ function generateContentStream(title: string, userInputs: any, content: string, 
   stream.push(`(Generated: ${timestamp}) Tj`)
   stream.push('ET')
   
-  yPos -= 25
+  yPos -= 30
   
   // CUSTOMER INFORMATION SECTION
   if (userInputs && Object.keys(userInputs).length > 0) {
@@ -124,53 +124,76 @@ function generateContentStream(title: string, userInputs: any, content: string, 
     stream.push('(CUSTOMER INFORMATION) Tj')
     stream.push('ET')
     
-    yPos -= 20
+    yPos -= 22
     
     const inputEntries = Object.entries(userInputs)
     
+    // Calculate box dimensions with proper padding
+    const boxPadding = 12
+    const fieldHeight = 24
+    const boxTop = yPos + boxPadding
+    const boxBottom = yPos - (inputEntries.length * fieldHeight) - boxPadding
+    
     // Draw background box
     stream.push('0.95 0.95 0.97 rg')
-    stream.push('0 0 0 RG')
-    stream.push('0.3 w')
-    stream.push(`38 ${yPos - (inputEntries.length * 22) - 10} m`)
-    stream.push(`572 ${yPos - (inputEntries.length * 22) - 10} l`)
-    stream.push(`572 ${yPos + 5} l`)
-    stream.push(`38 ${yPos + 5} l`)
+    stream.push(`38 ${boxBottom} m`)
+    stream.push(`572 ${boxBottom} l`)
+    stream.push(`572 ${boxTop} l`)
+    stream.push(`38 ${boxTop} l`)
     stream.push('f')
     
     // Draw border
     stream.push('0.7 0.7 0.7 RG')
     stream.push('0.5 w')
-    stream.push(`38 ${yPos - (inputEntries.length * 22) - 10} m`)
-    stream.push(`572 ${yPos - (inputEntries.length * 22) - 10} l`)
-    stream.push(`572 ${yPos + 5} l`)
-    stream.push(`38 ${yPos + 5} l`)
+    stream.push(`38 ${boxBottom} m`)
+    stream.push(`572 ${boxBottom} l`)
+    stream.push(`572 ${boxTop} l`)
+    stream.push(`38 ${boxTop} l`)
     stream.push('h')
     stream.push('S')
     
-    // Add field entries
+    // Add field entries with proper spacing
+    const fieldsPerLine = 2
+    let currentY = yPos - 8
+    let columnIndex = 0
+    
     inputEntries.forEach(([key, value]: [string, any], index) => {
       const label = camelCaseToTitleCase(key)
-      const val = String(value || 'N/A').substring(0, 70)
+      const val = String(value || 'N/A').substring(0, 50)
       
-      // Label (bold)
+      let xPos = 50
+      
+      // Calculate position based on column
+      if (columnIndex === 1) {
+        xPos = 310
+      }
+      
+      // Label (bold) on first line
       stream.push('BT')
       stream.push('/F2 11 Tf')
       stream.push('0.13 0.25 0.64 rg')
-      stream.push(`50 ${yPos - (index * 22)} Td`)
+      stream.push(`${xPos} ${currentY} Td`)
       stream.push(`(${escapeText(label)}) Tj`)
       stream.push('ET')
       
-      // Value (regular)
+      // Value (regular) on second line below label
       stream.push('BT')
       stream.push('/F1 10 Tf')
       stream.push('0 0 0 rg')
-      stream.push(`50 ${yPos - (index * 22) - 14} Td`)
+      stream.push(`${xPos} ${currentY - 14} Td`)
       stream.push(`(${escapeText(val)}) Tj`)
       stream.push('ET')
+      
+      columnIndex++
+      
+      // Move to next row after 2 columns
+      if (columnIndex >= fieldsPerLine) {
+        currentY -= fieldHeight
+        columnIndex = 0
+      }
     })
     
-    yPos -= (inputEntries.length * 22) + 25
+    yPos = boxBottom - 15
   }
   
   // DOCUMENT CONTENT SECTION
