@@ -180,7 +180,7 @@ function generateContentStream(title: string, userInputs: any, content: string, 
       stream.push('BT')
       stream.push('/F1 10 Tf')
       stream.push('0 0 0 rg')
-      stream.push(`${xPos} ${currentY - 28} Td`)
+      stream.push(`${xPos} ${currentY - 34} Td`)
       stream.push(`(${escapeText(val)}) Tj`)
       stream.push('ET')
       
