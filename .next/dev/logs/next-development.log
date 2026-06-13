@@ -1,1 +1,3 @@
-[00:00:00.805] Server  LOG      ✓ Ready in 516ms
+[00:00:00.795] Server  LOG      ✓ Ready in 489ms
+[00:00:05.050] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
+[00:06:07.969] Server  LOG      ✓ Compiled in 41ms
