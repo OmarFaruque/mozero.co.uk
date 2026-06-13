@@ -1,7 +1,2 @@
-[00:00:01.027] Server  LOG      ✓ Ready in 665ms
-[00:00:48.455] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:01:33.714] Server  LOG        Reload env: .env.development.local
-[01:43:38.418] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[01:43:47.197] Server  LOG        Reload env: .env.development.local
-[01:43:48.223] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[01:44:11.453] Server  LOG      ✓ Compiled in 147ms
+[00:00:00.768] Server  LOG      ✓ Ready in 482ms
+[00:00:04.896] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.

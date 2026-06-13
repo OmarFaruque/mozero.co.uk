@@ -32,7 +32,7 @@ function buildPDFBody(title: string, userInputs: any, content: string, timestamp
   
   // Object 3: Page
   objects.push(
-    `3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>\nendobj`
+    `3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>\nendobj`
   )
   
   // Object 4: Content Stream
@@ -40,9 +40,14 @@ function buildPDFBody(title: string, userInputs: any, content: string, timestamp
     `4 0 obj\n<< /Length ${contentLength} >>\nstream\n${contentStream}\nendstream\nendobj`
   )
   
-  // Object 5: Font
+  // Object 5: Font (Regular)
   objects.push(
     `5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj`
+  )
+  
+  // Object 6: Font (Bold)
+  objects.push(
+    `6 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>\nendobj`
   )
   
   // Calculate byte offsets
@@ -73,25 +78,27 @@ function buildPDFBody(title: string, userInputs: any, content: string, timestamp
 function generateContentStream(title: string, userInputs: any, content: string, timestamp: string): string {
   const stream: string[] = []
   
-  // Set line width and colors
+  // Set line width
   stream.push('0.5 w')
-  stream.push('0.13 0.25 0.64 RG') // Blue color for headers (RGB)
   
   // HEADER SECTION
   stream.push('BT')
-  stream.push('/F1 28 Tf')
+  stream.push('/F2 32 Tf')
   stream.push('40 750 Td')
+  stream.push('0.13 0.25 0.64 rg')
   stream.push(`(${escapeText(title)}) Tj`)
   stream.push('ET')
   
   // Company name
   stream.push('BT')
-  stream.push('/F1 10 Tf')
+  stream.push('/F1 11 Tf')
+  stream.push('0.4 0.4 0.4 rg')
   stream.push('40 730 Td')
-  stream.push('(MOZERO Legal Document Generation) Tj')
+  stream.push('(MOZERO - Legal Document Generation) Tj')
   stream.push('ET')
   
   // Horizontal line
+  stream.push('0.13 0.25 0.64 RG')
   stream.push('40 725 m')
   stream.push('570 725 l')
   stream.push('S')
@@ -101,70 +108,88 @@ function generateContentStream(title: string, userInputs: any, content: string, 
   // METADATA SECTION
   stream.push('BT')
   stream.push('/F1 10 Tf')
-  stream.push('0 0 0 rg') // Black text
+  stream.push('0 0 0 rg')
   stream.push(`40 ${yPos} Td`)
   stream.push(`(Generated: ${timestamp}) Tj`)
   stream.push('ET')
   
-  yPos -= 20
+  yPos -= 25
   
   // CUSTOMER INFORMATION SECTION
   if (userInputs && Object.keys(userInputs).length > 0) {
-    stream.push('0.13 0.25 0.64 RG') // Blue for section header
     stream.push('BT')
-    stream.push('/F1 12 Tf')
+    stream.push('/F2 13 Tf')
+    stream.push('0.13 0.25 0.64 rg')
     stream.push(`40 ${yPos} Td`)
     stream.push('(CUSTOMER INFORMATION) Tj')
     stream.push('ET')
     
-    yPos -= 18
+    yPos -= 20
     
-    // Background box for customer info
-    stream.push('0.93 0.93 0.95 rg') // Light gray background
-    stream.push(`40 ${yPos - 5} m`)
-    stream.push(`570 ${yPos - 5} l`)
-    stream.push(`570 ${yPos - (Object.keys(userInputs).length * 16) - 10} l`)
-    stream.push(`40 ${yPos - (Object.keys(userInputs).length * 16) - 10} l`)
+    const inputEntries = Object.entries(userInputs)
+    
+    // Draw background box
+    stream.push('0.95 0.95 0.97 rg')
+    stream.push('0 0 0 RG')
+    stream.push('0.3 w')
+    stream.push(`38 ${yPos - (inputEntries.length * 22) - 10} m`)
+    stream.push(`572 ${yPos - (inputEntries.length * 22) - 10} l`)
+    stream.push(`572 ${yPos + 5} l`)
+    stream.push(`38 ${yPos + 5} l`)
     stream.push('f')
     
-    stream.push('0 0 0 rg') // Black text
-    const inputEntries = Object.entries(userInputs).slice(0, 10) // Limit to 10 fields
+    // Draw border
+    stream.push('0.7 0.7 0.7 RG')
+    stream.push('0.5 w')
+    stream.push(`38 ${yPos - (inputEntries.length * 22) - 10} m`)
+    stream.push(`572 ${yPos - (inputEntries.length * 22) - 10} l`)
+    stream.push(`572 ${yPos + 5} l`)
+    stream.push(`38 ${yPos + 5} l`)
+    stream.push('h')
+    stream.push('S')
     
+    // Add field entries
     inputEntries.forEach(([key, value]: [string, any], index) => {
-      const label = formatLabel(key)
-      const val = String(value || 'N/A').substring(0, 55)
+      const label = camelCaseToTitleCase(key)
+      const val = String(value || 'N/A').substring(0, 70)
       
+      // Label (bold)
+      stream.push('BT')
+      stream.push('/F2 11 Tf')
+      stream.push('0.13 0.25 0.64 rg')
+      stream.push(`50 ${yPos - (index * 22)} Td`)
+      stream.push(`(${escapeText(label)}) Tj`)
+      stream.push('ET')
+      
+      // Value (regular)
       stream.push('BT')
       stream.push('/F1 10 Tf')
-      stream.push(`50 ${yPos - (index * 16)} Td`)
-      stream.push(`(${escapeText(label)}: ) Tj`)
-      
-      stream.push('0.3 0.3 0.3 rg') // Dark gray for values
+      stream.push('0 0 0 rg')
+      stream.push(`50 ${yPos - (index * 22) - 14} Td`)
       stream.push(`(${escapeText(val)}) Tj`)
       stream.push('ET')
     })
     
-    yPos -= (inputEntries.length * 16) + 20
+    yPos -= (inputEntries.length * 22) + 25
   }
   
   // DOCUMENT CONTENT SECTION
-  stream.push('0.13 0.25 0.64 RG') // Blue for section header
   stream.push('BT')
-  stream.push('/F1 12 Tf')
+  stream.push('/F2 13 Tf')
+  stream.push('0.13 0.25 0.64 rg')
   stream.push(`40 ${yPos} Td`)
   stream.push('(DOCUMENT CONTENT) Tj')
   stream.push('ET')
   
-  yPos -= 18
+  yPos -= 20
   
-  stream.push('0 0 0 rg') // Black text
+  stream.push('0 0 0 rg')
   
   // Add content with better wrapping
-  const lines = wrapTextToLines(content, 95)
-  let contentLines = 0
+  const lines = wrapTextToLines(content, 100)
   
   lines.forEach(line => {
-    if (yPos < 60) return
+    if (yPos < 70) return
     
     stream.push('BT')
     stream.push('/F1 11 Tf')
@@ -172,27 +197,27 @@ function generateContentStream(title: string, userInputs: any, content: string, 
     stream.push(`(${escapeText(line)}) Tj`)
     stream.push('ET')
     
-    yPos -= 14
-    contentLines++
+    yPos -= 15
   })
   
   // FOOTER SECTION
-  stream.push('0.13 0.25 0.64 RG') // Blue line
-  stream.push('40 45 m')
-  stream.push('570 45 l')
+  stream.push('0.13 0.25 0.64 RG')
+  stream.push('0.5 w')
+  stream.push('40 50 m')
+  stream.push('570 50 l')
   stream.push('S')
   
-  stream.push('0.5 0.5 0.5 rg') // Gray text for footer
+  stream.push('0.5 0.5 0.5 rg')
   stream.push('BT')
   stream.push('/F1 9 Tf')
-  stream.push('40 30 Td')
-  stream.push('(LEGAL DISCLAIMER: This document was generated by Mozero and does not constitute legal advice.) Tj')
+  stream.push('40 35 Td')
+  stream.push('(LEGAL DISCLAIMER: This document was generated by MOZERO and does not constitute legal advice.) Tj')
   stream.push('ET')
   
   stream.push('BT')
   stream.push('/F1 8 Tf')
-  stream.push('40 18 Td')
-  stream.push('(For legal matters, please consult a licensed attorney or solicitor. Visit www.mozero.co.uk) Tj')
+  stream.push('40 23 Td')
+  stream.push('(For legal matters, please consult a licensed attorney or solicitor. www.mozero.co.uk) Tj')
   stream.push('ET')
   
   return stream.join('\n')
@@ -206,12 +231,16 @@ function escapeText(text: string): string {
     .substring(0, 200)
 }
 
-function formatLabel(key: string): string {
-  return key
+function camelCaseToTitleCase(str: string): string {
+  // Convert camelCase and snake_case to Title Case
+  return str
+    // Handle camelCase
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    // Handle underscores
     .replace(/_/g, ' ')
-    .replace(/^./, char => char.toUpperCase())
+    // Capitalize each word
     .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(' ')
 }
 
