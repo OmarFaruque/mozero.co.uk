@@ -2,3 +2,8 @@
 [00:00:04.945] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
 [00:12:49.974] Server  LOG        Reload env: .env.development.local
 [00:12:51.611] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
+[00:16:54.665] Server  LOG        Reload env: .env
+[00:22:07.848] Server  LOG      ○ Compiling /administrator ...
+[00:22:12.484] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:13.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:32.252] Server  LOG     Login request for: "admin@mozero.co.uk"

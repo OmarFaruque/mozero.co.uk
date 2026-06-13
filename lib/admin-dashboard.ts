@@ -19,6 +19,7 @@ export type AdminDashboardData = {
   transactions: any[]
   subscriptions: any[]
   plans: any[]
+  orders: any[]
   pagination?: {
     total: number
     page: number
@@ -93,6 +94,7 @@ export async function getAdminDashboardData(
   let transactions: any[] = []
   let subscriptions: any[] = []
   let categories: any[] = []
+  let orders: any[] = []
   let totalCount = 0
 
   if (section === 'users') {
@@ -208,6 +210,32 @@ export async function getAdminDashboardData(
       ORDER BY us.created_at DESC
       LIMIT ${limit} OFFSET ${offset}
     `
+  } else if (section === 'orders') {
+    const countResult = await sql`
+      SELECT COUNT(*) FROM documents d
+      LEFT JOIN users u ON d.user_id = u.id
+      WHERE ${search === ''}
+        OR u.email ILIKE ${searchTerm}
+        OR d.title ILIKE ${searchTerm}
+    `
+    totalCount = toNumber(countResult[0].count)
+
+    orders = await sql`
+      SELECT
+        d.id, d.title, d.status, d.created_at, d.updated_at,
+        u.id AS user_id, u.email, u.full_name,
+        t.name AS template_name,
+        c.name AS category_name
+      FROM documents d
+      LEFT JOIN users u ON d.user_id = u.id
+      LEFT JOIN templates t ON d.template_id = t.id
+      LEFT JOIN categories c ON t.category_id = c.id
+      WHERE ${search === ''}
+        OR u.email ILIKE ${searchTerm}
+        OR d.title ILIKE ${searchTerm}
+      ORDER BY d.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `
   } else {
     // For overview or other sections, just provide basic categories
     categories = allCategories
@@ -231,6 +259,7 @@ export async function getAdminDashboardData(
     templates,
     transactions,
     subscriptions,
+    orders,
     plans,
     pagination: totalCount > 0 ? {
       total: totalCount,

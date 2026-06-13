@@ -12,6 +12,7 @@ import {
   Users,
   Zap,
   SquareKanban,
+  ShoppingCart,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -40,6 +41,7 @@ export const dynamic = 'force-dynamic'
 const navItems = [
   { id: 'overview', label: 'Overview', icon: BarChart3 },
   { id: 'users', label: 'Users', icon: Users },
+  { id: 'orders', label: 'Orders', icon: ShoppingCart },
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
   { id: 'categories', label: 'Categories', icon: FolderOpen },
   { id: 'payments', label: 'Payments', icon: CreditCard },
@@ -271,6 +273,62 @@ export default async function AdministratorPage({ searchParams }: PageProps) {
                       </form>
                     </div>
                   ))
+                )}
+                {data.pagination && (
+                  <Pagination 
+                    currentPage={data.pagination.page} 
+                    totalPages={data.pagination.totalPages} 
+                    baseUrl={paginationBaseUrl} 
+                  />
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          {section === 'orders' && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Customer Orders & Documents</CardTitle>
+                <CardDescription>View generated documents and download files for customer orders.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <form className="flex w-full gap-2">
+                  <input type="hidden" name="section" value="orders" />
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <Input name="q" defaultValue={search} placeholder="Search by email or reference" className="pl-9" />
+                  </div>
+                  <Button type="submit" variant="outline">Search</Button>
+                </form>
+
+                {data.orders.length === 0 ? (
+                  <EmptyState message="No orders found." />
+                ) : (
+                  <div className="space-y-3">
+                    {data.orders.map((order) => (
+                      <div key={order.id} className="grid gap-3 rounded-lg border p-4 md:grid-cols-[1fr_180px_140px_100px] md:items-center">
+                        <div className="min-w-0">
+                          <div className="font-medium truncate">{order.title}</div>
+                          <div className="mt-1 flex flex-wrap gap-2 text-sm text-muted-foreground">
+                            <span>{order.email || 'Unknown'}</span>
+                            {order.category_name && <Badge variant="secondary" className="text-xs">{order.category_name}</Badge>}
+                          </div>
+                        </div>
+                        <Badge variant={order.status === 'finalized' ? 'default' : 'secondary'}>
+                          {order.status || 'draft'}
+                        </Badge>
+                        <div className="text-sm text-muted-foreground text-right">{date(order.created_at)}</div>
+                        <a
+                          href={`/api/export-pdf?docId=${order.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-600 hover:underline text-right"
+                        >
+                          Download
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 )}
                 {data.pagination && (
                   <Pagination 
