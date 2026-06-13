@@ -1,7 +1,4 @@
 {
-  "/admin-login/page": "app/admin-login/page.js",
-  "/administrator/page": "app/administrator/page.js",
-  "/api/admin/login/route": "app/api/admin/login/route.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/page": "app/page.js"
 }
