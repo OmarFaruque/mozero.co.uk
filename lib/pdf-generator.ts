@@ -172,7 +172,7 @@ function generateContentStream(title: string, userInputs: any, content: string, 
       stream.push('BT')
       stream.push('/F2 11 Tf')
       stream.push('0.13 0.25 0.64 rg')
-      stream.push(`${xPos} ${currentY - 15} Td`)
+      stream.push(`${xPos} ${currentY - 10} Td`)
       stream.push(`(${escapeText(label)}) Tj`)
       stream.push('ET')
       
@@ -180,7 +180,7 @@ function generateContentStream(title: string, userInputs: any, content: string, 
       stream.push('BT')
       stream.push('/F1 10 Tf')
       stream.push('0 0 0 rg')
-      stream.push(`${xPos} ${currentY - 34} Td`)
+      stream.push(`${xPos} ${currentY - 24} Td`)
       stream.push(`(${escapeText(val)}) Tj`)
       stream.push('ET')
       
