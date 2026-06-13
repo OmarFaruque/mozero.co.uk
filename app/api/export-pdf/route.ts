@@ -2,6 +2,35 @@ import { requireAuth } from '@/lib/auth'
 import { sql } from '@/lib/db'
 import { NextResponse } from 'next/server'
 
+function escapeHtml(text: string): string {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  }
+  return text.replace(/[&<>"']/g, (m) => map[m])
+}
+
+function formatUserInputs(userInputs: any): string {
+  if (!userInputs || typeof userInputs !== 'object') return ''
+
+  return Object.entries(userInputs)
+    .map(([key, value]) => {
+      const label = key
+        .replace(/([A-Z])/g, ' $1')
+        .replace(/^./, (str) => str.toUpperCase())
+        .trim()
+      const formattedValue = typeof value === 'string' ? escapeHtml(value) : String(value)
+      return `<div class="input-field">
+        <label>${label}</label>
+        <span class="value">${formattedValue}</span>
+      </div>`
+    })
+    .join('')
+}
+
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url)
@@ -14,10 +43,12 @@ export async function GET(req: Request) {
       )
     }
 
-    // For GET requests (admin dashboard), get document without user check
     const documents = await sql`
-      SELECT * FROM documents
-      WHERE id = ${parseInt(docId)}
+      SELECT d.id, d.title, d.content, d.user_inputs, d.created_at, u.full_name, u.email, t.name as template_name
+      FROM documents d
+      LEFT JOIN users u ON d.user_id = u.id
+      LEFT JOIN templates t ON d.template_id = t.id
+      WHERE d.id = ${parseInt(docId)}
     `
 
     if (documents.length === 0) {
@@ -28,152 +59,288 @@ export async function GET(req: Request) {
     }
 
     const document = documents[0]
-
-    const generatedDate = new Date().toLocaleDateString('en-GB', {
-      day: 'numeric',
+    const generatedDate = new Date(document.created_at).toLocaleDateString('en-GB', {
+      day: '2-digit',
       month: 'long',
       year: 'numeric'
     })
 
-    const formattedContent = document.content
-      .split(/\n\s*\n/)
-      .map((block: string) => block.trim())
-      .filter(Boolean)
-      .map((block: string) => {
-        if (/^[A-Z][A-Z\s\-]{2,}$/.test(block)) {
-          return `<h2>${block}</h2>`
-        }
-
-        if (/^(Date|Subject|To|From|Re):/i.test(block)) {
-          return `<p class=\"meta-line\"><strong>${block}</strong></p>`
-        }
-
-        if (/^(Sincerely|Yours faithfully|Best regards|Regards|Respectfully),?$/i.test(block)) {
-          return `<p class=\"closing\">${block}</p>`
-        }
-
-        return `<p>${block.replace(/\n/g, '<br>')}</p>`
-      })
-      .join('')
+    const userInputsHtml = formatUserInputs(document.user_inputs)
 
     const html = `
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>${document.title}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(document.title)}</title>
   <style>
-    @page {
-      margin: 1in;
-      size: A4;
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .document {
+        box-shadow: none;
+        page-break-after: always;
+      }
+      @page {
+        margin: 0.5in;
+        size: A4;
+      }
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Inter', 'Segoe UI', 'Calibri', sans-serif;
-      font-size: 11pt;
-      line-height: 1.7;
-      color: #111827;
-      max-width: 100%;
-      background: white;
-      padding: 0;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
     }
-    .document-container {
-      max-width: 8.25in;
+
+    .document {
+      max-width: 8.5in;
+      height: 11in;
       margin: 0 auto;
-      padding: 0.85in 0.9in;
+      padding: 0.75in;
       background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      page-break-after: always;
     }
+
     .header {
-      margin-bottom: 1.5em;
-      padding-bottom: 0.9em;
-      border-bottom: 1px solid #d1d5db;
+      border-bottom: 3px solid #1e40af;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
     }
-    .title {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 20pt;
+
+    .header-logo {
+      font-size: 24px;
       font-weight: 700;
-      line-height: 1.2;
-      color: #0f172a;
-      margin-bottom: 0.2em;
+      color: #1e40af;
+      margin-bottom: 8px;
     }
-    .subtitle {
-      font-size: 9pt;
-      letter-spacing: 0.04em;
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .metadata {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 15px;
+      background: #f9fafb;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 12px;
+    }
+
+    .metadata-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metadata-label {
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4px;
+    }
+
+    .metadata-value {
+      color: #333;
+      word-break: break-word;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .inputs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      padding: 10px;
+      background: #f9fafb;
+      border-radius: 4px;
+      border-left: 3px solid #1e40af;
+    }
+
+    .input-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4px;
       text-transform: uppercase;
-      color: #6b7280;
+      letter-spacing: 0.5px;
     }
-    .content {
-      text-align: left;
-      margin-bottom: 2.4em;
+
+    .input-field .value {
+      display: block;
+      font-size: 13px;
+      color: #333;
+      word-wrap: break-word;
+      word-break: break-word;
     }
-    .content p {
-      margin: 0.9em 0;
+
+    .document-content {
+      margin-bottom: 25px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .document-content p {
+      margin-bottom: 12px;
       text-align: justify;
-      text-justify: inter-word;
     }
-    .content h2 {
-      margin: 1.6em 0 0.6em;
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 13.5pt;
-      color: #1f2937;
-      letter-spacing: 0.01em;
-    }
-    .meta-line {
-      margin: 0.35em 0 !important;
-      color: #1f2937;
-      text-align: left !important;
-    }
-    .closing {
-      margin-top: 1.6em !important;
-      text-align: left !important;
-    }
+
     .footer {
-      margin-top: 2.8em;
-      padding-top: 1em;
-      border-top: 1px solid #d1d5db;
-      font-size: 8.5pt;
-      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+      margin-top: 25px;
+      font-size: 10px;
+      color: #666;
       text-align: center;
-      line-height: 1.5;
     }
+
+    .footer-line {
+      margin-bottom: 4px;
+    }
+
     .watermark {
       position: fixed;
-      bottom: 0.5in;
-      right: 0.5in;
-      font-size: 8pt;
-      color: #9ca3af;
-      opacity: 0.7;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      font-size: 100px;
+      color: rgba(30, 64, 175, 0.05);
+      z-index: -1;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
     }
-    @media print {
-      body {
-        padding: 0;
-        margin: 0;
+
+    .signature-block {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .signature-line {
+      border-top: 1px solid #333;
+      padding-top: 8px;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      .metadata {
+        grid-template-columns: 1fr;
       }
-      .no-print {
-        display: none;
+      .inputs-grid {
+        grid-template-columns: 1fr;
+      }
+      .signature-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="document-container">
+  <div class="watermark">MOZERO</div>
+  
+  <div class="document">
     <div class="header">
-      <h1 class="title">${document.title}</h1>
-      <p class="subtitle">Generated Document • Mozero</p>
+      <div class="header-logo">MOZERO</div>
+      <div class="header-title">${escapeHtml(document.title)}</div>
+      <div class="header-subtitle">Generated Legal Document</div>
     </div>
-    <div class="content">${formattedContent}</div>
+
+    <div class="metadata">
+      <div class="metadata-item">
+        <div class="metadata-label">Document ID</div>
+        <div class="metadata-value">${document.id}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Template</div>
+        <div class="metadata-value">${escapeHtml(document.template_name || 'N/A')}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Client Name</div>
+        <div class="metadata-value">${escapeHtml(document.full_name || 'Not specified')}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Generated Date</div>
+        <div class="metadata-value">${generatedDate}</div>
+      </div>
+    </div>
+
+    <div class="section-title">DOCUMENT DETAILS</div>
+    <div class="inputs-grid">
+      ${userInputsHtml}
+    </div>
+
+    <div class="section-title">DOCUMENT CONTENT</div>
+    <div class="document-content">
+      ${document.content
+        .split('\n\n')
+        .map((para: string) => `<p>${escapeHtml(para.trim())}</p>`)
+        .join('')}
+    </div>
+
     <div class="footer">
-      <p><strong>Legal Disclaimer:</strong> This document was generated by Mozero and does not constitute legal advice.</p>
-      <p>For legal matters, please consult a licensed attorney or solicitor.</p>
-      <p style="margin-top: 0.5em; font-size: 8pt;">Generated on ${generatedDate} • Mozero.com</p>
+      <div class="footer-line"><strong>LEGAL DISCLAIMER</strong></div>
+      <div class="footer-line">This document was generated by Mozero and does not constitute legal advice.</div>
+      <div class="footer-line">For legal matters, please consult a licensed attorney or solicitor.</div>
+      <div class="footer-line" style="margin-top: 8px;">Mozero.com • Generated on ${generatedDate}</div>
+    </div>
+
+    <div class="signature-block">
+      <div class="signature-line">Client Signature / Date</div>
+      <div class="signature-line">Authorized Representative / Date</div>
     </div>
   </div>
+
+  <script>
+    // Auto-print on load if requested
+    if (window.location.hash === '#print') {
+      window.print()
+    }
+  </script>
 </body>
 </html>
     `
@@ -181,11 +348,11 @@ export async function GET(req: Request) {
     return new NextResponse(html, {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
-        'Content-Disposition': `attachment; filename="${document.title.replace(/[^a-z0-9]/gi, '_')}.html"`,
+        'Content-Disposition': `inline; filename="${document.title.replace(/[^a-z0-9]/gi, '_')}.html"`,
       },
     })
   } catch (error: any) {
-    console.error('[v0] PDF export error:', error)
+    console.error('[v0] Export error:', error)
     return NextResponse.json(
       { error: 'Failed to export document' },
       { status: 500 }
@@ -198,10 +365,12 @@ export async function POST(req: Request) {
     const user = await requireAuth()
     const { documentId } = await req.json()
 
-    // Verify document belongs to user
     const documents = await sql`
-      SELECT * FROM documents
-      WHERE id = ${documentId} AND user_id = ${user.id}
+      SELECT d.id, d.title, d.content, d.user_inputs, d.created_at, u.full_name, u.email, t.name as template_name
+      FROM documents d
+      LEFT JOIN users u ON d.user_id = u.id
+      LEFT JOIN templates t ON d.template_id = t.id
+      WHERE d.id = ${documentId} AND d.user_id = ${user.id}
     `
 
     if (documents.length === 0) {
@@ -212,152 +381,288 @@ export async function POST(req: Request) {
     }
 
     const document = documents[0]
-
-    const generatedDate = new Date().toLocaleDateString('en-GB', {
-      day: 'numeric',
+    const generatedDate = new Date(document.created_at).toLocaleDateString('en-GB', {
+      day: '2-digit',
       month: 'long',
       year: 'numeric'
     })
 
-    const formattedContent = document.content
-      .split(/\n\s*\n/)
-      .map((block: string) => block.trim())
-      .filter(Boolean)
-      .map((block: string) => {
-        if (/^[A-Z][A-Z\s\-]{2,}$/.test(block)) {
-          return `<h2>${block}</h2>`
-        }
-
-        if (/^(Date|Subject|To|From|Re):/i.test(block)) {
-          return `<p class=\"meta-line\"><strong>${block}</strong></p>`
-        }
-
-        if (/^(Sincerely|Yours faithfully|Best regards|Regards|Respectfully),?$/i.test(block)) {
-          return `<p class=\"closing\">${block}</p>`
-        }
-
-        return `<p>${block.replace(/\n/g, '<br>')}</p>`
-      })
-      .join('')
+    const userInputsHtml = formatUserInputs(document.user_inputs)
 
     const html = `
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>${document.title}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(document.title)}</title>
   <style>
-    @page {
-      margin: 1in;
-      size: A4;
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .document {
+        box-shadow: none;
+        page-break-after: always;
+      }
+      @page {
+        margin: 0.5in;
+        size: A4;
+      }
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Inter', 'Segoe UI', 'Calibri', sans-serif;
-      font-size: 11pt;
-      line-height: 1.7;
-      color: #111827;
-      max-width: 100%;
-      background: white;
-      padding: 0;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
     }
-    .document-container {
-      max-width: 8.25in;
+
+    .document {
+      max-width: 8.5in;
+      height: 11in;
       margin: 0 auto;
-      padding: 0.85in 0.9in;
+      padding: 0.75in;
       background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      page-break-after: always;
     }
+
     .header {
-      margin-bottom: 1.5em;
-      padding-bottom: 0.9em;
-      border-bottom: 1px solid #d1d5db;
+      border-bottom: 3px solid #1e40af;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
     }
-    .title {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 20pt;
+
+    .header-logo {
+      font-size: 24px;
       font-weight: 700;
-      line-height: 1.2;
-      color: #0f172a;
-      margin-bottom: 0.2em;
+      color: #1e40af;
+      margin-bottom: 8px;
     }
-    .subtitle {
-      font-size: 9pt;
-      letter-spacing: 0.04em;
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .metadata {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 15px;
+      background: #f9fafb;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 12px;
+    }
+
+    .metadata-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metadata-label {
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4px;
+    }
+
+    .metadata-value {
+      color: #333;
+      word-break: break-word;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .inputs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      padding: 10px;
+      background: #f9fafb;
+      border-radius: 4px;
+      border-left: 3px solid #1e40af;
+    }
+
+    .input-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4px;
       text-transform: uppercase;
-      color: #6b7280;
+      letter-spacing: 0.5px;
     }
-    .content {
-      text-align: left;
-      margin-bottom: 2.4em;
+
+    .input-field .value {
+      display: block;
+      font-size: 13px;
+      color: #333;
+      word-wrap: break-word;
+      word-break: break-word;
     }
-    .content p {
-      margin: 0.9em 0;
+
+    .document-content {
+      margin-bottom: 25px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .document-content p {
+      margin-bottom: 12px;
       text-align: justify;
-      text-justify: inter-word;
     }
-    .content h2 {
-      margin: 1.6em 0 0.6em;
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 13.5pt;
-      color: #1f2937;
-      letter-spacing: 0.01em;
-    }
-    .meta-line {
-      margin: 0.35em 0 !important;
-      color: #1f2937;
-      text-align: left !important;
-    }
-    .closing {
-      margin-top: 1.6em !important;
-      text-align: left !important;
-    }
+
     .footer {
-      margin-top: 2.8em;
-      padding-top: 1em;
-      border-top: 1px solid #d1d5db;
-      font-size: 8.5pt;
-      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+      margin-top: 25px;
+      font-size: 10px;
+      color: #666;
       text-align: center;
-      line-height: 1.5;
     }
+
+    .footer-line {
+      margin-bottom: 4px;
+    }
+
     .watermark {
       position: fixed;
-      bottom: 0.5in;
-      right: 0.5in;
-      font-size: 8pt;
-      color: #9ca3af;
-      opacity: 0.7;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      font-size: 100px;
+      color: rgba(30, 64, 175, 0.05);
+      z-index: -1;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
     }
-    @media print {
-      body {
-        padding: 0;
-        margin: 0;
+
+    .signature-block {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .signature-line {
+      border-top: 1px solid #333;
+      padding-top: 8px;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      .metadata {
+        grid-template-columns: 1fr;
       }
-      .no-print {
-        display: none;
+      .inputs-grid {
+        grid-template-columns: 1fr;
+      }
+      .signature-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="document-container">
+  <div class="watermark">MOZERO</div>
+  
+  <div class="document">
     <div class="header">
-      <h1 class="title">${document.title}</h1>
-      <p class="subtitle">Generated Document • Mozero</p>
+      <div class="header-logo">MOZERO</div>
+      <div class="header-title">${escapeHtml(document.title)}</div>
+      <div class="header-subtitle">Generated Legal Document</div>
     </div>
-    <div class="content">${formattedContent}</div>
+
+    <div class="metadata">
+      <div class="metadata-item">
+        <div class="metadata-label">Document ID</div>
+        <div class="metadata-value">${document.id}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Template</div>
+        <div class="metadata-value">${escapeHtml(document.template_name || 'N/A')}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Client Name</div>
+        <div class="metadata-value">${escapeHtml(document.full_name || 'Not specified')}</div>
+      </div>
+      <div class="metadata-item">
+        <div class="metadata-label">Generated Date</div>
+        <div class="metadata-value">${generatedDate}</div>
+      </div>
+    </div>
+
+    <div class="section-title">DOCUMENT DETAILS</div>
+    <div class="inputs-grid">
+      ${userInputsHtml}
+    </div>
+
+    <div class="section-title">DOCUMENT CONTENT</div>
+    <div class="document-content">
+      ${document.content
+        .split('\n\n')
+        .map((para: string) => `<p>${escapeHtml(para.trim())}</p>`)
+        .join('')}
+    </div>
+
     <div class="footer">
-      <p><strong>Legal Disclaimer:</strong> This document was generated by Mozero and does not constitute legal advice.</p>
-      <p>For legal matters, please consult a licensed attorney or solicitor.</p>
-      <p style="margin-top: 0.5em; font-size: 8pt;">Generated on ${generatedDate} • Mozero.com</p>
+      <div class="footer-line"><strong>LEGAL DISCLAIMER</strong></div>
+      <div class="footer-line">This document was generated by Mozero and does not constitute legal advice.</div>
+      <div class="footer-line">For legal matters, please consult a licensed attorney or solicitor.</div>
+      <div class="footer-line" style="margin-top: 8px;">Mozero.com • Generated on ${generatedDate}</div>
+    </div>
+
+    <div class="signature-block">
+      <div class="signature-line">Client Signature / Date</div>
+      <div class="signature-line">Authorized Representative / Date</div>
     </div>
   </div>
+
+  <script>
+    // Auto-print on load if requested
+    if (window.location.hash === '#print') {
+      window.print()
+    }
+  </script>
 </body>
 </html>
     `
@@ -365,19 +670,17 @@ export async function POST(req: Request) {
     return new NextResponse(html, {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
-        'Content-Disposition': `attachment; filename="${document.title.replace(/[^a-z0-9]/gi, '_')}.html"`,
+        'Content-Disposition': `inline; filename="${document.title.replace(/[^a-z0-9]/gi, '_')}.html"`,
       },
     })
   } catch (error: any) {
-    console.error('[v0] PDF export error:', error)
-    
+    console.error('[v0] Export error:', error)
     if (error.message === 'Unauthorized') {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
       )
     }
-
     return NextResponse.json(
       { error: 'Failed to export document' },
       { status: 500 }
