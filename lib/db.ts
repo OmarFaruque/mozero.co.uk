@@ -3,7 +3,7 @@ import { neon } from '@neondatabase/serverless'
 
 // Database is no longer needed for template pages which now use static data
 
-const DATABASE_URL = process.env.DATABASE_URL_3 || process.env.DATABASE_URL
+const DATABASE_URL = process.env.DATABASE_URL
 
 if (!DATABASE_URL) {
   console.warn('DATABASE_URL environment variable is not set. Database features will fail.')
