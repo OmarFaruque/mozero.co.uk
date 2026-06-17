@@ -4,9 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
-import { FileText, Plus, CreditCard, Zap } from 'lucide-react'
+import { FileText, Plus, CreditCard, Zap, File } from 'lucide-react'
 import { requireAuth } from '@/lib/auth'
 import { getUserDashboardData } from '@/lib/user-dashboard'
+import { DocumentTopUp } from '@/components/document-topup'
 
 export const dynamic = 'force-dynamic'
 
@@ -44,7 +45,7 @@ export default async function DashboardPage() {
         </section>
 
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-6 sm:mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
@@ -59,6 +60,8 @@ export default async function DashboardPage() {
                 </p>
               </CardContent>
             </Card>
+
+            <DocumentTopUp currentDocuments={42} />
 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -97,6 +100,7 @@ export default async function DashboardPage() {
                 </p>
               </CardContent>
             </Card>
+
           </div>
 
           {userCredits.credits_available === 0 && (

@@ -2,8 +2,9 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Check, Zap } from 'lucide-react'
+import { Check, Zap, FileText } from 'lucide-react'
 import { CheckoutButton } from '@/components/checkout-button'
+import { DocumentBundleCard } from '@/components/document-bundle-card'
 import { getActivePlans } from '@/lib/plans'
 import { getSettings } from '@/lib/admin-settings'
 import { getCurrentUser } from '@/lib/auth'
@@ -172,6 +173,59 @@ export default async function PricingPage() {
             </div>
           </section>
         )}
+
+        {/* Document Bundles */}
+        <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+          <div className="text-center mb-8 sm:mb-12">
+            <Badge variant="secondary" className="mb-3">
+              <FileText className="h-3 w-3 mr-1" />
+              Document Bundles
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">Buy Documents in Bulk</h2>
+            <p className="text-sm sm:text-base text-muted-foreground px-4">
+              Purchase document bundles and use them whenever you need. Never expire.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
+            <DocumentBundleCard
+              id="bundle-5"
+              name="Starter"
+              description="Perfect for trying it out"
+              documentCount={5}
+              price={14.93}
+            />
+            <DocumentBundleCard
+              id="bundle-10"
+              name="Basic"
+              description="Great value"
+              documentCount={10}
+              price={23.89}
+              isPopular
+            />
+            <DocumentBundleCard
+              id="bundle-25"
+              name="Professional"
+              description="For regular users"
+              documentCount={25}
+              price={52.90}
+            />
+            <DocumentBundleCard
+              id="bundle-50"
+              name="Premium"
+              description="Best for teams"
+              documentCount={50}
+              price={82.54}
+            />
+            <DocumentBundleCard
+              id="bundle-100"
+              name="Enterprise"
+              description="Maximum value"
+              documentCount={100}
+              price={176.28}
+            />
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
