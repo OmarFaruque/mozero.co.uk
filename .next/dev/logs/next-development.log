@@ -1362,3 +1362,7 @@ Import trace:
 [00:20:46.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 >>>>>>> origin/ui-for-bundles
 [00:14:39.203] Server  LOG      ✓ Compiled in 0ms
+[00:15:22.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:38.556] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "NaN"
+[00:16:52.092] Browser ERROR   Checkout error: {"digest":"3060365623","environmentName":"Server","name":"NeonDbError"}
+[00:25:00.546] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
