@@ -1360,9 +1360,29 @@ Import trace:
 [00:19:54.728] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:20:19.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:20:46.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+<<<<<<< HEAD
 >>>>>>> origin/ui-for-bundles
 [00:14:39.203] Server  LOG      ✓ Compiled in 0ms
 [00:15:22.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:16:38.556] Server  ERROR    ⨯ NeonDbError: invalid input syntax for type integer: "NaN"
 [00:16:52.092] Browser ERROR   Checkout error: {"digest":"3060365623","environmentName":"Server","name":"NeonDbError"}
 [00:25:00.546] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+=======
+[00:49:32.975] Server  LOG      ✓ Compiled in 61ms
+[00:49:33.078] Browser ERROR   uncaughtError: ReferenceError: customAmount is not defined
+[00:49:37.681] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:49:37.919] Server  LOG      ✓ Compiled in 50ms
+[00:49:38.003] Server  ERROR    ⨯ ReferenceError: customAmount is not defined
+[00:49:38.035] Browser ERROR   uncaughtError: ReferenceError: customAmount is not defined
+[00:49:38.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:38.386] Browser ERROR   uncaughtError: ReferenceError: customAmount is not defined
+[00:49:44.659] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:49:44.842] Server  LOG      ✓ Compiled in 74ms
+[00:49:44.911] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/app_globals_71f961d1.css
+[00:49:45.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:51.168] Server  LOG      ✓ Compiled in 41ms
+[00:49:56.029] Server  LOG      ✓ Compiled in 34ms
+[00:50:01.684] Server  LOG      ✓ Compiled in 33ms
+[00:50:35.293] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+>>>>>>> origin/ui-for-bundles
+[00:44:56.986] Server  LOG      ✓ Compiled in 3.3s
