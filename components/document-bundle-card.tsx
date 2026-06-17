@@ -79,6 +79,7 @@ export function DocumentBundleCard({
         bundleName={name}
         bundlePrice={price}
         documentCount={documentCount}
+        bundleId={id}
       />
     </>
   )

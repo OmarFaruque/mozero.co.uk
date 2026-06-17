@@ -1304,3 +1304,26 @@ The error was caused by importing 'lib'
 [00:05:49.258] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:06:10.985] Server  LOG      ✓ Compiled in 0ms
 [00:06:21.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:04.161] Server  LOG      ✓ Compiled in 345ms
+[00:18:36.780] Server  LOG      ✓ Compiled in 0ms
+[00:18:43.043] Server  LOG      ✓ Compiled in 35ms
+[00:18:49.658] Server  LOG      ✓ Compiled in 53ms
+[00:18:49.760] Browser ERROR   ./components/document-topup.tsx:183:9
+Parsing ecmascript source code failed
+  181 |           </div>
+  182 |         </DialogContent>
+> 183 |       </Dialog>
+      |         ^^^^^^
+  184 |     </>
+  185 |   )
+  186 | }
+
+Expected '>', got 'Dialog'
+
+Import trace:
+  Server Component:
+    ./components/document-topup.tsx
+    ./app/dashboard/page.tsx
+[00:19:54.728] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:19.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:46.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
