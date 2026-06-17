@@ -15,14 +15,14 @@ type DocumentTopUpProps = {
 
 export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
   const [showTopUpModal, setShowTopUpModal] = useState(false)
-  const [customAmount, setCustomAmount] = useState('')
+  const [priceAmount, setPriceAmount] = useState('')
   const [selectedPreset, setSelectedPreset] = useState<number | null>(null)
   const [isProcessing, setIsProcessing] = useState(false)
 
-  const presetAmounts = [5, 10, 20, 50]
+  const presetAmounts = [10, 25, 50, 100] // Preset prices in £
 
   const handleTopUp = async () => {
-    const amount = selectedPreset || parseInt(customAmount)
+    const amount = selectedPreset || (priceAmount ? parseFloat(priceAmount) : null)
 
     if (!amount || amount <= 0) {
       alert('Please enter a valid amount')
@@ -31,7 +31,7 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
 
     setIsProcessing(true)
     try {
-      // Create a dynamic product ID for the document top-up
+      // Create a dynamic product ID for the balance top-up with price
       const productId = `topup-${amount}`
       const result = await startCheckoutSession(productId)
       if (result?.url) {
@@ -46,8 +46,7 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
     }
   }
 
-  const topUpAmount = selectedPreset || (customAmount ? parseInt(customAmount) : 0)
-  const estimatedCost = (topUpAmount * 0.15).toFixed(2) // Rough estimate: £0.15 per document
+  const topUpAmount = selectedPreset || (priceAmount ? parseFloat(priceAmount) : 0)
 
   return (
     <>
@@ -78,16 +77,16 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
       <Dialog open={showTopUpModal} onOpenChange={setShowTopUpModal}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Top Up Document Balance</DialogTitle>
+            <DialogTitle>Top Up Balance</DialogTitle>
             <DialogDescription>
-              Add documents to your account balance
+              Choose an amount to add to your account balance
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-6">
             {/* Quick Add Buttons */}
             <div className="space-y-2">
-              <Label className="text-sm font-medium">Quick Add</Label>
+              <Label className="text-sm font-medium">Quick Amount</Label>
               <div className="grid grid-cols-4 gap-2">
                 {presetAmounts.map((amount) => (
                   <Button
@@ -96,12 +95,12 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
                     size="sm"
                     onClick={() => {
                       setSelectedPreset(amount)
-                      setCustomAmount('')
+                      setPriceAmount('')
                     }}
                     disabled={isProcessing}
                     className="text-xs h-10"
                   >
-                    +{amount}
+                    £{amount}
                   </Button>
                 ))}
               </div>
@@ -112,18 +111,23 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
               <Label htmlFor="custom-amount" className="text-sm font-medium">
                 Custom Amount
               </Label>
-              <Input
-                id="custom-amount"
-                type="number"
-                min="1"
-                placeholder="Enter custom amount"
-                value={customAmount}
-                onChange={(e) => {
-                  setCustomAmount(e.target.value)
-                  setSelectedPreset(null)
-                }}
-                disabled={isProcessing}
-              />
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
+                <Input
+                  id="custom-amount"
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="Enter amount"
+                  value={priceAmount}
+                  onChange={(e) => {
+                    setPriceAmount(e.target.value)
+                    setSelectedPreset(null)
+                  }}
+                  disabled={isProcessing}
+                  className="pl-7"
+                />
+              </div>
             </div>
 
             {/* Summary */}
@@ -132,17 +136,13 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
                 <CardContent className="pt-4">
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span>Documents to add</span>
-                      <span className="font-semibold">{topUpAmount}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span>Cost per document</span>
-                      <span className="text-muted-foreground">~£0.15</span>
+                      <span>Top Up Amount</span>
+                      <span className="font-semibold">£{topUpAmount.toFixed(2)}</span>
                     </div>
                     <div className="border-t pt-2 mt-2">
                       <div className="flex justify-between font-semibold">
-                        <span>Estimated Total</span>
-                        <span className="text-primary">£{estimatedCost}</span>
+                        <span>Total to Pay</span>
+                        <span className="text-primary">£{topUpAmount.toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
             {/* Info Message */}
             <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg">
               <p className="text-xs text-muted-foreground">
-                Documents never expire. Use them anytime to generate documents.
+                Your balance is added to your account and can be used to generate documents anytime.
               </p>
             </div>
 
@@ -164,7 +164,7 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
                 className="flex-1"
                 onClick={() => {
                   setShowTopUpModal(false)
-                  setCustomAmount('')
+                  setPriceAmount('')
                   setSelectedPreset(null)
                 }}
                 disabled={isProcessing}
@@ -177,7 +177,7 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
                 disabled={isProcessing || topUpAmount === 0}
               >
                 {isProcessing && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                {isProcessing ? 'Processing...' : `Add ${topUpAmount || 0} Documents`}
+                {isProcessing ? 'Processing...' : `Top Up £${topUpAmount.toFixed(2)}`}
               </Button>
             </div>
           </div>
