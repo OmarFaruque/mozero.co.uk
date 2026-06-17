@@ -39,3 +39,1326 @@ https://react.dev/link/hydration-mismatch
             ...
       ...
 
+<<<<<<< HEAD
+=======
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+
+
+
+[00:00:32.515] Browser ERROR   uncaughtError: Error: ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:00:32.747] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:15.347] Server  LOG        Reload env: .env.development.local
+[00:01:15.361] Server  ERROR    ⨯ ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+
+./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+
+
+
+[00:01:15.474] Browser ERROR   uncaughtError: Error: ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+[00:01:15.612] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:15.612] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:15.612] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:33.498] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.498] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.498] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.499] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:33.499] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.499] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.499] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:33.499] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:34.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:34.391] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:34.391] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:34.391] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:34.391] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:01:35.455] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:35.455] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:35.455] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:01:35.455] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:02:10.578] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:10.578] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:10.578] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:10.578] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:02:10.863] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:11.034] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:02:11.034] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:11.034] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:02:26.053] Browser ERROR   uncaughtError: Error: ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+
+[00:02:26.204] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:02:26.204] Browser ERROR   ./lib/auth.ts:2:1
+Ecmascript file had an error
+  1 | import 'server-only'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+  5 | import { sql } from './db'
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib/auth.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { cookies } from 'next/headers'
+  3 | import { SignJWT, jwtVerify } from 'jose'
+  4 | import bcrypt from 'bcryptjs'
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib/db.ts:1:1
+Ecmascript file had an error
+> 1 | import 'server-only'
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 | import { neon } from '@neondatabase/serverless'
+  3 |
+  4 | // Database is no longer needed for template pages which now use static data
+
+You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  Client Component Browser:
+    ./lib/db.ts [Client Component Browser]
+    ./lib/auth.ts [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Client Component Browser]
+    ./app/pricing-demo/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/db.ts [Client Component SSR]
+    ./lib/auth.ts [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Client Component SSR]
+    ./app/pricing-demo/page.tsx [Server Component]
+[00:02:26.204] Browser ERROR   ./lib
+Invalid import
+'server-only' cannot be imported from a Client Component module. It should only be used from a Server Component.
+The error was caused by importing 'lib'
+[00:03:10.512] Server  LOG      ✓ Compiled in 85ms
+[00:03:10.543] Server  ERROR    ⨯ ReferenceError: redirect is not defined
+[00:03:10.696] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.830] Browser ERROR   uncaughtError: ReferenceError: redirect is not defined
+[00:03:14.949] Server  ERROR    ⨯ ReferenceError: redirect is not defined
+[00:03:14.985] Server  LOG      ✓ Compiled in 36ms
+[00:03:15.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.200] Browser ERROR   uncaughtError: ReferenceError: redirect is not defined
+[00:03:37.737] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:54.250] Server  ERROR    ⨯ ReferenceError: redirect is not defined
+[00:04:54.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:54.502] Browser ERROR   uncaughtError: ReferenceError: redirect is not defined
+[00:05:10.737] Server  LOG      ✓ Compiled in 76ms
+[00:05:11.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:49.258] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:10.985] Server  LOG      ✓ Compiled in 0ms
+[00:06:21.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:04.161] Server  LOG      ✓ Compiled in 345ms
+[00:18:36.780] Server  LOG      ✓ Compiled in 0ms
+[00:18:43.043] Server  LOG      ✓ Compiled in 35ms
+[00:18:49.658] Server  LOG      ✓ Compiled in 53ms
+[00:18:49.760] Browser ERROR   ./components/document-topup.tsx:183:9
+Parsing ecmascript source code failed
+  181 |           </div>
+  182 |         </DialogContent>
+> 183 |       </Dialog>
+      |         ^^^^^^
+  184 |     </>
+  185 |   )
+  186 | }
+
+Expected '>', got 'Dialog'
+
+Import trace:
+  Server Component:
+    ./components/document-topup.tsx
+    ./app/dashboard/page.tsx
+[00:19:54.728] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:19.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:46.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+>>>>>>> origin/ui-for-bundles
+[00:14:39.203] Server  LOG      ✓ Compiled in 0ms

@@ -32,6 +32,12 @@
     },
     "4084ff237f8259a4b0c2152a0fd69cd4af03b03b8d": {
       "workers": {
+        "app/dashboard/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "startCheckoutSession",
+          "filename": "app/actions/stripe.ts"
+        },
         "app/pricing/page": {
           "moduleId": "[project]/.next-internal/server/app/pricing/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/plans.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/stripe.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -40,6 +46,7 @@
         }
       },
       "layer": {
+        "app/dashboard/page": "action-browser",
         "app/pricing/page": "action-browser"
       },
       "filename": "app/actions/stripe.ts",

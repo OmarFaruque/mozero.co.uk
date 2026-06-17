@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useState } from 'react'
 import { Plus, Loader2 } from 'lucide-react'
+import { startCheckoutSession } from '@/app/actions/stripe'
 
 type DocumentTopUpProps = {
   currentDocuments?: number
@@ -29,14 +30,20 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
     }
 
     setIsProcessing(true)
-    // Simulate API call
-    setTimeout(() => {
-      alert(`Top-up successful! You added ${amount} documents to your balance.\n\nThis is a demo - no actual transaction occurred.`)
+    try {
+      // Create a dynamic product ID for the document top-up
+      const productId = `topup-${amount}`
+      const result = await startCheckoutSession(productId)
+      if (result?.url) {
+        window.location.href = result.url
+      } else {
+        throw new Error('Failed to create checkout session')
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+      alert('Failed to start checkout. Please try again.')
       setIsProcessing(false)
-      setShowTopUpModal(false)
-      setCustomAmount('')
-      setSelectedPreset(null)
-    }, 1000)
+    }
   }
 
   const topUpAmount = selectedPreset || (customAmount ? parseInt(customAmount) : 0)
@@ -173,10 +180,6 @@ export function DocumentTopUp({ currentDocuments = 0 }: DocumentTopUpProps) {
                 {isProcessing ? 'Processing...' : `Add ${topUpAmount || 0} Documents`}
               </Button>
             </div>
-
-            <p className="text-xs text-muted-foreground text-center">
-              This is a demo - no actual transaction will be processed
-            </p>
           </div>
         </DialogContent>
       </Dialog>

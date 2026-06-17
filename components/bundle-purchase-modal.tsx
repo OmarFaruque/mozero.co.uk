@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent } from '@/components/ui/card'
 import { useState } from 'react'
 import { Check, Loader2 } from 'lucide-react'
+import { startCheckoutSession } from '@/app/actions/stripe'
 
 type BundlePurchaseModalProps = {
   open: boolean
@@ -14,6 +15,7 @@ type BundlePurchaseModalProps = {
   bundleName: string
   bundlePrice: number
   documentCount: number
+  bundleId: string
 }
 
 export function BundlePurchaseModal({
@@ -21,11 +23,11 @@ export function BundlePurchaseModal({
   onOpenChange,
   bundleName,
   bundlePrice,
-  documentCount
+  documentCount,
+  bundleId
 }: BundlePurchaseModalProps) {
   const [step, setStep] = useState<'coupon' | 'confirm'>('coupon')
   const [couponCode, setCouponCode] = useState('')
-  const [couponApplied, setCouponApplied] = useState(false)
   const [discountAmount, setDiscountAmount] = useState(0)
   const [isProcessing, setIsProcessing] = useState(false)
 
@@ -38,40 +40,42 @@ export function BundlePurchaseModal({
     }
 
     setIsProcessing(true)
-    // Simulate API call
+    // In production, validate coupon against backend
     setTimeout(() => {
-      if (couponCode.toLowerCase() === 'demo10') {
-        const discount = bundlePrice * 0.1
+      // Placeholder for coupon validation
+      const validCoupons = ['SAVE10', 'BUNDLE20', 'WELCOME15']
+      if (validCoupons.includes(couponCode.toUpperCase())) {
+        const discountPercent = couponCode.toUpperCase() === 'BUNDLE20' ? 20 : couponCode.toUpperCase() === 'WELCOME15' ? 15 : 10
+        const discount = bundlePrice * (discountPercent / 100)
         setDiscountAmount(discount)
-        setCouponApplied(true)
         setIsProcessing(false)
         setStep('confirm')
       } else {
-        alert('Invalid coupon code. Try "demo10" for demo.')
+        alert('Invalid coupon code')
         setIsProcessing(false)
       }
     }, 500)
   }
 
   const handleSkipCoupon = () => {
-    setCouponApplied(true)
     setDiscountAmount(0)
     setStep('confirm')
   }
 
-  const handleConfirmPurchase = () => {
+  const handleConfirmPurchase = async () => {
     setIsProcessing(true)
-    // Simulate purchase
-    setTimeout(() => {
-      alert(`Purchase successful! You now have ${documentCount} documents.\n\nThis is a demo - no actual transaction occurred.`)
+    try {
+      const result = await startCheckoutSession(bundleId)
+      if (result?.url) {
+        window.location.href = result.url
+      } else {
+        throw new Error('Failed to create checkout session')
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+      alert('Failed to start checkout. Please try again.')
       setIsProcessing(false)
-      onOpenChange(false)
-      // Reset modal state
-      setStep('coupon')
-      setCouponCode('')
-      setCouponApplied(false)
-      setDiscountAmount(0)
-    }, 1000)
+    }
   }
 
   return (
@@ -133,7 +137,7 @@ export function BundlePurchaseModal({
                   </Button>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Tip: Try "demo10" for a 10% discount demo
+                  Optional: Enter your discount code if you have one
                 </p>
               </div>
 
@@ -193,18 +197,15 @@ export function BundlePurchaseModal({
                 </CardContent>
               </Card>
 
-              {/* Payment Method Info (Demo) */}
+              {/* Payment Method Info */}
               <Card className="bg-muted/50">
                 <CardContent className="pt-6">
                   <Label className="text-xs font-semibold text-muted-foreground mb-2 block">
-                    Payment Method (Demo)
+                    Continue to Payment
                   </Label>
-                  <div className="flex items-center gap-2 p-3 border rounded-lg">
-                    <div className="w-8 h-5 bg-primary/20 rounded flex items-center justify-center text-xs font-bold text-primary">
-                      CARD
-                    </div>
-                    <span className="text-sm">•••• •••• •••• 4242</span>
-                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    You will be redirected to our secure payment processor
+                  </p>
                 </CardContent>
               </Card>
 
@@ -229,7 +230,7 @@ export function BundlePurchaseModal({
               </div>
 
               <p className="text-xs text-muted-foreground text-center">
-                This is a demo - no actual payment will be processed
+                Secure payment powered by Stripe
               </p>
             </div>
           </>
