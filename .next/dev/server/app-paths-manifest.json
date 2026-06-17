@@ -1,8 +1,9 @@
 {
-  "/dashboard-demo/page": "app/dashboard-demo/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/apple-icon/route": "app-edge-has-no-entrypoint",
   "/dashboard/page": "app/dashboard/page.js",
   "/icon/route": "app-edge-has-no-entrypoint",
   "/login/page": "app/login/page.js",
-  "/pricing-demo/page": "app/pricing-demo/page.js",
+  "/page": "app/page.js",
   "/pricing/page": "app/pricing/page.js"
 }
