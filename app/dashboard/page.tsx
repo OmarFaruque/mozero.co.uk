@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { FileText, Plus, CreditCard, Zap, File } from 'lucide-react'
 import { requireAuth } from '@/lib/auth'
 import { getUserDashboardData } from '@/lib/user-dashboard'

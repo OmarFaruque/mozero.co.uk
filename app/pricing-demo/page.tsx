@@ -1,5 +1,3 @@
-'use client'
-
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Badge } from '@/components/ui/badge'
@@ -7,7 +5,7 @@ import { FileText, Zap } from 'lucide-react'
 import { DocumentBundleCard } from '@/components/document-bundle-card'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function PricingDemoPage() {
+export default async function PricingDemoPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
