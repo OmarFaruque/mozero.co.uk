@@ -1,9 +1,1 @@
-[00:00:00.698] Server  LOG      ✓ Ready in 465ms
-[00:00:27.185] Server  WARN    DATABASE_URL environment variable is not set. Database features will fail.
-[00:00:27.311] Server  ERROR   Error fetching settings for key stripe: Error: DATABASE_URL environment variable is not set
-[00:00:27.341] Server  ERROR    ⨯ Error: DATABASE_URL environment variable is not set
-[00:00:27.412] Server  ERROR   Error: write EPIPE
-[00:00:27.416] Server  ERROR    ⨯ "uncaughtException:" Error: write EPIPE
-[00:00:27.423] Server  ERROR    ⨯ "uncaughtException: " Error: write EPIPE
-[00:00:27.654] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:27.803] Browser ERROR   uncaughtError: Error: DATABASE_URL environment variable is not set
+[00:00:00.665] Server  LOG      ✓ Ready in 414ms
